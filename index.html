@@ -4,41 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON Beautifier Online - Format & Rapikan JSON Instan</title>
-    <meta name="description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify! Mendukung upload file dan drag & drop.">
+    <meta name="description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify! Upload file apapun, drag & drop, download hasil.">
+    <meta name="keywords" content="JSON beautifier, JSON formatter, JSON validator, online JSON tool, format JSON, rapikan JSON">
     <meta name="robots" content="index, follow">
-
-    <!-- Favicon -->
+    <link rel="canonical" href="https://jsonbeautifier.vinnesia.my.id">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jsonbeautifier.vinnesia.my.id">
+    <meta property="og:title" content="JSON Beautifier Online - Format & Rapikan JSON Instan">
+    <meta property="og:description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify!">
+    <meta property="og:image" content="https://jsonbeautifier.vinnesia.my.id/logo.png">
 
-    <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jsonbeautifier.vinnesia.my.id">
+    <meta property="twitter:title" content="JSON Beautifier Online - Format & Rapikan JSON Instan">
+    <meta property="twitter:description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify!">
+    <meta property="twitter:image" content="https://jsonbeautifier.vinnesia.my.id/logo.png">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Custom Tailwind Configuration for Dark Theme -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'primary-purple': '#5B21B6', // Purple-800
-                        'dark-green': '#14532D', // Green-900
-                        'light-purple': '#C4B5FD', // Purple-300
-                        'accent-green': '#34D399', // Green-500
-                        'bg-dark': '#1F2937', // Dark Gray-800 for general background
-                        'input-bg': '#374151', // Dark Gray-700 for textareas
-                        'error-red': '#EF4444', // Red-500
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Schema.org SoftwareApplication Markup -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -56,15 +42,7 @@
     }
     </script>
 
-    <!-- Open Graph Tags for SEO -->
-    <meta property="og:title" content="JSON Beautifier Online - Format & Rapikan JSON Instan">
-    <meta property="og:description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify! Mendukung upload file dan drag & drop.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jsonbeautifier.vinnesia.my.id">
-    <meta property="og:image" content="https://jsonbeautifier.vinnesia.my.id/logo.png"> <!-- Pastikan path ini benar -->
-    <meta property="og:image:alt" content="VIN NESIA JSON BEAUTIFIER Logo">
-
-    <!-- Google Analytics GA4 -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PYZXZFNER"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -73,201 +51,464 @@
         gtag('config', 'G-3PYZXZFNER');
     </script>
 
+    <!-- fflate.js for ZIP extraction -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fflate/0.8.2/index.min.js"></script>
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            /* Gradient background from purple to dark green */
-            background: linear-gradient(to bottom right, #5B21B6, #14532D);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #e0e0e0;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            color: #E5E7EB; /* Light gray text */
+            line-height: 1.6;
         }
+
         .container {
-            flex-grow: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        textarea {
-            resize: vertical; /* Allow vertical resizing */
-            min-height: 200px; /* Minimum height for textareas */
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(124, 58, 237, 0.3);
         }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: url('logo.png') center/contain no-repeat;
+            background-color: rgba(124, 58, 237, 0.2);
+            border-radius: 50%;
+        }
+
+        h1 {
+            color: #a855f7;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(168, 85, 247, 0.3);
+        }
+
+        .subtitle {
+            color: #10b981;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #a855f7, #10b981);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .section h2 {
+            color: #a855f7;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .textarea {
+            width: 100%;
+            min-height: 300px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(124, 58, 237, 0.3);
+            border-radius: 10px;
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+
+        .textarea:focus {
+            outline: none;
+            border-color: #a855f7;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+        }
+
+        .drop-zone {
+            border: 2px dashed rgba(16, 185, 129, 0.5);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .drop-zone.dragover {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.15);
+            transform: scale(1.02);
+        }
+
+        .drop-zone-text {
+            color: #10b981;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .file-info {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 10px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
         .btn {
-            @apply px-6 py-3 rounded-lg font-semibold transition duration-300 ease-in-out transform hover:scale-105 shadow-lg;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
+
         .btn-primary {
-            @apply bg-primary-purple text-white hover:bg-purple-700;
+            background: linear-gradient(45deg, #a855f7, #7c3aed);
+            color: white;
         }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+        }
+
         .btn-secondary {
-            @apply bg-accent-green text-white hover:bg-green-600;
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
         }
-        .btn-tertiary {
-            @apply bg-gray-600 text-white hover:bg-gray-700;
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
         }
-        /* New style for the upload button area */
-        .upload-button-area {
-            @apply flex items-center justify-center py-3 px-6 rounded-lg font-semibold text-white cursor-pointer;
-            background: linear-gradient(to right, #6D28D9, #3B82F6); /* Purple-700 to Blue-500 */
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        .file-input {
+            display: none;
         }
-        .upload-button-area:hover {
-            @apply shadow-xl transform scale-105;
+
+        .error-message, .success-message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 500;
+            display: none;
+        }
+
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+        }
+
+        .success-message {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #6ee7b7;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            margin-top: 40px;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #10b981;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #a855f7;
+        }
+
+        .copyright {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .back-button {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 20px;
+                display: inline-block;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+        }
+
+        /* Loading spinner */
+        .loading {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
-<body class="font-sans">
-    <header class="bg-bg-dark text-white p-4 shadow-md">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between">
-            <div class="flex items-center mb-4 sm:mb-0">
-                <img src="logo.png" alt="VIN NESIA Logo" class="h-10 w-10 mr-3 rounded-full">
-                <h1 class="text-2xl font-bold text-light-purple">VIN NESIA JSON BEAUTIFIER</h1>
+<body>
+    <a href="https://www.vinnesia.my.id" class="back-button">🔙 Kembali ke Homepage</a>
+    
+    <div class="container">
+        <header class="header">
+            <div class="logo"></div>
+            <h1>VIN NESIA JSON BEAUTIFIER</h1>
+            <p class="subtitle">Format & Rapikan JSON Instan - Upload File Apapun!</p>
+        </header>
+
+        <div class="main-content">
+            <div class="section">
+                <h2>📝 Input JSON</h2>
+                
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-text">🗂️ Drag & Drop File Disini</div>
+                    <p>atau klik untuk pilih file</p>
+                    <div class="file-info">
+                        Kami menerima semua file teks (.txt, .json, .log, .zip, .rar, dll.)<br>
+                        Isi file akan dicek apakah valid JSON.
+                    </div>
+                </div>
+
+                <input type="file" id="fileInput" class="file-input" multiple accept="*/*">
+                
+                <textarea 
+                    id="inputJson" 
+                    class="textarea" 
+                    placeholder="Paste JSON mentah disini atau upload file..."
+                    spellcheck="false"
+                ></textarea>
+
+                <div class="button-group">
+                    <button class="btn btn-primary" id="beautifyBtn">
+                        <span class="loading" id="loading"></span>
+                        ✨ Beautify JSON
+                    </button>
+                    <button class="btn btn-secondary" id="uploadBtn">
+                        📁 Upload File
+                    </button>
+                </div>
+
+                <div class="error-message" id="errorMessage"></div>
+                <div class="success-message" id="successMessage"></div>
             </div>
-            <nav>
-                <a href="https://www.vinnesia.my.id" class="btn btn-tertiary text-sm sm:text-base">🔙 Kembali ke Homepage</a>
-            </nav>
-        </div>
-    </header>
 
-    <main class="container max-w-7xl mx-auto p-6 my-8 bg-bg-dark rounded-xl shadow-2xl">
-        <h1 class="text-4xl font-extrabold text-center mb-8 text-white">JSON Beautifier Online</h1>
+            <div class="section">
+                <h2>✅ Output JSON</h2>
+                
+                <textarea 
+                    id="outputJson" 
+                    class="textarea" 
+                    placeholder="Hasil JSON yang sudah dirapikan akan muncul disini..."
+                    readonly
+                    spellcheck="false"
+                ></textarea>
 
-        <!-- Input Section -->
-        <div class="mb-6">
-            <label for="jsonInput" class="block text-lg font-medium text-gray-200 mb-2">Paste JSON Mentah di Sini:</label>
-            <textarea id="jsonInput" class="w-full p-4 rounded-lg bg-input-bg text-gray-100 border border-gray-600 focus:ring-2 focus:ring-primary-purple focus:border-transparent outline-none" placeholder="Contoh: {'name':'John','age':30,'city':'New York'}" spellcheck="false"></textarea>
-        </div>
-
-        <!-- File Upload Section -->
-        <div class="mb-6">
-            <label for="fileInput" class="block text-lg font-medium text-gray-200 mb-2">Atau Unggah File:</label>
-            <div id="dropArea" class="upload-button-area">
-                <span class="text-xl mr-2">📂</span> <!-- Folder icon emoji -->
-                <span>Upload File JSON</span>
+                <div class="button-group">
+                    <button class="btn btn-secondary" id="copyBtn">
+                        📋 Salin Hasil
+                    </button>
+                    <button class="btn btn-primary" id="downloadBtn">
+                        💾 Download JSON
+                    </button>
+                </div>
             </div>
-            <p class="text-sm text-gray-400 mt-2 text-center">Seret & Lepas file di sini, atau klik tombol di atas.</p>
-            <p class="text-sm text-gray-400 mt-1 text-center">Kami menerima semua file teks (termasuk .zip, .rar, .tar). Isi file akan dicek apakah valid JSON.</p>
-            <input type="file" id="fileInput" class="hidden" multiple accept="*/*"> <!-- Accept all file types -->
         </div>
 
-        <!-- Action Buttons -->
-        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-            <button id="beautifyBtn" class="btn btn-primary">Beautify JSON</button>
-            <button id="clearBtn" class="btn btn-tertiary">Bersihkan</button>
-        </div>
-
-        <!-- Error Message Display -->
-        <div id="errorMessage" class="hidden bg-error-red text-white p-3 rounded-lg mb-6 text-center font-medium">
-            <!-- Error message will be displayed here -->
-        </div>
-
-        <!-- Output Section -->
-        <div class="mb-6">
-            <label for="jsonOutput" class="block text-lg font-medium text-gray-200 mb-2">Hasil JSON yang Dirapikan:</label>
-            <textarea id="jsonOutput" class="w-full p-4 rounded-lg bg-input-bg text-gray-100 border border-gray-600 focus:ring-2 focus:ring-primary-purple focus:border-transparent outline-none" readonly spellcheck="false"></textarea>
-        </div>
-
-        <!-- Output Action Buttons -->
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <button id="copyBtn" class="btn btn-secondary">Salin ke Clipboard</button>
-            <button id="downloadBtn" class="btn btn-secondary">Unduh sebagai JSON</button>
-        </div>
-    </main>
-
-    <footer class="bg-bg-dark text-gray-400 text-center p-4 mt-8 shadow-inner">
-        <div class="max-w-7xl mx-auto">
-            <p class="mb-2">&copy;2025 vinnesia.my.id — All Rights Reserved</p>
-            <a href="privacy.html" class="text-primary-purple hover:underline">Kebijakan Privasi</a>
-        </div>
-    </footer>
-
-    <!-- fflate.js for ZIP handling -->
-    <script src="https://unpkg.com/fflate@0.8.0/umd/index.js"></script>
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="mailto:admin@vinnesia.my.id">Contact</a>
+            </div>
+            <div class="copyright">
+                ©2025 vinnesia.my.id — All Rights Reserved
+            </div>
+        </footer>
+    </div>
 
     <script>
-        const jsonInput = document.getElementById('jsonInput');
-        const jsonOutput = document.getElementById('jsonOutput');
+        // DOM Elements
+        const inputJson = document.getElementById('inputJson');
+        const outputJson = document.getElementById('outputJson');
         const beautifyBtn = document.getElementById('beautifyBtn');
         const copyBtn = document.getElementById('copyBtn');
         const downloadBtn = document.getElementById('downloadBtn');
-        const clearBtn = document.getElementById('clearBtn');
+        const uploadBtn = document.getElementById('uploadBtn');
         const fileInput = document.getElementById('fileInput');
-        const dropArea = document.getElementById('dropArea');
+        const dropZone = document.getElementById('dropZone');
         const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+        const loading = document.getElementById('loading');
 
-        /**
-         * Menampilkan pesan error dan menyembunyikannya setelah beberapa detik.
-         * @param {string} message - Pesan error yang akan ditampilkan.
-         */
+        // Show/Hide Messages
         function showError(message) {
             errorMessage.textContent = message;
-            errorMessage.classList.remove('hidden');
-            setTimeout(() => {
-                errorMessage.classList.add('hidden');
-            }, 5000); // Sembunyikan setelah 5 detik
+            errorMessage.style.display = 'block';
+            successMessage.style.display = 'none';
         }
 
-        /**
-         * Memeriksa apakah string adalah JSON yang valid.
-         * @param {string} str - String yang akan diperiksa.
-         * @returns {boolean} - True jika valid JSON, false jika tidak.
-         */
-        function isValidJson(str) {
-            try {
-                JSON.parse(str);
-            } catch (e) {
-                return false;
-            }
-            return true;
+        function showSuccess(message) {
+            successMessage.textContent = message;
+            successMessage.style.display = 'block';
+            errorMessage.style.display = 'none';
         }
 
-        /**
-         * Merapikan JSON dari input textarea ke output textarea.
-         */
+        function hideMessages() {
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+        }
+
+        // Beautify JSON Function
         function beautifyJson() {
-            const rawJson = jsonInput.value.trim();
-            if (!rawJson) {
-                jsonOutput.value = '';
-                showError('Input JSON kosong. Silakan paste JSON atau unggah file.');
+            const input = inputJson.value.trim();
+            
+            if (!input) {
+                showError('❌ Input kosong! Silakan masukkan JSON atau upload file.');
+                return;
+            }
+
+            // Show loading
+            loading.style.display = 'inline-block';
+            beautifyBtn.disabled = true;
+
+            setTimeout(() => {
+                try {
+                    const parsed = JSON.parse(input);
+                    const beautified = JSON.stringify(parsed, null, 2);
+                    outputJson.value = beautified;
+                    showSuccess('✅ JSON berhasil dirapikan!');
+                } catch (error) {
+                    showError(`❌ JSON tidak valid: ${error.message}`);
+                    outputJson.value = '';
+                } finally {
+                    loading.style.display = 'none';
+                    beautifyBtn.disabled = false;
+                }
+            }, 500);
+        }
+
+        // Copy to Clipboard
+        async function copyToClipboard() {
+            const output = outputJson.value;
+            
+            if (!output) {
+                showError('❌ Tidak ada hasil untuk disalin!');
                 return;
             }
 
             try {
-                const parsedJson = JSON.parse(rawJson);
-                // Use 2 spaces for indentation
-                jsonOutput.value = JSON.stringify(parsedJson, null, 2);
-                errorMessage.classList.add('hidden'); // Hide any previous error
-            } catch (e) {
-                jsonOutput.value = '';
-                showError('❌ JSON tidak valid! Silakan periksa sintaksnya.');
-            }
-        }
-
-        /**
-         * Menyalin konten dari output textarea ke clipboard.
-         */
-        function copyToClipboard() {
-            jsonOutput.select();
-            jsonOutput.setSelectionRange(0, 99999); // For mobile devices
-            try {
+                await navigator.clipboard.writeText(output);
+                showSuccess('📋 Hasil berhasil disalin ke clipboard!');
+            } catch (error) {
+                // Fallback for older browsers
+                outputJson.select();
                 document.execCommand('copy');
-                // In a real application, consider a custom modal instead of alert()
-                // For this context, alert() is used for simplicity.
-                alert('JSON berhasil disalin ke clipboard!');
-            } catch (err) {
-                showError('Gagal menyalin ke clipboard. Browser Anda mungkin tidak mendukung fitur ini.');
+                showSuccess('📋 Hasil berhasil disalin ke clipboard!');
             }
         }
 
-        /**
-         * Mengunduh konten dari output textarea sebagai file JSON.
-         */
+        // Download JSON
         function downloadJson() {
-            const beautifiedJson = jsonOutput.value;
-            if (!beautifiedJson) {
-                showError('Tidak ada JSON untuk diunduh. Silakan beautify JSON terlebih dahulu.');
+            const output = outputJson.value;
+            
+            if (!output) {
+                showError('❌ Tidak ada hasil untuk didownload!');
                 return;
             }
 
-            const blob = new Blob([beautifiedJson], { type: 'application/json' });
+            const blob = new Blob([output], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
@@ -276,117 +517,83 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
+            
+            showSuccess('💾 File JSON berhasil didownload!');
         }
 
-        /**
-         * Membersihkan input dan output textarea.
-         */
-        function clearTextareas() {
-            jsonInput.value = '';
-            jsonOutput.value = '';
-            errorMessage.classList.add('hidden');
+        // File Processing Functions
+        function isZipFile(file) {
+            return file.name.toLowerCase().endsWith('.zip') || 
+                   file.name.toLowerCase().endsWith('.rar') || 
+                   file.name.toLowerCase().endsWith('.tar');
         }
 
-        /**
-         * Memproses konten teks dan mencoba mem-parse sebagai JSON.
-         * Jika berhasil, akan mengisi input dan meng-beautify.
-         * @param {string} content - Konten teks dari file.
-         * @param {string} fileName - Nama file (untuk pesan error).
-         * @returns {boolean} - True jika JSON valid ditemukan dan diproses, false jika tidak.
-         */
-        function processTextContent(content, fileName) {
-            if (isValidJson(content)) {
-                jsonInput.value = content;
-                beautifyJson();
-                return true;
-            } else {
-                return false;
+        async function extractZipFile(file) {
+            try {
+                const arrayBuffer = await file.arrayBuffer();
+                const uint8Array = new Uint8Array(arrayBuffer);
+                
+                // Try to decompress ZIP
+                const decompressed = fflate.unzipSync(uint8Array);
+                
+                for (const [filename, data] of Object.entries(decompressed)) {
+                    try {
+                        const text = new TextDecoder().decode(data);
+                        const parsed = JSON.parse(text);
+                        return { content: text, filename };
+                    } catch (e) {
+                        // Continue to next file
+                        continue;
+                    }
+                }
+                
+                throw new Error('Tidak ditemukan file JSON valid dalam arsip');
+            } catch (error) {
+                throw new Error(`Gagal mengekstrak arsip: ${error.message}`);
             }
         }
 
-        /**
-         * Memproses file yang diunggah atau di-drag.
-         * Mencari JSON valid di dalam file, termasuk di dalam arsip ZIP.
-         * @param {FileList} files - Objek FileList dari event.
-         */
+        async function processTextFile(file) {
+            try {
+                const text = await file.text();
+                
+                // Validate JSON
+                JSON.parse(text);
+                return { content: text, filename: file.name };
+            } catch (error) {
+                throw new Error(`Isi file tidak valid JSON: ${error.message}`);
+            }
+        }
+
         async function processFiles(files) {
-            if (files.length === 0) return;
-
-            errorMessage.classList.add('hidden'); // Sembunyikan pesan error sebelumnya
-            jsonInput.value = ''; // Bersihkan input
-            jsonOutput.value = ''; // Bersihkan output
-
-            let jsonFoundInAnyFile = false;
+            let foundValidJson = false;
+            let processedCount = 0;
 
             for (const file of files) {
-                const fileName = file.name.toLowerCase();
+                try {
+                    processedCount++;
+                    let result;
 
-                // Handle ZIP files using fflate.js
-                if (fileName.endsWith('.zip')) {
-                    try {
-                        const buffer = await file.arrayBuffer();
-                        const unzipped = fflate.unzipSync(new Uint8Array(buffer)); // Synchronous unzip
-
-                        let jsonFoundInZip = false;
-                        for (const entryName in unzipped) {
-                            const data = unzipped[entryName];
-                            // Check if it's a file (not a directory) and has content
-                            if (data instanceof Uint8Array && data.length > 0) {
-                                const textDecoder = new TextDecoder('utf-8');
-                                const content = textDecoder.decode(data);
-                                if (processTextContent(content, entryName)) {
-                                    jsonFoundInZip = true;
-                                    jsonFoundInAnyFile = true;
-                                    break; // Stop after finding the first valid JSON in the ZIP
-                                }
-                            }
-                        }
-                        if (jsonFoundInZip) {
-                            break; // Stop processing further files if JSON found in this ZIP
-                        } else {
-                            showError(`❌ Tidak ditemukan file berisi JSON valid di dalam arsip "${file.name}".`);
-                        }
-                    } catch (e) {
-                        console.error('Error processing ZIP file:', e);
-                        showError(`❌ Gagal membaca file arsip "${file.name}".`);
+                    if (isZipFile(file)) {
+                        result = await extractZipFile(file);
+                    } else {
+                        result = await processTextFile(file);
                     }
-                }
-                // Handle other files (including .rar, .tar, .txt, .log, images, etc. as plain text)
-                else {
-                    await new Promise((resolve) => {
-                        const reader = new FileReader();
-                        reader.onload = (e) => {
-                            const content = e.target.result;
-                            if (processTextContent(content, file.name)) {
-                                jsonFoundInAnyFile = true;
-                            } else {
-                                showError(`❌ Isi file "${file.name}" tidak valid JSON!`);
-                            }
-                            resolve(); // Resolve the promise to continue loop
-                        };
-                        reader.onerror = () => {
-                            showError(`❌ Gagal membaca file "${file.name}".`);
-                            resolve();
-                        };
-                        // Read as text, regardless of actual file type
-                        reader.readAsText(file);
-                    });
 
-                    if (jsonFoundInAnyFile) {
-                        break; // Stop processing further files if JSON found in this file
-                    }
+                    // If we found valid JSON, use it
+                    inputJson.value = result.content;
+                    showSuccess(`✅ File "${result.filename}" berhasil dimuat dan berisi JSON valid!`);
+                    foundValidJson = true;
+                    break; // Use first valid JSON found
+
+                } catch (error) {
+                    console.log(`File ${file.name}: ${error.message}`);
+                    continue; // Try next file
                 }
             }
 
-            // If after processing all files, no valid JSON was found
-            if (!jsonFoundInAnyFile && files.length > 0) {
-                 // This specific error is handled by processTextContent or ZIP error.
-                 // This block is mostly for when multiple files are dropped and none are valid.
-                 // The individual file errors will likely overwrite each other,
-                 // so a final general error might be useful if nothing was found.
-                 // Let's rely on the specific errors from processTextContent for now.
-                 // If the last processed file was invalid, its error will be shown.
-                 // If a ZIP was processed and no JSON found, its error will be shown.
+            if (!foundValidJson) {
+                showError(`❌ Tidak ditemukan file berisi JSON valid dari ${processedCount} file yang diperiksa.`);
             }
         }
 
@@ -394,41 +601,46 @@
         beautifyBtn.addEventListener('click', beautifyJson);
         copyBtn.addEventListener('click', copyToClipboard);
         downloadBtn.addEventListener('click', downloadJson);
-        clearBtn.addEventListener('click', clearTextareas);
+        uploadBtn.addEventListener('click', () => fileInput.click());
 
-        // File Input Change Listener
         fileInput.addEventListener('change', (e) => {
-            processFiles(e.target.files);
+            if (e.target.files.length > 0) {
+                processFiles(Array.from(e.target.files));
+            }
         });
 
-        // Drag and Drop Listeners
-        dropArea.addEventListener('dragover', (e) => {
+        // Drag and Drop
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        dropZone.addEventListener('dragover', (e) => {
             e.preventDefault();
-            dropArea.classList.add('border-accent-green'); // Keep visual feedback for dragover
-            dropArea.style.transform = 'scale(1.02)'; // Slight scale on hover
+            dropZone.classList.add('dragover');
         });
 
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.classList.remove('border-accent-green');
-            dropArea.style.transform = 'scale(1)'; // Reset scale
-        });
-
-        dropArea.addEventListener('drop', (e) => {
+        dropZone.addEventListener('dragleave', (e) => {
             e.preventDefault();
-            dropArea.classList.remove('border-accent-green');
-            dropArea.style.transform = 'scale(1)'; // Reset scale
-            processFiles(e.dataTransfer.files);
+            dropZone.classList.remove('dragover');
         });
 
-        // Allow clicking the drop area to open file dialog
-        dropArea.addEventListener('click', () => {
-            fileInput.click();
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            
+            const files = Array.from(e.dataTransfer.files);
+            if (files.length > 0) {
+                processFiles(files);
+            }
         });
 
-        // Initial beautify if there's pre-filled content (e.g., from browser restore)
-        if (jsonInput.value.trim()) {
-            beautifyJson();
-        }
+        // Auto-beautify on input change (optional)
+        inputJson.addEventListener('input', hideMessages);
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'Enter') {
+                beautifyJson();
+            }
+        });
     </script>
 </body>
 </html>
