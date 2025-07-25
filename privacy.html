@@ -4,336 +4,1846 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - VIN NESIA JSON Beautifier</title>
-    <meta name="description" content="Kebijakan Privasi untuk JSON Beautifier Online - vinnesia.my.id">
-    <meta name="robots" content="noindex, follow">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Privacy Policy lengkap untuk VIN NESIA JSON Beautifier - Kebijakan privasi dan perlindungan data pengguna sesuai GDPR.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PYZXZFNER"></script>
+    <!-- Google Analytics GA4 with Consent Mode -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-3PYZXZFNER');
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied'
+        });
     </script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PYZXZFNER"></script>
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        :root {
+            --primary-purple: #8b5cf6;
+            --primary-green: #10b981;
+            --dark-bg: #1a1a2e;
+            --darker-bg: #16213e;
+            --darkest-bg: #0f3460;
+            --text-light: #ffffff;
+            --text-gray: #e5e5e5;
+            --text-muted: #a3a3a3;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #e0e0e0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 50%, var(--darkest-bg) 100%);
+            color: var(--text-light);
             min-height: 100vh;
-            line-height: 1.7;
+            line-height: 1.6;
         }
-
+        
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
-
+        
         .header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            border: 1px solid rgba(124, 58, 237, 0.3);
-        }
-
-        h1 {
-            color: #a855f7;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 10px rgba(168, 85, 247, 0.3);
-        }
-
-        .subtitle {
-            color: #10b981;
-            font-size: 1.1rem;
-            font-weight: 400;
-        }
-
-        .back-button {
-            display: inline-block;
             margin-bottom: 30px;
-            padding: 12px 24px;
-            background: linear-gradient(45deg, #a855f7, #10b981);
+            padding: 20px 0;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .site-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #6366f1, var(--primary-purple));
             color: white;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
             font-weight: 500;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
         }
-
-        .back-button:hover {
+        
+        .back-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
         }
-
+        
         .content {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 40px;
-            border: 1px solid rgba(124, 58, 237, 0.3);
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             margin-bottom: 30px;
         }
-
-        h2 {
-            color: #a855f7;
-            font-size: 1.6rem;
-            font-weight: 600;
+        
+        h1 {
+            color: var(--primary-green);
+            font-size: 2.5rem;
             margin-bottom: 20px;
-            margin-top: 30px;
+            text-align: center;
         }
-
-        h2:first-child {
-            margin-top: 0;
+        
+        h2 {
+            color: var(--primary-purple);
+            font-size: 1.5rem;
+            margin: 35px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(139, 92, 246, 0.3);
         }
-
+        
         h3 {
-            color: #10b981;
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-            margin-top: 25px;
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin: 25px 0 15px 0;
         }
-
+        
+        h4 {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+        
         p {
             margin-bottom: 15px;
-            color: #cbd5e1;
+            color: var(--text-gray);
+            text-align: justify;
+            line-height: 1.7;
         }
-
-        ul {
-            margin-left: 20px;
+        p {
             margin-bottom: 15px;
+            color: var(--text-gray);
+            text-align: justify;
+            line-height: 1.7;
         }
-
+        
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            color: var(--text-gray);
+        }
+        
         li {
             margin-bottom: 8px;
-            color: #cbd5e1;
+            line-height: 1.6;
         }
-
+        
         .highlight {
             background: rgba(16, 185, 129, 0.1);
             padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #10b981;
-            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-green);
+            margin: 25px 0;
         }
-
-        .contact-info {
-            background: rgba(168, 85, 247, 0.1);
+        
+        .warning {
+            background: rgba(245, 158, 11, 0.1);
             padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #a855f7;
-            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 4px solid var(--warning-color);
+            margin: 25px 0;
+            color: #fbbf24;
         }
-
+        
+        .important {
+            background: rgba(239, 68, 68, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--error-color);
+            margin: 25px 0;
+            color: #fca5a5;
+        }
+        
+        .info-box {
+            background: rgba(139, 92, 246, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-purple);
+            margin: 25px 0;
+        }
+        
+        .contact-info {
+            background: rgba(139, 92, 246, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
         .contact-info a {
-            color: #a855f7;
+            color: var(--primary-purple);
             text-decoration: none;
             font-weight: 500;
         }
-
+        
         .contact-info a:hover {
-            color: #10b981;
+            text-decoration: underline;
         }
-
-        .last-updated {
+        
+        .gdpr-rights {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .gdpr-rights h3 {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .data-table th {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--primary-purple);
+            font-weight: 600;
+        }
+        
+        .data-table td {
+            color: var(--text-gray);
+        }
+        
+        .footer {
             text-align: center;
-            color: #94a3b8;
-            font-style: italic;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(124, 58, 237, 0.3);
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-
+        
+        .footer a {
+            color: var(--primary-green);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .last-updated {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin: 20px 0;
+            font-style: italic;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        
+        .toc {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .toc h3 {
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+        }
+        
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .toc a {
+            color: var(--text-gray);
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+        
+        .toc a:hover {
+            color: var(--primary-green);
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
             }
-
-            h1 {
-                font-size: 2rem;
-            }
-
+            
             .content {
                 padding: 25px;
             }
-
-            h2 {
-                font-size: 1.4rem;
+            
+            .site-title {
+                font-size: 1.5rem;
             }
-
-            h3 {
-                font-size: 1.2rem;
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .data-table {
+                font-size: 0.9rem;
+            }
+            
+            .data-table th,
+            .data-table td {
+                padding: 8px 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .data-table {
+                font-size: 0.8rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="https://jsonbeautifier.vinnesia.my.id" class="back-button">🔙 Kembali ke JSON Beautifier</a>
+        <div class="header">
+            <div class="logo">VN</div>
+            <div class="site-title">VIN NESIA JSON BEAUTIFIER</div>
+            <a href="index.html" class="back-btn">🔙 Kembali ke JSON Beautifier</a>
+        </div>
         
-        <header class="header">
-            <h1>Privacy Policy</h1>
-            <p class="subtitle">VIN NESIA JSON Beautifier</p>
-        </header>
-
         <div class="content">
-            <div class="highlight">
-                <p><strong>Ringkasan Singkat:</strong> Kami tidak mengumpulkan, menyimpan, atau mengirim data pribadi Anda. Semua proses JSON beautifying dilakukan sepenuhnya di browser Anda (client-side). File yang Anda upload tidak pernah meninggalkan perangkat Anda.</p>
-            </div>
-
-            <h2>1. Informasi yang Kami Kumpulkan</h2>
-            <p>JSON Beautifier Online berkomitmen untuk melindungi privasi pengguna. Kami <strong>TIDAK mengumpulkan, menyimpan, atau memproses</strong> data pribadi apapun, termasuk:</p>
-            <ul>
-                <li>Nama, email, atau informasi identitas pribadi</li>
-                <li>File JSON atau konten yang Anda upload/input</li>
-                <li>Data hasil beautify/format JSON</li>
-                <li>Informasi login atau akun (karena tidak ada sistem akun)</li>
-            </ul>
-
-            <h2>2. Bagaimana Aplikasi Bekerja</h2>
-            <h3>Client-Side Processing</h3>
-            <p>Semua pemrosesan JSON dilakukan sepenuhnya di browser Anda (client-side):</p>
-            <ul>
-                <li>File yang Anda upload dibaca langsung oleh JavaScript di browser</li>
-                <li>Proses beautify/format menggunakan fungsi JSON.stringify() browser</li>
-                <li>Tidak ada data yang dikirim ke server atau pihak ketiga</li>
-                <li>File dan hasil processing hanya ada di memori browser Anda</li>
-            </ul>
-
-            <h3>Tidak Ada Penyimpanan Data</h3>
-            <p>Aplikasi ini tidak menggunakan:</p>
-            <ul>
-                <li>Database atau server penyimpanan</li>
-                <li>localStorage atau sessionStorage browser</li>
-                <li>Cookies untuk menyimpan data pengguna</li>
-                <li>Cache file atau konten pengguna</li>
-            </ul>
-
-            <h2>3. Google Analytics</h2>
-            <p>Kami menggunakan Google Analytics (GA4) dengan ID tracking <code>G-3PYZXZFNER</code> untuk menganalisis penggunaan website secara anonim:</p>
+            <h1>Kebijakan Privasi</h1>
             
-            <h3>Data yang Dikumpulkan GA4:</h3>
-            <ul>
-                <li>Informasi teknis browser (jenis browser, sistem operasi)</li>
-                <li>Lokasi geografis umum (negara/kota, bukan alamat spesifik)</li>
-                <li>Halaman yang dikunjungi dan durasi kunjungan</li>
-                <li>Referrer/sumber traffic</li>
-                <li>Interaksi dengan elemen website (klik tombol, dll.)</li>
-            </ul>
-
-            <h3>Data yang TIDAK Dikumpulkan GA4:</h3>
-            <ul>
-                <li>Konten file JSON yang Anda upload/input</li>
-                <li>Informasi pribadi yang dapat mengidentifikasi Anda</li>
-                <li>Data sensitif atau rahasia bisnis</li>
-            </ul>
-
-            <p>Anda dapat menonaktifkan Google Analytics dengan menggunakan ekstensi browser seperti "Google Analytics Opt-out" atau mengatur browser untuk memblokir tracking.</p>
-
-            <h2>4. Cookies dan Teknologi Pelacakan</h2>
-            <p>Website ini menggunakan cookies minimal yang diperlukan untuk:</p>
-            <ul>
-                <li>Google Analytics (untuk statistik penggunaan anonim)</li>
-                <li>Preferensi teknis browser (tidak menyimpan data pribadi)</li>
-            </ul>
-            
-            <p>Kami tidak menggunakan cookies untuk:</p>
-            <ul>
-                <li>Menyimpan data pribadi atau file pengguna</li>
-                <li>Tracking lintas website</li>
-                <li>Advertising atau marketing</li>
-                <li>Profiling pengguna</li>
-            </ul>
-
-            <h2>5. Keamanan Data</h2>
-            <div class="highlight">
-                <p><strong>Keamanan Maksimal:</strong> Karena semua proses dilakukan client-side, data Anda tidak pernah meninggalkan perangkat Anda. Ini adalah metode paling aman untuk memproses file JSON sensitif.</p>
-            </div>
-
-            <h3>Praktik Keamanan:</h3>
-            <ul>
-                <li>Koneksi HTTPS untuk mengenkripsi komunikasi</li>
-                <li>Tidak ada penyimpanan data di server</li>
-                <li>Tidak ada transmisi file ke server external</li>
-                <li>Code open-source yang dapat diaudit</li>
-            </ul>
-
-            <h2>6. Hak Pengguna</h2>
-            <p>Karena kami tidak mengumpulkan atau menyimpan data pribadi, Anda secara otomatis memiliki kontrol penuh atas data Anda:</p>
-            <ul>
-                <li><strong>Hak Akses:</strong> Tidak ada data pribadi yang disimpan untuk diakses</li>
-                <li><strong>Hak Hapus:</strong> Refresh browser akan menghapus semua data lokal</li>
-                <li><strong>Hak Portabilitas:</strong> Data tetap di perangkat Anda</li>
-                <li><strong>Hak Pembatasan:</strong> Anda dapat berhenti menggunakan layanan kapan saja</li>
-            </ul>
-
-            <h2>7. Anak-anak dan Remaja</h2>
-            <p>Layanan ini aman digunakan oleh pengguna di bawah 18 tahun karena:</p>
-            <ul>
-                <li>Tidak mengumpulkan informasi pribadi apapun</li>
-                <li>Tidak memerlukan registrasi atau login</li>
-                <li>Tidak ada interaksi sosial atau komunikasi</li>
-                <li>Fokus pada tools teknis yang edukatif</li>
-            </ul>
-
-            <h2>8. Link Eksternal</h2>
-            <p>Website ini berisi link ke:</p>
-            <ul>
-                <li><strong>vinnesia.my.id</strong> - Website utama kami</li>
-                <li><strong>CDN resources</strong> (Google Fonts, libraries) - Untuk fungsi teknis</li>
-            </ul>
-            
-            <p>Kami tidak bertanggung jawab atas kebijakan privasi website eksternal. Silakan periksa kebijakan privasi mereka secara terpisah.</p>
-
-            <h2>9. Perubahan Kebijakan Privasi</h2>
-            <p>Jika ada perubahan pada kebijakan privasi ini, kami akan:</p>
-            <ul>
-                <li>Memperbarui tanggal "Last Updated" di bagian bawah</li>
-                <li>Memberikan notifikasi di halaman utama untuk perubahan material</li>
-                <li>Tetap berkomitmen pada prinsip "tidak mengumpulkan data pribadi"</li>
-            </ul>
-
-            <h2>10. Dasar Hukum (GDPR Compliance)</h2>
-            <p>Untuk pengguna di wilayah Uni Eropa, pemrosesan data kami berdasarkan:</p>
-            <ul>
-                <li><strong>Legitimate Interest:</strong> Google Analytics untuk menganalisis penggunaan website</li>
-                <li><strong>Consent:</strong> Dengan menggunakan website, Anda menyetujui penggunaan Google Analytics</li>
-            </ul>
-            
-            <p>Karena tidak ada data pribadi yang dikumpulkan dari proses JSON beautifying, sebagian besar requirement GDPR tidak berlaku untuk fungsi utama aplikasi.</p>
-
-            <h2>11. Kontak dan Pertanyaan</h2>
-            <div class="contact-info">
-                <p>Jika Anda memiliki pertanyaan tentang kebijakan privasi ini atau ingin melaporkan masalah keamanan, silakan hubungi:</p>
-                <p><strong>Email:</strong> <a href="mailto:admin@vinnesia.my.id">admin@vinnesia.my.id</a></p>
-                <p><strong>Website:</strong> <a href="https://www.vinnesia.my.id">vinnesia.my.id</a></p>
-                <p><strong>Response Time:</strong> Kami akan merespon dalam 24-48 jam</p>
-            </div>
-
-            <h2>12. Yurisdiksi dan Hukum yang Berlaku</h2>
-            <p>Kebijakan privasi ini tunduk pada hukum Republik Indonesia. Untuk sengketa yang timbul, akan diselesaikan melalui pengadilan yang berwenang di Indonesia.</p>
-
             <div class="last-updated">
-                <p><strong>Terakhir Diperbarui:</strong> 26 Juli 2025</p>
-                <p>Kebijakan ini berlaku untuk layanan JSON Beautifier di <strong>jsonbeautifier.vinnesia.my.id</strong></p>
+                <strong>Terakhir Diperbarui:</strong> 26 Juli 2025<br>
+                <strong>Berlaku Efektif:</strong> 26 Juli 2025
+            </div>
+            
+            <div class="highlight">
+                <strong>🔒 Ringkasan Privasi:</strong> VIN NESIA JSON Beautifier berkomitmen melindungi privasi Anda. Kami TIDAK mengumpulkan, menyimpan, atau mengirim data pribadi atau file JSON Anda. Semua pemrosesan dilakukan secara lokal di browser Anda.
+            </div>
+            
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>📋 Daftar Isi</h3>
+                <ul>
+                    <li><a href="#section1">1. Informasi yang Kami Kumpulkan</a></li>
+                    <li><a href="#section2">2. Bagaimana Kami Menggunakan Informasi</a></li>
+                    <li><a href="#section3">3. Dasar Hukum Pemrosesan Data (GDPR)</a></li>
+                    <li><a href="#section4">4. Google Analytics & Cookies</a></li>
+                    <li><a href="#section5">5. Newsletter & Komunikasi</a></li>
+                    <li><a href="#section6">6. Keamanan Data</a></li>
+                    <li><a href="#section7">7. Hak-Hak Anda (GDPR)</a></li>
+                    <li><a href="#section8">8. Retensi Data</a></li>
+                    <li><a href="#section9">9. Transfer Data Internasional</a></li>
+                    <li><a href="#section10">10. Hak Anak-anak</a></li>
+                    <li><a href="#section11">11. Perubahan Kebijakan</a></li>
+                    <li><a href="#section12">12. Kontak & DPO</a></li>
+                </ul>
+            </div>
+
+            <h2 id="section1">1. Informasi yang Kami Kumpulkan</h2>
+            
+            <h3>1.1 Data yang TIDAK Kami Kumpulkan</h3>
+            <p>VIN NESIA JSON Beautifier dirancang dengan prinsip <strong>Privacy by Design</strong>. Kami secara tegas <strong>TIDAK mengumpulkan</strong>:</p>
+            <ul>
+                <li><strong>Data Pribadi:</strong> Nama, alamat, nomor telepon, atau identitas personal lainnya</li>
+                <li><strong>File JSON:</strong> Semua file yang Anda upload atau teks yang Anda masukkan</li>
+                <li><strong>Konten Sensitif:</strong> Data bisnis, konfigurasi, atau informasi rahasia apapun</li>
+                <li><strong>Kredensial:</strong> Password, token, atau informasi autentikasi</li>
+                <li><strong>Data Biometrik:</strong> Sidik jari, pengenalan wajah, atau data biometrik lainnya</li>
+            </ul>
+            
+            <h3>1.2 Data yang Kami Kumpulkan (Minimal & Anonim)</h3>
+            <div class="info-box">
+                <p><strong>📊 Google Analytics (Hanya dengan Persetujuan):</strong></p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Jenis Data</th>
+                            <th>Tujuan</th>
+                            <th>Dasar Hukum</th>
+                            <th>Retensi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Statistik Kunjungan</td>
+                            <td>Analisis performa website</td>
+                            <td>Persetujuan (Consent)</td>
+                            <td>26 bulan</td>
+                        </tr>
+                        <tr>
+                            <td>Jenis Browser & OS</td>
+                            <td>Optimasi kompatibilitas</td>
+                            <td>Persetujuan (Consent)</td>
+                            <td>26 bulan</td>
+                        </tr>
+                        <tr>
+                            <td>Lokasi Geografis (Negara/Kota)</td>
+                            <td>Penyesuaian konten regional</td>
+                            <td>Persetujuan (Consent)</td>
+                            <td>26 bulan</td>
+                        </tr>
+                        <tr>
+                            <td>Durasi Kunjungan</td>
+                            <td>Analisis engagement pengguna</td>
+                            <td>Persetujuan (Consent)</td>
+                            <td>26 bulan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>1.3 Newsletter (Opsional)</h3>
+            <p>Jika Anda berlangganan newsletter:</p>
+            <ul>
+                <li><strong>Email Address:</strong> Untuk mengirim update dan tips programming</li>
+                <li><strong>Timestamp Subscription:</strong> Untuk mengelola daftar pelanggan</li>
+                <li><strong>Preferensi:</strong> Jenis konten yang Anda minati (jika ada)</li>
+            </ul>
+
+            <h2 id="section2">2. Bagaimana Kami Menggunakan Informasi</h2>
+            
+            <h3>2.1 Pemrosesan Client-Side</h3>
+            <div class="highlight">
+                <p><strong>🔐 100% Lokal Processing:</strong> Semua operasi JSON (beautify, validate, minify) dilakukan sepenuhnya di browser Anda. File atau data Anda:</p>
+                <ul>
+                    <li>✅ Tidak pernah meninggalkan perangkat Anda</li>
+                    <li>✅ Tidak dikirim ke server kami atau pihak ketiga</li>
+                    <li>✅ Tidak disimpan dalam database</li>
+                    <li>✅ Hilang ketika Anda menutup atau refresh halaman</li>
+                </ul>
+            </div>
+            
+            <h3>2.2 Penggunaan Data Analytics</h3>
+            <p>Data analytics (hanya jika Anda setuju) digunakan untuk:</p>
+            <ol>
+                <li><strong>Peningkatan Layanan:</strong> Memahami fitur yang paling berguna</li>
+                <li><strong>Optimasi Performa:</strong> Mengidentifikasi dan memperbaiki masalah teknis</li>
+                <li><strong>Pengembangan Fitur:</strong> Merencanakan fitur baru berdasarkan kebutuhan pengguna</li>
+                <li><strong>Keamanan:</strong> Mendeteksi aktivitas mencurigakan atau penyalahgunaan</li>
+            </ol>
+
+            <h2 id="section3">3. Dasar Hukum Pemrosesan Data (GDPR)</h2>
+            
+            <div class="gdpr-rights">
+                <h3>Dasar Hukum Kami</h3>
+                <ul>
+                    <li><strong>Persetujuan (Art. 6(1)(a) GDPR):</strong> Untuk Google Analytics dan newsletter</li>
+                    <li><strong>Kepentingan Sah (Art. 6(1)(f) GDPR):</strong> Untuk keamanan website dan pencegahan penyalahgunaan</li>
+                    <li><strong>Pelaksanaan Kontrak (Art. 6(1)(b) GDPR):</strong> Untuk menyediakan layanan JSON Beautifier</li>
+                </ul>
+            </div>
+
+            <h2 id="section4">4. Google Analytics & Cookies</h2>
+            
+            <h3>4.1 Google Analytics 4 (GA4)</h3>
+            <p>Kami menggunakan Google Analytics 4 dengan <strong>Consent Mode</strong> yang memastikan:</p>
+            <ul>
+                <li>Data hanya dikumpulkan setelah Anda memberikan persetujuan eksplisit</li>
+                <li>IP Address di-anonymize (tidak dapat diidentifikasi)</li>
+                <li>Data demografis sensitif tidak dikumpulkan</li>
+                <li>Anda dapat mencabut persetujuan kapan saja</li>
+            </ul>
+            
+            <h3>4.2 Jenis Cookies</h3>
+            <div class="info-box">
+                <h4>🍪 Cookie yang Kami Gunakan:</h4>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nama Cookie</th>
+                            <th>Tujuan</th>
+                            <th>Durasi</th>
+                            <th>Wajib</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>vinnesia_cookie_consent</td>
+                            <td>Menyimpan preferensi cookie Anda</td>
+                            <td>1 tahun</td>
+                            <td>Ya</td>
+                        </tr>
+                        <tr>
+                            <td>_ga</td>
+                            <td>Google Analytics - Identifikasi user unik</td>
+                            <td>2 tahun</td>
+                            <td>Tidak</td>
+                        </tr>
+                        <tr>
+                            <td>_ga_*</td>
+                            <td>Google Analytics - Data sesi</td>
+                            <td>2 tahun</td>
+                            <td>Tidak</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>4.3 Mengelola Cookies</h3>
+            <p>Anda dapat mengelola cookies melalui:</p>
+            <ul>
+                <li><strong>Banner Cookie:</strong> Pilih preferensi saat pertama kali mengunjungi situs</li>
+                <li><strong>Pengaturan Cookie:</strong> Ubah preferensi kapan saja melalui footer</li>
+                <li><strong>Browser Settings:</strong> Blokir atau hapus cookies melalui pengaturan browser</li>
+                <li><strong>Google Analytics Opt-out:</strong> <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" style="color: var(--primary-purple);">Install browser add-on</a></li>
+            </ul>
+
+            <h2 id="section5">5. Newsletter & Komunikasi</h2>
+            
+            <h3>5.1 Berlangganan Newsletter</h3>
+            <p>Jika Anda berlangganan newsletter kami:</p>
+            <ul>
+                <li><strong>Double Opt-in:</strong> Konfirmasi melalui email sebelum menambahkan ke daftar</li>
+                <li><strong>Kontrol Penuh:</strong> Unsubscribe kapan saja dengan satu klik</li>
+                <li><strong>Frekuensi:</strong> Maksimal 1 email per minggu, tidak ada spam</li>
+                <li><strong>Konten:</strong> Tips programming, update tools, dan artikel teknologi</li>
+            </ul>
+            
+            <h3>5.2 Komunikasi Transaksional</h3>
+            <p>Kami mungkin mengirim email untuk:</p>
+            <ul>
+                <li>Konfirmasi berlangganan/berhenti berlangganan</li>
+                <li>Pemberitahuan keamanan penting</li>
+                <li>Update kebijakan privasi yang signifikan</li>
+            </ul>
+
+            <h2 id="section6">6. Keamanan Data</h2>
+            
+            <h3>6.1 Langkah-langkah Keamanan Teknis</h3>
+            <div class="highlight">
+                <ul>
+                    <li><strong>🔒 HTTPS/TLS Encryption:</strong> Semua komunikasi dienkripsi end-to-end</li>
+                    <li><strong>🛡️ Content Security Policy (CSP):</strong> Perlindungan dari XSS attacks</li>
+                    <li><strong>🔐 Client-Side Processing:</strong> Data tidak pernah dikirim ke server</li>
+                    <li><strong>⚡ Memory Management:</strong> Data otomatis dihapus dari memory browser</li>
+                    <li><strong>🚫 No Backend Storage:</strong> Tidak ada database atau penyimpanan server</li>
+                </ul>
+            </div>
+            
+            <h3>6.2 Langkah-langkah Keamanan Organisasi</h3>
+            <ul>
+                <li><strong>Access Control:</strong> Akses terbatas hanya untuk personel yang berwenang</li>
+                <li><strong>Regular Security Audits:</strong> Pemeriksaan keamanan berkala</li>
+                <li><strong>Incident Response Plan:</strong> Prosedur respons jika terjadi insiden keamanan</li>
+                <li><strong>Staff Training:</strong> Pelatihan keamanan dan privasi untuk tim</li>
+            </ul>
+
+            <h2 id="section7">7. Hak-Hak Anda (GDPR)</h2>
+            
+            <div class="gdpr-rights">
+                <h3>🇪🇺 Hak Anda Berdasarkan GDPR</h3>
+                
+                <h4>7.1 Hak Akses (Right of Access)</h4>
+                <p>Anda berhak mengetahui data pribadi apa yang kami proses tentang Anda.</p>
+                
+                <h4>7.2 Hak Perbaikan (Right of Rectification)</h4>
+                <p>Anda berhak meminta perbaikan data yang tidak akurat atau tidak lengkap.</p>
+                
+                <h4>7.3 Hak Penghapusan (Right to Erasure / "Right to be Forgotten")</h4>
+                <p>Anda berhak meminta penghapusan data pribadi Anda dalam kondisi tertentu.</p>
+                
+                <h4>7.4 Hak Pembatasan Pemrosesan (Right to Restriction)</h4>
+                <p>Anda berhak meminta pembatasan pemrosesan data dalam situasi tertentu.</p>
+                
+                <h4>7.5 Hak Portabilitas Data (Right to Data Portability)</h4>
+                <p>Anda berhak menerima data pribadi Anda dalam format yang terstruktur dan dapat dibaca mesin.</p>
+                
+                <h4>7.6 Hak Keberatan (Right to Object)</h4>
+                <p>Anda berhak menolak pemrosesan data pribadi untuk tujuan tertentu.</p>
+                
+                <h4>7.7 Hak Terkait Pengambilan Keputusan Otomatis</h4>
+                <p>Kami tidak menggunakan pengambilan keputusan otomatis atau profiling.</p>
+                
+                <div class="important">
+                    <strong>📧 Cara Menggunakan Hak Anda:</strong><br>
+                    Kirim email ke <a href="mailto:privacy@vinnesia.my.id" style="color: #fca5a5;">privacy@vinnesia.my.id</a> dengan subjek "GDPR Request" dan sertakan:
+                    <ul>
+                        <li>Jenis hak yang ingin Anda gunakan</li>
+                        <li>Informasi yang memungkinkan kami mengidentifikasi Anda</li>
+                        <li>Alasan permintaan (jika diperlukan)</li>
+                    </ul>
+                    <strong>Kami akan merespons dalam 30 hari kalender.</strong>
+                </div>
+            </div>
+
+            <h2 id="section8">8. Retensi Data</h2>
+            
+            <h3>8.1 Periode Penyimpanan</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Jenis Data</th>
+                        <th>Periode Retensi</th>
+                        <th>Alasan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>File JSON yang diupload</td>
+                        <td>0 hari (Tidak disimpan)</td>
+                        <td>Pemrosesan client-side</td>
+                    </tr>
+                    <tr>
+                        <td>Google Analytics Data</td>
+                        <td>26 bulan</td>
+                        <td>Standar Google Analytics</td>
+                    </tr>
+                    <tr>
+                        <td>Newsletter Email</td>
+                        <td>Hingga unsubscribe + 30 hari</td>
+                        <td>Compliance dan anti-spam</td>
+                    </tr>
+                    <tr>
+                        <td>Cookie Preferences</td>
+                        <td>12 bulan</td>
+                        <td>Mengingat pilihan pengguna</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>8.2 Penghapusan Otomatis</h3>
+            <p>Data akan dihapus secara otomatis setelah periode retensi berakhir atau jika Anda:</p>
+            <ul>
+                <li>Menolak cookies analytics</li>
+                <li>Unsubscribe dari newsletter</li>
+                <li>Meminta penghapusan melalui hak GDPR</li>
+            </ul>
+
+            <h2 id="section9">9. Transfer Data Internasional</h2>
+            
+            <h3>9.1 Google Analytics</h3>
+            <p>Data analytics dapat ditransfer ke server Google di luar Indonesia/EU. Google memiliki:</p>
+            <ul>
+                <li><strong>Adequacy Decision:</strong> EU-US Data Privacy Framework</li>
+                <li><strong>Standard Contractual Clauses (SCCs):</strong> Perlindungan hukum untuk transfer data</li>
+                <li><strong>Additional Safeguards:</strong> Enkripsi dan pseudonymization</li>
+            </ul>
+            
+            <h3>9.2 Newsletter Service</h3>
+            <p>Email newsletter mungkin diproses melalui provider yang berlokasi di:</p>
+            <ul>
+                <li>Indonesia (server utama)</li>
+                <li>Singapura (backup dan CDN)</li>
+                <li>Eropa (compliance dengan GDPR)</li>
+            </ul>
+
+            <h2 id="section10">10. Hak Anak-anak</h2>
+            
+            <div class="warning">
+                <h3>👶 Perlindungan Anak</h3>
+                <p><strong>Usia Minimum:</strong> Layanan ini tidak secara khusus ditujukan untuk anak-anak di bawah 16 tahun (13 tahun di beberapa yurisdiksi).</p>
+                
+                <h4>10.1 Jika Anda Berusia di Bawah 16 Tahun:</h4>
+                <ul>
+                    <li>Mintalah izin orang tua/wali sebelum menggunakan layanan</li>
+                    <li>Jangan berlangganan newsletter tanpa persetujuan orang tua</li>
+                    <li>Orang tua dapat menghubungi kami untuk menghapus data anak</li>
+                </ul>
+                
+                <h4>10.2 Untuk Orang Tua:</h4>
+                <p>Jika Anda yakin anak Anda telah memberikan informasi pribadi, hubungi kami segera di <a href="mailto:privacy@vinnesia.my.id" style="color: #fbbf24;">privacy@vinnesia.my.id</a></p>
+            </div>
+
+            <h2 id="section11">11. Perubahan Kebijakan</h2>
+            
+            <h3>11.1 Pemberitahuan Perubahan</h3>
+            <p>Kami akan memberitahu Anda tentang perubahan material melalui:</p>
+            <ul>
+                <li><strong>Banner Website:</strong> Pemberitahuan di halaman utama</li>
+                <li><strong>Email Notification:</strong> Jika Anda berlangganan newsletter</li>
+                <li><strong>Updated Date:</strong> Tanggal "Terakhir Diperbarui" di bagian atas</li>
+            </ul>
+            
+            <h3>11.2 Perubahan Material</h3>
+            <p>Untuk perubahan signifikan, kami akan:</p>
+            <ul>
+                <li>Memberikan pemberitahuan 30 hari sebelumnya</li>
+                <li>Meminta persetujuan ulang jika diperlukan</li>
+                <li>Menyediakan opsi untuk menolak perubahan</li>
+            </ul>
+
+            <h2 id="section12">12. Kontak & Data Protection Officer</h2>
+            
+            <div class="contact-info">
+                <h3>📧 Informasi Kontak</h3>
+                
+                <h4>Controller Data:</h4>
+                <p><strong>VIN NESIA</strong><br>
+                Website: <a href="https://www.vinnesia.my.id">www.vinnesia.my.id</a><br>
+                Lokasi: Indonesia</p>
+                
+                <h4>Data Protection Officer (DPO):</h4>
+                <p><strong>Email:</strong> <a href="mailto:privacy@vinnesia.my.id">privacy@vinnesia.my.id</a><br>
+                <strong>Subject Line:</strong> "Privacy Inquiry" atau "GDPR Request"</p>
+                
+                <h4>Kontak Umum:</h4>
+                <p><strong>Admin:</strong> <a href="mailto:admin@vinnesia.my.id">admin@vinnesia.my.id</a><br>
+                <strong>Support:</strong> <a href="mailto:support@vinnesia.my.id">support@vinnesia.my.id</a></p>
+                
+                <h4>Otoritas Pengawas:</h4>
+                <p>Jika Anda tidak puas dengan respons kami, Anda dapat mengadukan ke:</p>
+                <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+                    <li><strong>Indonesia:</strong> Kementerian Komunikasi dan Informatika</li>
+                    <li><strong>EU:</strong> Data Protection Authority di negara Anda</li>
+                    <li><strong>UK:</strong> Information Commissioner's Office (ICO)</li>
+                </ul>
+            </div>
+
+            <div class="important">
+                <h3>⚡ Komitmen Kami</h3>
+                <p>VIN NESIA berkomitmen untuk:</p>
+                <ul>
+                    <li>✅ Selalu menjaga transparansi dalam pemrosesan data</li>
+                    <li>✅ Menerapkan prinsip Privacy by Design</li>
+                    <li>✅ Mematuhi semua regulasi privasi yang berlaku</li>
+                    <li>✅ Memberikan kontrol penuh kepada pengguna atas data mereka</li>
+                    <li>✅ Tidak pernah menjual atau menyewakan data pribadi</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <p><strong>🛡️ Terima kasih telah mempercayai VIN<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - VIN NESIA JSON Beautifier</title>
+    <meta name="description" content="Privacy Policy lengkap untuk VIN NESIA JSON Beautifier - Kebijakan privasi dan perlindungan data pengguna sesuai GDPR.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics GA4 with Consent Mode -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PYZXZFNER"></script>
+    
+    <style>
+        :root {
+            --primary-purple: #8b5cf6;
+            --primary-green: #10b981;
+            --dark-bg: #1a1a2e;
+            --darker-bg: #16213e;
+            --darkest-bg: #0f3460;
+            --text-light: #ffffff;
+            --text-gray: #e5e5e5;
+            --text-muted: #a3a3a3;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 50%, var(--darkest-bg) 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .site-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #6366f1, var(--primary-purple));
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+        }
+        
+        .content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: var(--primary-green);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: var(--primary-purple);
+            font-size: 1.5rem;
+            margin: 35px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        h3 {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin: 25px 0 15px 0;
+        }
+        
+        h4 {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--text-gray);
+            text-align: justify;
+            line-height: 1.7;
+        }
+        p {
+            margin-bottom: 15px;
+            color: var(--text-gray);
+            text-align: justify;
+            line-height: 1.7;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            color: var(--text-gray);
+        }
+        
+        li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            background: rgba(16, 185, 129, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-green);
+            margin: 25px 0;
+        }
+        
+        .warning {
+            background: rgba(245, 158, 11, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--warning-color);
+            margin: 25px 0;
+            color: #fbbf24;
+        }
+        
+        .important {
+            background: rgba(239, 68, 68, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--error-color);
+            margin: 25px 0;
+            color: #fca5a5;
+        }
+        
+        .info-box {
+            background: rgba(139, 92, 246, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-purple);
+            margin: 25px 0;
+        }
+        
+        .contact-info {
+            background: rgba(139, 92, 246, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .contact-info a {
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .gdpr-rights {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .gdpr-rights h3 {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .data-table th {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--primary-purple);
+            font-weight: 600;
+        }
+        
+        .data-table td {
+            color: var(--text-gray);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer a {
+            color: var(--primary-green);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .last-updated {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin: 20px 0;
+            font-style: italic;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        
+        .toc {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .toc h3 {
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+        }
+        
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .toc a {
+            color: var(--text-gray);
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+        
+        .toc a:hover {
+            color: var(--primary-green);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .site-title {
+                font-size: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .data-table {
+                font-size: 0.9rem;
+            }
+            
+            .data-table th,
+            .data-table td {
+                padding: 8px 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .data-table {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">VN</div>
+            <div class="site-title">VIN NESIA JSON BEAUTIFIER</div>
+            <a href="index.html" class="back-btn">🔙 Kembali ke JSON Beautifier</a>
+        </div>
+        
+        <div class="content">
+            <h1>Kebijakan Privasi</h1>
+            
+            <div class="last-updated">
+                <strong>Terakhir Diperbarui:</strong> 26 Juli 2025<br>
+                <strong>Berlaku Efektif:</strong> 26 Juli 2025
+            </div>
+            
+            <div class="highlight">
+                <strong>🔒 Ringkasan Privasi:</strong> VIN NESIA JSON Beautifier berkomitmen melindungi privasi Anda. Kami TIDAK mengumpulkan, menyimpan, atau mengirim data pribadi atau file JSON Anda. Semua pemrosesan dilakukan secara lokal di browser Anda.
+            </div>
+            
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>📋 Daftar Isi</h3>
+                <ul>
+                    <li><a href="#section1">1. Informasi yang Kami Kumpulkan</a></li>
+                    <li><a href="#section2">2. Bagaimana Kami Menggunakan Informasi</a></li>
+                    <li><a href="#section3">3. Dasar Hukum Pemrosesan Data (GDPR)</a></li>
+                    <li><a href="#section4">4. Google Analytics & Cookies</a></li>
+                    <li><a href="#section5">5. Newsletter & Komunikasi</a></li>
+                    <li><a href="#section6">6. Keamanan Data</a></li>
+                    <li><a href="#section7">7. Hak-Hak Anda (GDPR)</a></li>
+                    <li><a href="#section8">8. Retensi Data</a></li>
+                    <li><a href="#section9">9. Transfer Data Internasional</a></li>
+                    <li><a href="#section10">10. Hak Anak-anak</a></li>
+                    <li><a href="#section11">11. Perubahan Kebijakan</a></li>
+                    <li><a href="#section12">12. Kontak & DPO</a></li>
+                </ul>
+            </div>
+
+            <h2 id="section1">1. Informasi yang Kami Kumpulkan</h2>
+            
+            <h3>1.1 Data yang TIDAK Kami Kumpulkan</h3>
+            <p>VIN NESIA JSON Beautifier dirancang dengan prinsip <strong>Privacy by Design</strong>. Kami secara tegas <strong>TIDAK mengumpulkan</strong>:</p>
+            <ul>
+                <li><strong>Data Pribadi:</strong> Nama, alamat, nomor telepon, atau identitas personal lainnya</li>
+                <li><strong>File JSON:</strong> Semua file yang Anda upload atau teks yang Anda masukkan</li>
+                <li><strong>Konten Sensitif:</strong> Data bisnis, konfigurasi, atau informasi rahasia apapun</li>
+                <li><strong>Kredensial:</strong> Password, token, atau informasi autentikasi</li>
+                <li><strong>Data Biometrik:</strong> Sidik jari, pengenalan wajah, atau data biometrik lainnya</li>
+            </ul>
+            
+            <h3>1.2 Data yang Kami Kumpulkan (Minimal & Anonim)</h3>
+            <div class="info-box">
+                <p><strong>📊 Google Analytics (Hanya dengan Persetujuan):</strong></p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Jenis Data</th>
+                            <th>Tujuan</th>
+                            <th>Dasar Hukum</th>
+                            <th>Retensi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Statistik Kunjungan</td>
+                            <td>Analisis performa website</td>
+                            <td>Persetujuan (Consent)</td>
+                            <td>26 bulan</td>
+                        </tr>
+                        <tr>
+                            <td>Jenis Browser & OS</td>
+                            <td>Optimasi kompatibilitas</td>
+                            <td>Persetujuan (Consent)</td>
+                            <td>26 bulan</td>
+                        </tr>
+                        <tr>
+                            <td>Lokasi Geografis (Negara/Kota)</td>
+                            <td>Penyesuaian konten regional</td>
+                            <td>Persetujuan (Consent)</td>
+                            <td>26 bulan</td>
+                        </tr>
+                        <tr>
+                            <td>Durasi Kunjungan</td>
+                            <td>Analisis engagement pengguna</td>
+                            <td>Persetujuan (Consent)</td>
+                            <td>26 bulan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>1.3 Newsletter (Opsional)</h3>
+            <p>Jika Anda berlangganan newsletter:</p>
+            <ul>
+                <li><strong>Email Address:</strong> Untuk mengirim update dan tips programming</li>
+                <li><strong>Timestamp Subscription:</strong> Untuk mengelola daftar pelanggan</li>
+                <li><strong>Preferensi:</strong> Jenis konten yang Anda minati (jika ada)</li>
+            </ul>
+
+            <h2 id="section2">2. Bagaimana Kami Menggunakan Informasi</h2>
+            
+            <h3>2.1 Pemrosesan Client-Side</h3>
+            <div class="highlight">
+                <p><strong>🔐 100% Lokal Processing:</strong> Semua operasi JSON (beautify, validate, minify) dilakukan sepenuhnya di browser Anda. File atau data Anda:</p>
+                <ul>
+                    <li>✅ Tidak pernah meninggalkan perangkat Anda</li>
+                    <li>✅ Tidak dikirim ke server kami atau pihak ketiga</li>
+                    <li>✅ Tidak disimpan dalam database</li>
+                    <li>✅ Hilang ketika Anda menutup atau refresh halaman</li>
+                </ul>
+            </div>
+            
+            <h3>2.2 Penggunaan Data Analytics</h3>
+            <p>Data analytics (hanya jika Anda setuju) digunakan untuk:</p>
+            <ol>
+                <li><strong>Peningkatan Layanan:</strong> Memahami fitur yang paling berguna</li>
+                <li><strong>Optimasi Performa:</strong> Mengidentifikasi dan memperbaiki masalah teknis</li>
+                <li><strong>Pengembangan Fitur:</strong> Merencanakan fitur baru berdasarkan kebutuhan pengguna</li>
+                <li><strong>Keamanan:</strong> Mendeteksi aktivitas mencurigakan atau penyalahgunaan</li>
+            </ol>
+
+            <h2 id="section3">3. Dasar Hukum Pemrosesan Data (GDPR)</h2>
+            
+            <div class="gdpr-rights">
+                <h3>Dasar Hukum Kami</h3>
+                <ul>
+                    <li><strong>Persetujuan (Art. 6(1)(a) GDPR):</strong> Untuk Google Analytics dan newsletter</li>
+                    <li><strong>Kepentingan Sah (Art. 6(1)(f) GDPR):</strong> Untuk keamanan website dan pencegahan penyalahgunaan</li>
+                    <li><strong>Pelaksanaan Kontrak (Art. 6(1)(b) GDPR):</strong> Untuk menyediakan layanan JSON Beautifier</li>
+                </ul>
+            </div>
+
+            <h2 id="section4">4. Google Analytics & Cookies</h2>
+            
+            <h3>4.1 Google Analytics 4 (GA4)</h3>
+            <p>Kami menggunakan Google Analytics 4 dengan <strong>Consent Mode</strong> yang memastikan:</p>
+            <ul>
+                <li>Data hanya dikumpulkan setelah Anda memberikan persetujuan eksplisit</li>
+                <li>IP Address di-anonymize (tidak dapat diidentifikasi)</li>
+                <li>Data demografis sensitif tidak dikumpulkan</li>
+                <li>Anda dapat mencabut persetujuan kapan saja</li>
+            </ul>
+            
+            <h3>4.2 Jenis Cookies</h3>
+            <div class="info-box">
+                <h4>🍪 Cookie yang Kami Gunakan:</h4>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nama Cookie</th>
+                            <th>Tujuan</th>
+                            <th>Durasi</th>
+                            <th>Wajib</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>vinnesia_cookie_consent</td>
+                            <td>Menyimpan preferensi cookie Anda</td>
+                            <td>1 tahun</td>
+                            <td>Ya</td>
+                        </tr>
+                        <tr>
+                            <td>_ga</td>
+                            <td>Google Analytics - Identifikasi user unik</td>
+                            <td>2 tahun</td>
+                            <td>Tidak</td>
+                        </tr>
+                        <tr>
+                            <td>_ga_*</td>
+                            <td>Google Analytics - Data sesi</td>
+                            <td>2 tahun</td>
+                            <td>Tidak</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>4.3 Mengelola Cookies</h3>
+            <p>Anda dapat mengelola cookies melalui:</p>
+            <ul>
+                <li><strong>Banner Cookie:</strong> Pilih preferensi saat pertama kali mengunjungi situs</li>
+                <li><strong>Pengaturan Cookie:</strong> Ubah preferensi kapan saja melalui footer</li>
+                <li><strong>Browser Settings:</strong> Blokir atau hapus cookies melalui pengaturan browser</li>
+                <li><strong>Google Analytics Opt-out:</strong> <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" style="color: var(--primary-purple);">Install browser add-on</a></li>
+            </ul>
+
+            <h2 id="section5">5. Newsletter & Komunikasi</h2>
+            
+            <h3>5.1 Berlangganan Newsletter</h3>
+            <p>Jika Anda berlangganan newsletter kami:</p>
+            <ul>
+                <li><strong>Double Opt-in:</strong> Konfirmasi melalui email sebelum menambahkan ke daftar</li>
+                <li><strong>Kontrol Penuh:</strong> Unsubscribe kapan saja dengan satu klik</li>
+                <li><strong>Frekuensi:</strong> Maksimal 1 email per minggu, tidak ada spam</li>
+                <li><strong>Konten:</strong> Tips programming, update tools, dan artikel teknologi</li>
+            </ul>
+            
+            <h3>5.2 Komunikasi Transaksional</h3>
+            <p>Kami mungkin mengirim email untuk:</p>
+            <ul>
+                <li>Konfirmasi berlangganan/berhenti berlangganan</li>
+                <li>Pemberitahuan keamanan penting</li>
+                <li>Update kebijakan privasi yang signifikan</li>
+            </ul>
+
+            <h2 id="section6">6. Keamanan Data</h2>
+            
+            <h3>6.1 Langkah-langkah Keamanan Teknis</h3>
+            <div class="highlight">
+                <ul>
+                    <li><strong>🔒 HTTPS/TLS Encryption:</strong> Semua komunikasi dienkripsi end-to-end</li>
+                    <li><strong>🛡️ Content Security Policy (CSP):</strong> Perlindungan dari XSS attacks</li>
+                    <li><strong>🔐 Client-Side Processing:</strong> Data tidak pernah dikirim ke server</li>
+                    <li><strong>⚡ Memory Management:</strong> Data otomatis dihapus dari memory browser</li>
+                    <li><strong>🚫 No Backend Storage:</strong> Tidak ada database atau penyimpanan server</li>
+                </ul>
+            </div>
+            
+            <h3>6.2 Langkah-langkah Keamanan Organisasi</h3>
+            <ul>
+                <li><strong>Access Control:</strong> Akses terbatas hanya untuk personel yang berwenang</li>
+                <li><strong>Regular Security Audits:</strong> Pemeriksaan keamanan berkala</li>
+                <li><strong>Incident Response Plan:</strong> Prosedur respons jika terjadi insiden keamanan</li>
+                <li><strong>Staff Training:</strong> Pelatihan keamanan dan privasi untuk tim</li>
+            </ul>
+
+            <h2 id="section7">7. Hak-Hak Anda (GDPR)</h2>
+            
+            <div class="gdpr-rights">
+                <h3>🇪🇺 Hak Anda Berdasarkan GDPR</h3>
+                
+                <h4>7.1 Hak Akses (Right of Access)</h4>
+                <p>Anda berhak mengetahui data pribadi apa yang kami proses tentang Anda.</p>
+                
+                <h4>7.2 Hak Perbaikan (Right of Rectification)</h4>
+                <p>Anda berhak meminta perbaikan data yang tidak akurat atau tidak lengkap.</p>
+                
+                <h4>7.3 Hak Penghapusan (Right to Erasure / "Right to be Forgotten")</h4>
+                <p>Anda berhak meminta penghapusan data pribadi Anda dalam kondisi tertentu.</p>
+                
+                <h4>7.4 Hak Pembatasan Pemrosesan (Right to Restriction)</h4>
+                <p>Anda berhak meminta pembatasan pemrosesan data dalam situasi tertentu.</p>
+                
+                <h4>7.5 Hak Portabilitas Data (Right to Data Portability)</h4>
+                <p>Anda berhak menerima data pribadi Anda dalam format yang terstruktur dan dapat dibaca mesin.</p>
+                
+                <h4>7.6 Hak Keberatan (Right to Object)</h4>
+                <p>Anda berhak menolak pemrosesan data pribadi untuk tujuan tertentu.</p>
+                
+                <h4>7.7 Hak Terkait Pengambilan Keputusan Otomatis</h4>
+                <p>Kami tidak menggunakan pengambilan keputusan otomatis atau profiling.</p>
+                
+                <div class="important">
+                    <strong>📧 Cara Menggunakan Hak Anda:</strong><br>
+                    Kirim email ke <a href="mailto:privacy@vinnesia.my.id" style="color: #fca5a5;">privacy@vinnesia.my.id</a> dengan subjek "GDPR Request" dan sertakan:
+                    <ul>
+                        <li>Jenis hak yang ingin Anda gunakan</li>
+                        <li>Informasi yang memungkinkan kami mengidentifikasi Anda</li>
+                        <li>Alasan permintaan (jika diperlukan)</li>
+                    </ul>
+                    <strong>Kami akan merespons dalam 30 hari kalender.</strong>
+                </div>
+            </div>
+
+            <h2 id="section8">8. Retensi Data</h2>
+            
+            <h3>8.1 Periode Penyimpanan</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Jenis Data</th>
+                        <th>Periode Retensi</th>
+                        <th>Alasan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>File JSON yang diupload</td>
+                        <td>0 hari (Tidak disimpan)</td>
+                        <td>Pemrosesan client-side</td>
+                    </tr>
+                    <tr>
+                        <td>Google Analytics Data</td>
+                        <td>26 bulan</td>
+                        <td>Standar Google Analytics</td>
+                    </tr>
+                    <tr>
+                        <td>Newsletter Email</td>
+                        <td>Hingga unsubscribe + 30 hari</td>
+                        <td>Compliance dan anti-spam</td>
+                    </tr>
+                    <tr>
+                        <td>Cookie Preferences</td>
+                        <td>12 bulan</td>
+                        <td>Mengingat pilihan pengguna</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>8.2 Penghapusan Otomatis</h3>
+            <p>Data akan dihapus secara otomatis setelah periode retensi berakhir atau jika Anda:</p>
+            <ul>
+                <li>Menolak cookies analytics</li>
+                <li>Unsubscribe dari newsletter</li>
+                <li>Meminta penghapusan melalui hak GDPR</li>
+            </ul>
+
+            <h2 id="section9">9. Transfer Data Internasional</h2>
+            
+            <h3>9.1 Google Analytics</h3>
+            <p>Data analytics dapat ditransfer ke server Google di luar Indonesia/EU. Google memiliki:</p>
+            <ul>
+                <li><strong>Adequacy Decision:</strong> EU-US Data Privacy Framework</li>
+                <li><strong>Standard Contractual Clauses (SCCs):</strong> Perlindungan hukum untuk transfer data</li>
+                <li><strong>Additional Safeguards:</strong> Enkripsi dan pseudonymization</li>
+            </ul>
+            
+            <h3>9.2 Newsletter Service</h3>
+            <p>Email newsletter mungkin diproses melalui provider yang berlokasi di:</p>
+            <ul>
+                <li>Indonesia (server utama)</li>
+                <li>Singapura (backup dan CDN)</li>
+                <li>Eropa (compliance dengan GDPR)</li>
+            </ul>
+
+            <h2 id="section10">10. Hak Anak-anak</h2>
+            
+            <div class="warning">
+                <h3>👶 Perlindungan Anak</h3>
+                <p><strong>Usia Minimum:</strong> Layanan ini tidak secara khusus ditujukan untuk anak-anak di bawah 16 tahun (13 tahun di beberapa yurisdiksi).</p>
+                
+                <h4>10.1 Jika Anda Berusia di Bawah 16 Tahun:</h4>
+                <ul>
+                    <li>Mintalah izin orang tua/wali sebelum menggunakan layanan</li>
+                    <li>Jangan berlangganan newsletter tanpa persetujuan orang tua</li>
+                    <li>Orang tua dapat menghubungi kami untuk menghapus data anak</li>
+                </ul>
+                
+                <h4>10.2 Untuk Orang Tua:</h4>
+                <p>Jika Anda yakin anak Anda telah memberikan informasi pribadi, hubungi kami segera di <a href="mailto:privacy@vinnesia.my.id" style="color: #fbbf24;">privacy@vinnesia.my.id</a></p>
+            </div>
+
+            <h2 id="section11">11. Perubahan Kebijakan</h2>
+            
+            <h3>11.1 Pemberitahuan Perubahan</h3>
+            <p>Kami akan memberitahu Anda tentang perubahan material melalui:</p>
+            <ul>
+                <li><strong>Banner Website:</strong> Pemberitahuan di halaman utama</li>
+                <li><strong>Email Notification:</strong> Jika Anda berlangganan newsletter</li>
+                <li><strong>Updated Date:</strong> Tanggal "Terakhir Diperbarui" di bagian atas</li>
+            </ul>
+            
+            <h3>11.2 Perubahan Material</h3>
+            <p>Untuk perubahan signifikan, kami akan:</p>
+            <ul>
+                <li>Memberikan pemberitahuan 30 hari sebelumnya</li>
+                <li>Meminta persetujuan ulang jika diperlukan</li>
+                <li>Menyediakan opsi untuk menolak perubahan</li>
+            </ul>
+
+            <h2 id="section12">12. Kontak & Data Protection Officer</h2>
+            
+            <div class="contact-info">
+                <h3>📧 Informasi Kontak</h3>
+                
+                <h4>Controller Data:</h4>
+                <p><strong>VIN NESIA</strong><br>
+                Website: <a href="https://www.vinnesia.my.id">www.vinnesia.my.id</a><br>
+                Lokasi: Indonesia</p>
+                
+                <h4>Data Protection Officer (DPO):</h4>
+                <p><strong>Email:</strong> <a href="mailto:privacy@vinnesia.my.id">privacy@vinnesia.my.id</a><br>
+                <strong>Subject Line:</strong> "Privacy Inquiry" atau "GDPR Request"</p>
+                
+                <h4>Kontak Umum:</h4>
+                <p><strong>Admin:</strong> <a href="mailto:admin@vinnesia.my.id">admin@vinnesia.my.id</a><br>
+                <strong>Support:</strong> <a href="mailto:support@vinnesia.my.id">support@vinnesia.my.id</a></p>
+                
+                <h4>Otoritas Pengawas:</h4>
+                <p>Jika Anda tidak puas dengan respons kami, Anda dapat mengadukan ke:</p>
+                <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+                    <li><strong>Indonesia:</strong> Kementerian Komunikasi dan Informatika</li>
+                    <li><strong>EU:</strong> Data Protection Authority di negara Anda</li>
+                    <li><strong>UK:</strong> Information Commissioner's Office (ICO)</li>
+                </ul>
+            </div>
+
+            <div class="important">
+                <h3>⚡ Komitmen Kami</h3>
+                <p>VIN NESIA berkomitmen untuk:</p>
+                <ul>
+                    <li>✅ Selalu menjaga transparansi dalam pemrosesan data</li>
+                    <li>✅ Menerapkan prinsip Privacy by Design</li>
+                    <li>✅ Mematuhi semua regulasi privasi yang berlaku</li>
+                    <li>✅ Memberikan kontrol penuh kepada pengguna atas data mereka</li>
+                    <li>✅ Tidak pernah menjual atau menyewakan data pribadi</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <p><strong>🛡️ Terima kasih telah mempercayai VIN NESIA JSON Beautifier!</strong></p>
+                <p>Privasi Anda adalah prioritas utama kami. Jika Anda memiliki pertanyaan atau kekhawatiran tentang kebijakan privasi ini, jangan ragu untuk menghubungi kami.</p>
+            </div>
+            
+            <div class="last-updated">
+                <p><strong>Dokumen ini tersedia dalam bahasa:</strong><br>
+                🇮🇩 Bahasa Indonesia | 🇬🇧 English (coming soon) | 🇪🇸 Español (coming soon)</p>
             </div>
         </div>
+        
+        <footer class="footer">
+            <div>
+                <a href="index.html">JSON Beautifier</a>
+                <span style="color: #666;">|</span>
+                <a href="https://www.vinnesia.my.id">VIN NESIA</a>
+                <span style="color: #666;">|</span>
+                <a href="#" onclick="showCookieSettings()">Cookie Settings</a>
+                <span style="color: #666;">|</span>
+                <span>©2025 vinnesia.my.id — All Rights Reserved</span>
+            </div>
+        </footer>
     </div>
+
+    <script>
+        // Initialize Google Analytics with consent mode
+        if (typeof gtag !== 'undefined') {
+            // Check if user has given consent
+            const cookieConsent = localStorage.getItem('vinnesia_cookie_consent');
+            const analyticsConsent = localStorage.getItem('vinnesia_analytics_consent');
+            
+            if (cookieConsent === 'accepted' || analyticsConsent === 'true') {
+                gtag('config', 'G-3PYZXZFNER');
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }
+        }
+
+        // Cookie settings functionality for footer link
+        function showCookieSettings() {
+            // Redirect to main page with cookie settings trigger
+            window.location.href = 'index.html#cookie-settings';
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Back to top functionality
+        function addBackToTop() {
+            const backToTop = document.createElement('button');
+            backToTop.innerHTML = '↑';
+            backToTop.className = 'scroll-top';
+            backToTop.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
+                font-size: 20px;
+                transition: all 0.3s ease;
+                opacity: 0;
+                visibility: hidden;
+                z-index: 999;
+            `;
+
+            document.body.appendChild(backToTop);
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.style.opacity = '1';
+                    backToTop.style.visibility = 'visible';
+                } else {
+                    backToTop.style.opacity = '0';
+                    backToTop.style.visibility = 'hidden';
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            backToTop.addEventListener('mouseenter', () => {
+                backToTop.style.transform = 'translateY(-2px)';
+                backToTop.style.boxShadow = '0 8px 25px rgba(139, 92, 246, 0.3)';
+            });
+
+            backToTop.addEventListener('mouseleave', () => {
+                backToTop.style.transform = 'translateY(0)';
+                backToTop.style.boxShadow = 'none';
+            });
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            addBackToTop();
+            
+            // Track page view if analytics consent given
+            const analyticsConsent = localStorage.getItem('vinnesia_analytics_consent');
+            if (analyticsConsent === 'true' && typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    'page_title': 'Privacy Policy',
+                    'page_location': window.location.href
+                });
+            }
+        });
+
+        // Print functionality
+        function printPage() {
+            window.print();
+        }
+
+        // Add print button (optional)
+        function addPrintButton() {
+            const printBtn = document.createElement('button');
+            printBtn.innerHTML = '🖨️ Print Policy';
+            printBtn.style.cssText = `
+                position: fixed;
+                bottom: 80px;
+                right: 20px;
+                background: rgba(255, 255, 255, 0.1);
+                color: var(--text-light);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                padding: 10px 15px;
+                cursor: pointer;
+                font-size: 14px;
+                transition: all 0.3s ease;
+                z-index: 998;
+            `;
+
+            printBtn.addEventListener('click', printPage);
+            printBtn.addEventListener('mouseenter', () => {
+                printBtn.style.background = 'rgba(255, 255, 255, 0.2)';
+            });
+            printBtn.addEventListener('mouseleave', () => {
+                printBtn.style.background = 'rgba(255, 255, 255, 0.1)';
+            });
+
+            document.body.appendChild(printBtn);
+        }
+
+        // Initialize print button
+        // addPrintButton(); // Uncomment if you want print functionality
+
+        // Handle errors gracefully
+        window.addEventListener('error', (e) => {
+            console.error('Privacy page error:', e.error);
+        });
+    </script>
 </body>
-</html>
+</html><!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - VIN NESIA JSON Beautifier</title>
+    <meta name="description" content="Privacy Policy lengkap untuk VIN NESIA JSON Beautifier - Kebijakan privasi dan perlindungan data pengguna sesuai GDPR.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics GA4 with Consent Mode -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PYZXZFNER"></script>
+    
+    <style>
+        :root {
+            --primary-purple: #8b5cf6;
+            --primary-green: #10b981;
+            --dark-bg: #1a1a2e;
+            --darker-bg: #16213e;
+            --darkest-bg: #0f3460;
+            --text-light: #ffffff;
+            --text-gray: #e5e5e5;
+            --text-muted: #a3a3a3;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 50%, var(--darkest-bg) 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .site-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #6366f1, var(--primary-purple));
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+        }
+        
+        .content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: var(--primary-green);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: var(--primary-purple);
+            font-size: 1.5rem;
+            margin: 35px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        h3 {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin: 25px 0 15px 0;
+        }
+        
+        h4 {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--text-gray);
+            text-align: justify;
+            line-height: 1.7;
+        }
