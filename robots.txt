@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://jsonbeautifier.vinnesia.my.id/sitemap.xml
+
+# Crawl-delay (optional)
+Crawl-delay: 1
+
+# Disallow specific file types (optional)
+Disallow: /*.log$
+Disallow: /*.txt$
+Disallow: /favicon.ico
+Disallow: /logo.png
