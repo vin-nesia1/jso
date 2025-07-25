@@ -38,7 +38,15 @@
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
+        .file-input {
+            display: none;
         }
+
+        // Event Listeners
+        beautifyBtn.addEventListener('click', beautifyJson);
+        copyBtn.addEventListener('click', copyToClipboard);
+        downloadBtn.addEventListener('click', downloadJson);
+        uploadBtn.addEventListener('click', () => fileInput.click());
     }
     </script>
 
@@ -51,8 +59,8 @@
         gtag('config', 'G-3PYZXZFNER');
     </script>
 
-    <!-- fflate.js for ZIP extraction -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fflate/0.8.2/index.min.js"></script>
+    <!-- JSZip for ZIP extraction -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -241,8 +249,66 @@
             box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
         }
 
-        .file-input {
-            display: none;
+        .file-preview {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+        }
+
+        .file-preview h4 {
+            color: #10b981;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .file-list {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .file-item-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .file-icon {
+            width: 20px;
+            text-align: center;
+        }
+
+        .file-status {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-checking {
+            color: #fbbf24;
+        }
+
+        .status-valid {
+            color: #10b981;
+        }
+
+        .status-invalid {
+            color: #ef4444;
+        }
+
+        .status-processed {
+            color: #a855f7;
         }
 
         .error-message, .success-message {
@@ -354,15 +420,20 @@
                 <h2>📝 Input JSON</h2>
                 
                 <div class="drop-zone" id="dropZone">
-                    <div class="drop-zone-text">🗂️ Drag & Drop File Disini</div>
+                    <div class="drop-zone-text">🗂️ Drag & Drop File Apapun Disini</div>
                     <p>atau klik untuk pilih file</p>
                     <div class="file-info">
-                        Kami menerima semua file teks (.txt, .json, .log, .zip, .rar, dll.)<br>
-                        Isi file akan dicek apakah valid JSON.
+                        Mendukung semua format: .zip, .json, .txt, .docx, .pdf, .jpg, dll.<br>
+                        Program akan mencari konten JSON valid dalam file.
                     </div>
                 </div>
 
                 <input type="file" id="fileInput" class="file-input" multiple accept="*/*">
+                
+                <div class="file-preview" id="filePreview" style="display: none;">
+                    <h4>🧪 File yang Diperiksa:</h4>
+                    <div class="file-list" id="fileList"></div>
+                </div>
                 
                 <textarea 
                     id="inputJson" 
@@ -431,6 +502,11 @@
         const errorMessage = document.getElementById('errorMessage');
         const successMessage = document.getElementById('successMessage');
         const loading = document.getElementById('loading');
+        const filePreview = document.getElementById('filePreview');
+        const fileList = document.getElementById('fileList');
+
+        // File processing state
+        let processedFiles = [];
 
         // Show/Hide Messages
         function showError(message) {
@@ -450,11 +526,253 @@
             successMessage.style.display = 'none';
         }
 
+        // File type detection
+        function getFileIcon(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            const icons = {
+                'json': '📄',
+                'txt': '📝',
+                'zip': '📦',
+                'rar': '📦',
+                '7z': '📦',
+                'pdf': '📕',
+                'docx': '📘',
+                'doc': '📘',
+                'jpg': '🖼️',
+                'jpeg': '🖼️',
+                'png': '🖼️',
+                'gif': '🖼️',
+                'xml': '📋',
+                'log': '📊',
+                'config': '⚙️',
+                'ini': '⚙️'
+            };
+            return icons[ext] || '📄';
+        }
+
+        function addFileToPreview(filename, status = 'checking') {
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+            fileItem.id = `file-${Date.now()}-${Math.random()}`;
+            
+            fileItem.innerHTML = `
+                <div class="file-item-info">
+                    <span class="file-icon">${getFileIcon(filename)}</span>
+                    <span class="file-name">${filename}</span>
+                </div>
+                <span class="file-status status-${status}">
+                    ${status === 'checking' ? '🔍 Memeriksa...' : 
+                      status === 'valid' ? '✅ JSON Valid' :
+                      status === 'invalid' ? '❌ Bukan JSON' :
+                      status === 'processed' ? '🎯 Digunakan' : '⏳ Menunggu'}
+                </span>
+            `;
+            
+            fileList.appendChild(fileItem);
+            filePreview.style.display = 'block';
+            
+            return fileItem;
+        }
+
+        function updateFileStatus(fileItem, status, message = '') {
+            const statusElement = fileItem.querySelector('.file-status');
+            statusElement.className = `file-status status-${status}`;
+            
+            const statusTexts = {
+                'checking': '🔍 Memeriksa...',
+                'valid': '✅ JSON Valid',
+                'invalid': '❌ Bukan JSON',
+                'processed': '🎯 Digunakan',
+                'error': '⚠️ Error'
+            };
+            
+            statusElement.textContent = message || statusTexts[status] || status;
+        }
+
+        // Check if content is valid JSON
+        function isValidJSON(text) {
+            try {
+                JSON.parse(text.trim());
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        // Read file as text
+        function readFileAsText(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = (e) => resolve(e.target.result);
+                reader.onerror = (e) => reject(e);
+                reader.readAsText(file);
+            });
+        }
+
+        // Read file as array buffer
+        function readFileAsArrayBuffer(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = (e) => resolve(e.target.result);
+                reader.onerror = (e) => reject(e);
+                reader.readAsArrayBuffer(file);
+            });
+        }
+
+        // Process ZIP files
+        async function processZipFile(file, fileItem) {
+            try {
+                updateFileStatus(fileItem, 'checking', '🔍 Mengekstrak ZIP...');
+                
+                const arrayBuffer = await readFileAsArrayBuffer(file);
+                const zip = await JSZip.loadAsync(arrayBuffer);
+                
+                let foundJSON = false;
+                const zipFiles = Object.keys(zip.files);
+                
+                updateFileStatus(fileItem, 'checking', `🔍 Memeriksa ${zipFiles.length} file...`);
+                
+                for (const filename of zipFiles) {
+                    const zipEntry = zip.files[filename];
+                    
+                    if (zipEntry.dir) continue; // Skip directories
+                    
+                    // Add sub-file to preview
+                    const subFileItem = addFileToPreview(`📦 ${file.name} → ${filename}`, 'checking');
+                    
+                    try {
+                        const content = await zipEntry.async('text');
+                        
+                        if (isValidJSON(content)) {
+                            const beautified = JSON.stringify(JSON.parse(content), null, 2);
+                            outputJson.value = beautified;
+                            
+                            updateFileStatus(subFileItem, 'processed', '🎯 JSON Digunakan');
+                            updateFileStatus(fileItem, 'valid', '✅ Berisi JSON Valid');
+                            
+                            showSuccess(`✅ JSON ditemukan dalam "${filename}" dari ZIP "${file.name}"`);
+                            foundJSON = true;
+                            break;
+                        } else {
+                            updateFileStatus(subFileItem, 'invalid', '❌ Bukan JSON');
+                        }
+                    } catch (error) {
+                        updateFileStatus(subFileItem, 'error', '⚠️ Error baca file');
+                    }
+                }
+                
+                if (!foundJSON) {
+                    updateFileStatus(fileItem, 'invalid', '❌ Tidak ada JSON dalam ZIP');
+                }
+                
+                return foundJSON;
+            } catch (error) {
+                updateFileStatus(fileItem, 'error', '⚠️ Error ekstrak ZIP');
+                console.error('ZIP processing error:', error);
+                return false;
+            }
+        }
+
+        // Process text-based files
+        async function processTextFile(file, fileItem) {
+            try {
+                updateFileStatus(fileItem, 'checking', '🔍 Membaca konten...');
+                
+                const content = await readFileAsText(file);
+                
+                if (isValidJSON(content)) {
+                    const beautified = JSON.stringify(JSON.parse(content), null, 2);
+                    outputJson.value = beautified;
+                    
+                    updateFileStatus(fileItem, 'processed', '🎯 JSON Digunakan');
+                    showSuccess(`✅ JSON valid ditemukan dalam "${file.name}"`);
+                    return true;
+                } else {
+                    updateFileStatus(fileItem, 'invalid', '❌ Konten bukan JSON');
+                    return false;
+                }
+            } catch (error) {
+                updateFileStatus(fileItem, 'error', '⚠️ Error baca file');
+                console.error('Text file processing error:', error);
+                return false;
+            }
+        }
+
+        // Process binary/unsupported files
+        function processBinaryFile(file, fileItem) {
+            updateFileStatus(fileItem, 'invalid', '❌ Format tidak didukung');
+            return false;
+        }
+
+        // Main file processing function
+        async function processFiles(files) {
+            // Clear previous results
+            fileList.innerHTML = '';
+            outputJson.value = '';
+            hideMessages();
+            
+            if (files.length === 0) return;
+            
+            let foundValidJSON = false;
+            processedFiles = [];
+            
+            // Show loading
+            loading.style.display = 'inline-block';
+            beautifyBtn.disabled = true;
+            
+            try {
+                for (const file of files) {
+                    const fileItem = addFileToPreview(file.name, 'checking');
+                    processedFiles.push({ file, fileItem });
+                    
+                    const filename = file.name.toLowerCase();
+                    const ext = filename.split('.').pop();
+                    
+                    let result = false;
+                    
+                    // Determine file type and process accordingly
+                    if (ext === 'zip' || ext === 'rar' || ext === '7z') {
+                        result = await processZipFile(file, fileItem);
+                    } else if (['txt', 'json', 'log', 'config', 'ini', 'xml'].includes(ext) || !ext) {
+                        result = await processTextFile(file, fileItem);
+                    } else if (['pdf', 'docx', 'doc', 'jpg', 'jpeg', 'png', 'gif'].includes(ext)) {
+                        result = processBinaryFile(file, fileItem);
+                    } else {
+                        // Unknown extension, try as text first
+                        result = await processTextFile(file, fileItem);
+                    }
+                    
+                    if (result) {
+                        foundValidJSON = true;
+                        break; // Use first valid JSON found
+                    }
+                    
+                    // Small delay to show processing animation
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+                
+                if (!foundValidJSON) {
+                    showError('❌ Tidak ditemukan konten JSON valid dalam file yang diunggah.');
+                }
+                
+            } catch (error) {
+                showError(`❌ Error memproses file: ${error.message}`);
+                console.error('File processing error:', error);
+            } finally {
+                loading.style.display = 'none';
+                beautifyBtn.disabled = false;
+            }
+        }
+
         // Beautify JSON Function
         function beautifyJson() {
             const input = inputJson.value.trim();
+            const output = outputJson.value.trim();
             
-            if (!input) {
+            // Use output if input is empty (from file processing)
+            const jsonToBeautify = input || output;
+            
+            if (!jsonToBeautify) {
                 showError('❌ Input kosong! Silakan masukkan JSON atau upload file.');
                 return;
             }
@@ -465,7 +783,7 @@
 
             setTimeout(() => {
                 try {
-                    const parsed = JSON.parse(input);
+                    const parsed = JSON.parse(jsonToBeautify);
                     const beautified = JSON.stringify(parsed, null, 2);
                     outputJson.value = beautified;
                     showSuccess('✅ JSON berhasil dirapikan!');
@@ -520,88 +838,6 @@
             
             showSuccess('💾 File JSON berhasil didownload!');
         }
-
-        // File Processing Functions
-        function isZipFile(file) {
-            return file.name.toLowerCase().endsWith('.zip') || 
-                   file.name.toLowerCase().endsWith('.rar') || 
-                   file.name.toLowerCase().endsWith('.tar');
-        }
-
-        async function extractZipFile(file) {
-            try {
-                const arrayBuffer = await file.arrayBuffer();
-                const uint8Array = new Uint8Array(arrayBuffer);
-                
-                // Try to decompress ZIP
-                const decompressed = fflate.unzipSync(uint8Array);
-                
-                for (const [filename, data] of Object.entries(decompressed)) {
-                    try {
-                        const text = new TextDecoder().decode(data);
-                        const parsed = JSON.parse(text);
-                        return { content: text, filename };
-                    } catch (e) {
-                        // Continue to next file
-                        continue;
-                    }
-                }
-                
-                throw new Error('Tidak ditemukan file JSON valid dalam arsip');
-            } catch (error) {
-                throw new Error(`Gagal mengekstrak arsip: ${error.message}`);
-            }
-        }
-
-        async function processTextFile(file) {
-            try {
-                const text = await file.text();
-                
-                // Validate JSON
-                JSON.parse(text);
-                return { content: text, filename: file.name };
-            } catch (error) {
-                throw new Error(`Isi file tidak valid JSON: ${error.message}`);
-            }
-        }
-
-        async function processFiles(files) {
-            let foundValidJson = false;
-            let processedCount = 0;
-
-            for (const file of files) {
-                try {
-                    processedCount++;
-                    let result;
-
-                    if (isZipFile(file)) {
-                        result = await extractZipFile(file);
-                    } else {
-                        result = await processTextFile(file);
-                    }
-
-                    // If we found valid JSON, use it
-                    inputJson.value = result.content;
-                    showSuccess(`✅ File "${result.filename}" berhasil dimuat dan berisi JSON valid!`);
-                    foundValidJson = true;
-                    break; // Use first valid JSON found
-
-                } catch (error) {
-                    console.log(`File ${file.name}: ${error.message}`);
-                    continue; // Try next file
-                }
-            }
-
-            if (!foundValidJson) {
-                showError(`❌ Tidak ditemukan file berisi JSON valid dari ${processedCount} file yang diperiksa.`);
-            }
-        }
-
-        // Event Listeners
-        beautifyBtn.addEventListener('click', beautifyJson);
-        copyBtn.addEventListener('click', copyToClipboard);
-        downloadBtn.addEventListener('click', downloadJson);
-        uploadBtn.addEventListener('click', () => fileInput.click());
 
         fileInput.addEventListener('change', (e) => {
             if (e.target.files.length > 0) {
