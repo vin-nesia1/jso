@@ -4,27 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON Beautifier Online - Format & Rapikan JSON Instan</title>
-    <meta name="description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify! Upload file apapun, drag & drop, download hasil.">
-    <meta name="keywords" content="JSON beautifier, JSON formatter, JSON validator, online JSON tool, format JSON, rapikan JSON">
+    <meta name="description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify! Mendukung upload file apapun dan ekstraksi JSON otomatis.">
+    <meta name="keywords" content="JSON beautifier, JSON formatter, JSON validator, format JSON online, rapikan JSON, JSON tools, beautify JSON Indonesia">
+    <meta name="author" content="VIN NESIA">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://jsonbeautifier.vinnesia.my.id">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="JSON Beautifier Online - Format & Rapikan JSON Instan">
+    <meta property="og:description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify! Mendukung upload file apapun.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jsonbeautifier.vinnesia.my.id">
-    <meta property="og:title" content="JSON Beautifier Online - Format & Rapikan JSON Instan">
-    <meta property="og:description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify!">
     <meta property="og:image" content="https://jsonbeautifier.vinnesia.my.id/logo.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jsonbeautifier.vinnesia.my.id">
-    <meta property="twitter:title" content="JSON Beautifier Online - Format & Rapikan JSON Instan">
-    <meta property="twitter:description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify!">
-    <meta property="twitter:image" content="https://jsonbeautifier.vinnesia.my.id/logo.png">
-
-    <!-- Schema.org -->
+    <meta property="og:site_name" content="VIN NESIA JSON Beautifier">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JSON Beautifier Online - Format & Rapikan JSON Instan">
+    <meta name="twitter:description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify!">
+    <meta name="twitter:image" content="https://jsonbeautifier.vinnesia.my.id/logo.png">
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="canonical" href="https://jsonbeautifier.vinnesia.my.id">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- JSZip Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    
+    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -38,845 +46,1513 @@
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
-        .file-input {
-            display: none;
         }
-
-        // Event Listeners
-        beautifyBtn.addEventListener('click', beautifyJson);
-        copyBtn.addEventListener('click', copyToClipboard);
-        downloadBtn.addEventListener('click', downloadJson);
-        uploadBtn.addEventListener('click', () => fileInput.click());
     }
     </script>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PYZXZFNER"></script>
+    
+    <!-- Google Analytics GA4 with Consent Mode -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-3PYZXZFNER');
+        
+        // Initialize consent mode
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied'
+        });
     </script>
-
-    <!-- JSZip for ZIP extraction -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PYZXZFNER"></script>
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        :root {
+            --primary-purple: #8b5cf6;
+            --primary-green: #10b981;
+            --dark-bg: #1a1a2e;
+            --darker-bg: #16213e;
+            --darkest-bg: #0f3460;
+            --text-light: #ffffff;
+            --text-gray: #e5e5e5;
+            --text-muted: #a3a3a3;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #e0e0e0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 50%, var(--darkest-bg) 100%);
+            color: var(--text-light);
             min-height: 100vh;
             line-height: 1.6;
         }
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-
+        
         .header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            border: 1px solid rgba(124, 58, 237, 0.3);
+            margin-bottom: 30px;
+            padding: 20px 0;
         }
-
+        
         .logo {
             width: 80px;
             height: 80px;
             margin: 0 auto 20px;
-            background: url('logo.png') center/contain no-repeat;
-            background-color: rgba(124, 58, 237, 0.2);
             border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.3s ease;
         }
-
-        h1 {
-            color: #a855f7;
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .site-title {
             font-size: 2.5rem;
             font-weight: 700;
+            background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 10px;
-            text-shadow: 0 2px 10px rgba(168, 85, 247, 0.3);
         }
-
-        .subtitle {
-            color: #10b981;
-            font-size: 1.1rem;
-            font-weight: 400;
-        }
-
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
+        
+        .back-btn {
+            display: inline-block;
             padding: 10px 20px;
-            background: linear-gradient(45deg, #a855f7, #10b981);
+            background: linear-gradient(45deg, #6366f1, var(--primary-purple));
             color: white;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
             font-weight: 500;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
         }
-
-        .back-button:hover {
+        
+        .back-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
         }
-
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+        
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
-
-        .section {
+        
+        .panel {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 25px;
-            border: 1px solid rgba(124, 58, 237, 0.3);
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
         }
-
-        .section h2 {
-            color: #a855f7;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-            font-weight: 600;
+        
+        .panel:hover {
+            transform: translateY(-2px);
         }
-
-        .textarea {
+        
+        .panel h2 {
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        textarea {
             width: 100%;
             min-height: 300px;
             padding: 15px;
             background: rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(124, 58, 237, 0.3);
-            border-radius: 10px;
-            color: #e0e0e0;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 12px;
+            color: var(--text-light);
             font-family: 'Courier New', monospace;
             font-size: 14px;
             resize: vertical;
             transition: border-color 0.3s ease;
         }
-
-        .textarea:focus {
+        
+        textarea:focus {
             outline: none;
-            border-color: #a855f7;
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
         }
-
-        .drop-zone {
-            border: 2px dashed rgba(16, 185, 129, 0.5);
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
+        
+        .file-upload {
             margin-bottom: 20px;
+            padding: 20px;
+            border: 2px dashed rgba(139, 92, 246, 0.3);
+            border-radius: 12px;
+            text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
-            background: rgba(16, 185, 129, 0.05);
         }
-
-        .drop-zone.dragover {
-            border-color: #10b981;
-            background: rgba(16, 185, 129, 0.15);
-            transform: scale(1.02);
+        
+        .file-upload:hover,
+        .file-upload.dragover {
+            border-color: var(--primary-purple);
+            background: rgba(139, 92, 246, 0.1);
         }
-
-        .drop-zone-text {
-            color: #10b981;
-            font-weight: 500;
+        
+        .file-upload input[type="file"] {
+            display: none;
+        }
+        
+        .upload-text {
+            color: var(--text-muted);
             margin-bottom: 10px;
         }
-
+        
         .file-info {
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
             font-size: 0.9rem;
-            color: #94a3b8;
-            margin-top: 10px;
+            color: var(--primary-green);
         }
-
+        
+        .error-message, .success-message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid;
+            display: none;
+        }
+        
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--error-color);
+            border-left-color: var(--error-color);
+        }
+        
+        .success-message {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success-color);
+            border-left-color: var(--success-color);
+        }
+        
         .button-group {
             display: flex;
             gap: 15px;
             margin-top: 20px;
             flex-wrap: wrap;
         }
-
+        
         .btn {
             padding: 12px 24px;
             border: none;
             border-radius: 8px;
-            font-weight: 600;
             cursor: pointer;
+            font-weight: 500;
+            font-size: 16px;
             transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            text-align: center;
+            user-select: none;
         }
-
+        
         .btn-primary {
-            background: linear-gradient(45deg, #a855f7, #7c3aed);
+            background: linear-gradient(45deg, var(--primary-purple), #a855f7);
             color: white;
         }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+        
+        .btn-success {
+            background: linear-gradient(45deg, var(--primary-green), #059669);
+            color: white;
         }
-
+        
         .btn-secondary {
-            background: linear-gradient(45deg, #10b981, #059669);
-            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
-        .btn-secondary:hover {
+        
+        .btn:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
         }
-
-        .file-preview {
-            margin: 20px 0;
-            padding: 15px;
-            background: rgba(16, 185, 129, 0.05);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 8px;
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
-
-        .file-preview h4 {
-            color: #10b981;
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .newsletter-section h3 {
+            color: var(--primary-purple);
             margin-bottom: 10px;
-            font-size: 1rem;
+            font-size: 1.5rem;
         }
-
+        
+        .newsletter-section p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-size: 14px;
+            min-width: 250px;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--primary-purple);
+        }
+        
+        .newsletter-btn {
+            background: linear-gradient(45deg, var(--primary-green), #059669);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* File Preview */
+        .file-preview {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: none;
+        }
+        
         .file-list {
-            max-height: 200px;
-            overflow-y: auto;
+            list-style: none;
+            margin: 10px 0;
         }
-
-        .file-item {
+        
+        .file-list li {
+            padding: 5px 0;
+            color: var(--text-muted);
+        }
+        
+        .file-list li.valid {
+            color: var(--success-color);
+        }
+        
+        .file-list li.invalid {
+            color: var(--error-color);
+        }
+        
+        /* Cookie Consent Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 20px;
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+        
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 8px 12px;
-            margin-bottom: 5px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 6px;
-            font-size: 0.9rem;
+            gap: 20px;
+            flex-wrap: wrap;
         }
-
-        .file-item-info {
+        
+        .cookie-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .cookie-text h4 {
+            color: var(--primary-purple);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .cookie-text p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .cookie-text a {
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        
+        .cookie-text a:hover {
+            text-decoration: underline;
+        }
+        
+        .cookie-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .cookie-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .cookie-btn-accept {
+            background: linear-gradient(45deg, var(--success-color), #059669);
+            color: white;
+        }
+        
+        .cookie-btn-decline {
+            background: rgba(239, 68, 68, 0.8);
+            color: white;
+        }
+        
+        .cookie-btn-settings {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .cookie-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Cookie Settings Modal */
+        .cookie-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1001;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .cookie-modal.show {
+            display: flex;
+        }
+        
+        .cookie-modal-content {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .cookie-modal h3 {
+            color: var(--primary-purple);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .cookie-category {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .cookie-category h4 {
+            color: var(--primary-green);
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: space-between;
         }
-
-        .file-icon {
-            width: 20px;
-            text-align: center;
+        
+        .cookie-toggle {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
         }
-
-        .file-status {
-            font-size: 0.8rem;
-            font-weight: 500;
+        
+        .cookie-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
         }
-
-        .status-checking {
-            color: #fbbf24;
+        
+        .cookie-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #666;
+            transition: 0.3s;
+            border-radius: 24px;
         }
-
-        .status-valid {
-            color: #10b981;
+        
+        .cookie-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
         }
-
-        .status-invalid {
-            color: #ef4444;
+        
+        .cookie-toggle input:checked + .cookie-slider {
+            background-color: var(--primary-green);
         }
-
-        .status-processed {
-            color: #a855f7;
+        
+        .cookie-toggle input:checked + .cookie-slider:before {
+            transform: translateX(26px);
         }
-
-        .error-message, .success-message {
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            font-weight: 500;
-            display: none;
+        
+        .cookie-category p {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-top: 5px;
         }
-
-        .error-message {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            color: #fca5a5;
+        
+        .cookie-modal-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 25px;
+            flex-wrap: wrap;
         }
-
-        .success-message {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: #6ee7b7;
-        }
-
+        
         .footer {
             text-align: center;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            border: 1px solid rgba(124, 58, 237, 0.3);
-            margin-top: 40px;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
         }
-
-        .footer-links {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
-            color: #10b981;
+        
+        .footer a {
+            color: var(--primary-green);
             text-decoration: none;
             margin: 0 15px;
-            font-weight: 500;
-            transition: color 0.3s ease;
         }
-
-        .footer-links a:hover {
-            color: #a855f7;
+        
+        .footer a:hover {
+            text-decoration: underline;
         }
-
-        .copyright {
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
-
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .site-title {
+                font-size: 2rem;
+            }
+            
             .main-content {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .back-button {
-                position: relative;
-                top: auto;
-                left: auto;
-                margin-bottom: 20px;
-                display: inline-block;
-            }
-
+            
             .button-group {
                 flex-direction: column;
             }
-
+            
             .btn {
+                width: 100%;
+            }
+            
+            textarea {
+                min-height: 250px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .newsletter-input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cookie-buttons {
+                width: 100%;
                 justify-content: center;
             }
+            
+            .cookie-btn {
+                flex: 1;
+                min-width: 100px;
+            }
+            
+            .cookie-modal-content {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .cookie-modal-buttons {
+                flex-direction: column;
+            }
         }
-
-        /* Loading spinner */
+        
+        @media (max-width: 480px) {
+            .site-title {
+                font-size: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .panel {
+                padding: 20px;
+            }
+            
+            .newsletter-section {
+                padding: 20px;
+            }
+        }
+        
+        /* Loading Animation */
         .loading {
-            display: none;
+            display: inline-block;
             width: 20px;
             height: 20px;
-            border: 2px solid transparent;
-            border-top: 2px solid currentColor;
+            border: 3px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            border-top-color: var(--primary-purple);
+            animation: spin 1s ease-in-out infinite;
         }
-
+        
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
         }
     </style>
 </head>
 <body>
-    <a href="https://www.vinnesia.my.id" class="back-button">🔙 Kembali ke Homepage</a>
-    
     <div class="container">
-        <header class="header">
-            <div class="logo"></div>
-            <h1>VIN NESIA JSON BEAUTIFIER</h1>
-            <p class="subtitle">Format & Rapikan JSON Instan - Upload File Apapun!</p>
-        </header>
-
-        <div class="main-content">
-            <div class="section">
-                <h2>📝 Input JSON</h2>
-                
-                <div class="drop-zone" id="dropZone">
-                    <div class="drop-zone-text">🗂️ Drag & Drop File Apapun Disini</div>
-                    <p>atau klik untuk pilih file</p>
-                    <div class="file-info">
-                        Mendukung semua format: .zip, .json, .txt, .docx, .pdf, .jpg, dll.<br>
-                        Program akan mencari konten JSON valid dalam file.
+        <div class="header">
+            <div class="logo">VN</div>
+            <div class="site-title">VIN NESIA JSON BEAUTIFIER</div>
+            <a href="https://www.vinnesia.my.id" class="back-btn">🔙 Kembali ke Homepage</a>
+        </div>
+        
+        <main>
+            <h1>JSON Beautifier Online</h1>
+            
+            <div class="main-content">
+                <div class="panel">
+                    <h2>📥 Input JSON</h2>
+                    
+                    <div class="file-upload" id="fileUpload">
+                        <input type="file" id="fileInput" multiple accept="*/*">
+                        <div class="upload-text">
+                            <strong>📁 Drag & Drop file atau klik untuk upload</strong><br>
+                            <small>Kami menerima semua jenis file. Isi file akan dicek apakah berisi JSON valid.</small>
+                        </div>
+                    </div>
+                    
+                    <div id="filePreview" class="file-preview">
+                        <strong>🧪 File yang diperiksa:</strong>
+                        <ul id="fileList" class="file-list"></ul>
+                    </div>
+                    
+                    <div id="errorMessage" class="error-message"></div>
+                    <div id="successMessage" class="success-message"></div>
+                    
+                    <textarea id="inputJson" placeholder="Paste JSON mentah di sini atau upload file..."></textarea>
+                    
+                    <div class="button-group">
+                        <button class="btn btn-primary" id="beautifyBtn">✨ Beautify JSON</button>
+                        <button class="btn btn-secondary" id="clearBtn">🗑️ Clear</button>
+                        <button class="btn btn-secondary" id="validateBtn">✅ Validate Only</button>
                     </div>
                 </div>
-
-                <input type="file" id="fileInput" class="file-input" multiple accept="*/*">
                 
-                <div class="file-preview" id="filePreview" style="display: none;">
-                    <h4>🧪 File yang Diperiksa:</h4>
-                    <div class="file-list" id="fileList"></div>
-                </div>
-                
-                <textarea 
-                    id="inputJson" 
-                    class="textarea" 
-                    placeholder="Paste JSON mentah disini atau upload file..."
-                    spellcheck="false"
-                ></textarea>
-
-                <div class="button-group">
-                    <button class="btn btn-primary" id="beautifyBtn">
-                        <span class="loading" id="loading"></span>
-                        ✨ Beautify JSON
-                    </button>
-                    <button class="btn btn-secondary" id="uploadBtn">
-                        📁 Upload File
-                    </button>
-                </div>
-
-                <div class="error-message" id="errorMessage"></div>
-                <div class="success-message" id="successMessage"></div>
-            </div>
-
-            <div class="section">
-                <h2>✅ Output JSON</h2>
-                
-                <textarea 
-                    id="outputJson" 
-                    class="textarea" 
-                    placeholder="Hasil JSON yang sudah dirapikan akan muncul disini..."
-                    readonly
-                    spellcheck="false"
-                ></textarea>
-
-                <div class="button-group">
-                    <button class="btn btn-secondary" id="copyBtn">
-                        📋 Salin Hasil
-                    </button>
-                    <button class="btn btn-primary" id="downloadBtn">
-                        💾 Download JSON
-                    </button>
+                <div class="panel">
+                    <h2>📤 Output JSON</h2>
+                    
+                    <textarea id="outputJson" placeholder="Hasil JSON yang sudah dirapikan akan muncul di sini..." readonly></textarea>
+                    
+                    <div class="button-group">
+                        <button class="btn btn-success" id="copyBtn" disabled>📋 Salin ke Clipboard</button>
+                        <button class="btn btn-secondary" id="downloadBtn" disabled>💾 Download JSON</button>
+                        <button class="btn btn-secondary" id="minifyBtn" disabled>🗜️ Minify JSON</button>
+                    </div>
                 </div>
             </div>
-        </div>
-
+            
+            <!-- Newsletter Section -->
+            <div class="newsletter-section">
+                <h3>📧 Berlangganan Newsletter</h3>
+                <p>Dapatkan update terbaru tentang tools dan tips programming dari VIN NESIA</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Masukkan email Anda..." required>
+                    <button type="submit" class="newsletter-btn" id="newsletterBtn">
+                        <span id="newsletterBtnText">Berlangganan</span>
+                        <span id="newsletterLoading" class="loading" style="display: none;"></span>
+                    </button>
+                </form>
+                <div id="newsletterMessage" style="margin-top: 15px; display: none;"></div>
+            </div>
+        </main>
+        
         <footer class="footer">
-            <div class="footer-links">
+            <div>
                 <a href="privacy.html">Privacy Policy</a>
-                <a href="mailto:admin@vinnesia.my.id">Contact</a>
-            </div>
-            <div class="copyright">
-                ©2025 vinnesia.my.id — All Rights Reserved
+                <span style="color: #666;">|</span>
+                <a href="#" id="cookieSettingsFooter">Cookie Settings</a>
+                <span style="color: #666;">|</span>
+                <span>©2025 vinnesia.my.id — All Rights Reserved</span>
             </div>
         </footer>
     </div>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <h4>🍪 Kami Menggunakan Cookies</h4>
+                <p>
+                    Situs ini menggunakan cookies untuk Google Analytics guna meningkatkan pengalaman Anda. 
+                    Kami tidak menyimpan data pribadi atau file JSON Anda. 
+                    <a href="privacy.html" target="_blank">Baca Privacy Policy</a>
+                </p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-accept" id="acceptCookies">✅ Terima Semua</button>
+                <button class="cookie-btn cookie-btn-decline" id="declineCookies">❌ Tolak</button>
+                <button class="cookie-btn cookie-btn-settings" id="cookieSettings">⚙️ Pengaturan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div id="cookieModal" class="cookie-modal">
+        <div class="cookie-modal-content">
+            <h3>⚙️ Pengaturan Cookies</h3>
+            
+            <div class="cookie-category">
+                <h4>
+                    Cookies Wajib
+                    <label class="cookie-toggle">
+                        <input type="checkbox" checked disabled>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </h4>
+                <p>Cookies ini diperlukan untuk fungsi dasar website dan tidak dapat dinonaktifkan. Tidak menyimpan informasi pribadi.</p>
+            </div>
+            
+            <div class="cookie-category">
+                <h4>
+                    Google Analytics
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="analyticsCookies">
+                        <span class="cookie-slider"></span>
+                    </label>
+                </h4>
+                <p>Membantu kami memahami bagaimana pengunjung berinteraksi dengan website untuk meningkatkan pengalaman pengguna. Data bersifat anonim.</p>
+            </div>
+            
+            <div class="cookie-category">
+                <h4>
+                    Marketing Cookies
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="marketingCookies" disabled>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </h4>
+                <p>Tidak digunakan. Kami tidak menggunakan cookies untuk tujuan periklanan atau pemasaran.</p>
+            </div>
+            
+            <div class="cookie-modal-buttons">
+                <button class="cookie-btn cookie-btn-settings" id="saveSettings">💾 Simpan Pengaturan</button>
+                <button class="cookie-btn cookie-btn-accept" id="acceptAllModal">✅ Terima Semua</button>
+                <button class="cookie-btn cookie-btn-decline" id="closeModal">✖️ Tutup</button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Global variables
+        let isProcessing = false;
+        
         // DOM Elements
-        const inputJson = document.getElementById('inputJson');
-        const outputJson = document.getElementById('outputJson');
-        const beautifyBtn = document.getElementById('beautifyBtn');
-        const copyBtn = document.getElementById('copyBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const uploadBtn = document.getElementById('uploadBtn');
-        const fileInput = document.getElementById('fileInput');
-        const dropZone = document.getElementById('dropZone');
-        const errorMessage = document.getElementById('errorMessage');
-        const successMessage = document.getElementById('successMessage');
-        const loading = document.getElementById('loading');
-        const filePreview = document.getElementById('filePreview');
-        const fileList = document.getElementById('fileList');
+        const elements = {
+            fileInput: document.getElementById('fileInput'),
+            fileUpload: document.getElementById('fileUpload'),
+            filePreview: document.getElementById('filePreview'),
+            fileList: document.getElementById('fileList'),
+            inputJson: document.getElementById('inputJson'),
+            outputJson: document.getElementById('outputJson'),
+            beautifyBtn: document.getElementById('beautifyBtn'),
+            copyBtn: document.getElementById('copyBtn'),
+            downloadBtn: document.getElementById('downloadBtn'),
+            clearBtn: document.getElementById('clearBtn'),
+            validateBtn: document.getElementById('validateBtn'),
+            minifyBtn: document.getElementById('minifyBtn'),
+            errorMessage: document.getElementById('errorMessage'),
+            successMessage: document.getElementById('successMessage'),
+            scrollTop: document.getElementById('scrollTop'),
+            
+            // Newsletter elements
+            newsletterForm: document.getElementById('newsletterForm'),
+            newsletterEmail: document.getElementById('newsletterEmail'),
+            newsletterBtn: document.getElementById('newsletterBtn'),
+            newsletterBtnText: document.getElementById('newsletterBtnText'),
+            newsletterLoading: document.getElementById('newsletterLoading'),
+            newsletterMessage: document.getElementById('newsletterMessage'),
+            
+            // Cookie elements
+            cookieBanner: document.getElementById('cookieBanner'),
+            cookieModal: document.getElementById('cookieModal'),
+            acceptCookies: document.getElementById('acceptCookies'),
+            declineCookies: document.getElementById('declineCookies'),
+            cookieSettings: document.getElementById('cookieSettings'),
+            cookieSettingsFooter: document.getElementById('cookieSettingsFooter'),
+            saveSettings: document.getElementById('saveSettings'),
+            acceptAllModal: document.getElementById('acceptAllModal'),
+            closeModal: document.getElementById('closeModal'),
+            analyticsCookies: document.getElementById('analyticsCookies')
+        };
 
-        // File processing state
-        let processedFiles = [];
+        // Cookie Consent Management
+        class CookieManager {
+            constructor() {
+                this.storageKey = 'vinnesia_cookie_consent';
+                this.analyticsKey = 'vinnesia_analytics_consent';
+            }
 
-        // Show/Hide Messages
-        function showError(message) {
-            errorMessage.textContent = message;
-            errorMessage.style.display = 'block';
-            successMessage.style.display = 'none';
+            getCookieConsent() {
+                try {
+                    return localStorage.getItem(this.storageKey);
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            setCookieConsent(consent) {
+                try {
+                    localStorage.setItem(this.storageKey, consent);
+                    if (consent === 'accepted' || consent === 'customized') {
+                        this.enableAnalytics();
+                    } else {
+                        this.disableAnalytics();
+                    }
+                } catch (e) {
+                    console.warn('Unable to save cookie consent');
+                }
+            }
+
+            getAnalyticsConsent() {
+                try {
+                    const customConsent = localStorage.getItem(this.analyticsKey);
+                    const generalConsent = this.getCookieConsent();
+                    return customConsent === 'true' || generalConsent === 'accepted';
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            setAnalyticsConsent(consent) {
+                try {
+                    localStorage.setItem(this.analyticsKey, consent.toString());
+                } catch (e) {
+                    console.warn('Unable to save analytics consent');
+                }
+            }
+
+            enableAnalytics() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('config', 'G-3PYZXZFNER');
+                    gtag('consent', 'update', {
+                        'analytics_storage': 'granted'
+                    });
+                }
+            }
+
+            disableAnalytics() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('consent', 'update', {
+                        'analytics_storage': 'denied'
+                    });
+                }
+            }
+
+            showBanner() {
+                elements.cookieBanner.classList.add('show');
+            }
+
+            hideBanner() {
+                elements.cookieBanner.classList.remove('show');
+            }
+
+            showModal() {
+                elements.cookieModal.classList.add('show');
+                elements.analyticsCookies.checked = this.getAnalyticsConsent();
+            }
+
+            hideModal() {
+                elements.cookieModal.classList.remove('show');
+            }
+
+            init() {
+                const consent = this.getCookieConsent();
+                
+                if (!consent) {
+                    setTimeout(() => this.showBanner(), 1000);
+                } else {
+                    if (consent === 'accepted' || this.getAnalyticsConsent()) {
+                        this.enableAnalytics();
+                    } else {
+                        this.disableAnalytics();
+                    }
+                }
+
+                this.bindEvents();
+            }
+
+            bindEvents() {
+                elements.acceptCookies.addEventListener('click', () => {
+                    this.setCookieConsent('accepted');
+                    this.setAnalyticsConsent(true);
+                    this.hideBanner();
+                    showMessage('✅ Cookies diterima. Terima kasih!', 'success');
+                });
+
+                elements.declineCookies.addEventListener('click', () => {
+                    this.setCookieConsent('declined');
+                    this.setAnalyticsConsent(false);
+                    this.hideBanner();
+                    showMessage('❌ Cookies ditolak. Hanya cookies wajib yang akan digunakan.', 'success');
+                });
+
+                elements.cookieSettings.addEventListener('click', () => {
+                    this.showModal();
+                });
+
+                elements.cookieSettingsFooter.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.showModal();
+                });
+
+                elements.saveSettings.addEventListener('click', () => {
+                    const analyticsEnabled = elements.analyticsCookies.checked;
+                    this.setCookieConsent('customized');
+                    this.setAnalyticsConsent(analyticsEnabled);
+                    this.hideModal();
+                    this.hideBanner();
+                    
+                    const message = analyticsEnabled 
+                        ? '✅ Pengaturan disimpan. Analytics diaktifkan.'
+                        : '⚙️ Pengaturan disimpan. Hanya cookies wajib yang aktif.';
+                    showMessage(message, 'success');
+                });
+
+                elements.acceptAllModal.addEventListener('click', () => {
+                    elements.analyticsCookies.checked = true;
+                    this.setCookieConsent('accepted');
+                    this.setAnalyticsConsent(true);
+                    this.hideModal();
+                    this.hideBanner();
+                    showMessage('✅ Semua cookies diterima. Terima kasih!', 'success');
+                });
+
+                elements.closeModal.addEventListener('click', () => {
+                    this.hideModal();
+                });
+
+                elements.cookieModal.addEventListener('click', (e) => {
+                    if (e.target === elements.cookieModal) {
+                        this.hideModal();
+                    }
+                });
+            }
         }
 
-        function showSuccess(message) {
-            successMessage.textContent = message;
-            successMessage.style.display = 'block';
-            errorMessage.style.display = 'none';
+        // Newsletter Manager
+        class NewsletterManager {
+            constructor() {
+                this.apiEndpoint = 'https://api.vinnesia.my.id/newsletter/subscribe'; // Replace with actual endpoint
+                this.init();
+            }
+
+            init() {
+                elements.newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.subscribe();
+                });
+            }
+
+            async subscribe() {
+                const email = elements.newsletterEmail.value.trim();
+                
+                if (!email) {
+                    this.showMessage('❌ Silakan masukkan email yang valid.', 'error');
+                    return;
+                }
+
+                if (!this.isValidEmail(email)) {
+                    this.showMessage('❌ Format email tidak valid.', 'error');
+                    return;
+                }
+
+                this.setLoading(true);
+
+                try {
+                    // Simulate API call - replace with actual endpoint
+                    await this.simulateApiCall(email);
+                    
+                    this.showMessage('✅ Terima kasih! Anda berhasil berlangganan newsletter.', 'success');
+                    elements.newsletterEmail.value = '';
+                    
+                    // Track subscription if analytics enabled
+                    if (cookieManager.getAnalyticsConsent() && typeof gtag !== 'undefined') {
+                        gtag('event', 'newsletter_subscribe', {
+                            'event_category': 'engagement',
+                            'event_label': 'newsletter'
+                        });
+                    }
+                } catch (error) {
+                    this.showMessage('❌ Terjadi kesalahan. Silakan coba lagi nanti.', 'error');
+                } finally {
+                    this.setLoading(false);
+                }
+            }
+
+            async simulateApiCall(email) {
+                // Simulate API delay
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        // Simulate success rate
+                        if (Math.random() > 0.1) {
+                            resolve({ success: true });
+                        } else {
+                            reject(new Error('API Error'));
+                        }
+                    }, 1500);
+                });
+            }
+
+            isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            setLoading(loading) {
+                if (loading) {
+                    elements.newsletterBtnText.style.display = 'none';
+                    elements.newsletterLoading.style.display = 'inline-block';
+                    elements.newsletterBtn.disabled = true;
+                } else {
+                    elements.newsletterBtnText.style.display = 'inline';
+                    elements.newsletterLoading.style.display = 'none';
+                    elements.newsletterBtn.disabled = false;
+                }
+            }
+
+            showMessage(message, type) {
+                elements.newsletterMessage.textContent = message;
+                elements.newsletterMessage.style.display = 'block';
+                elements.newsletterMessage.style.color = type === 'error' ? 'var(--error-color)' : 'var(--success-color)';
+                
+                setTimeout(() => {
+                    elements.newsletterMessage.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        // JSON Processor
+        class JSONProcessor {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+            }
+
+            bindEvents() {
+                // File upload events
+                elements.fileUpload.addEventListener('click', () => elements.fileInput.click());
+                elements.fileUpload.addEventListener('dragover', this.handleDragOver.bind(this));
+                elements.fileUpload.addEventListener('dragleave', this.handleDragLeave.bind(this));
+                elements.fileUpload.addEventListener('drop', this.handleFileDrop.bind(this));
+                elements.fileInput.addEventListener('change', this.handleFileSelect.bind(this));
+
+                // Button events
+                elements.beautifyBtn.addEventListener('click', () => this.beautifyJson());
+                elements.validateBtn.addEventListener('click', () => this.validateJson());
+                elements.minifyBtn.addEventListener('click', () => this.minifyJson());
+                elements.copyBtn.addEventListener('click', () => this.copyToClipboard());
+                elements.downloadBtn.addEventListener('click', () => this.downloadJson());
+                elements.clearBtn.addEventListener('click', () => this.clearAll());
+
+                // Auto-resize textareas
+                elements.inputJson.addEventListener('input', () => this.autoResize(elements.inputJson));
+                elements.outputJson.addEventListener('input', () => this.autoResize(elements.outputJson));
+            }
+
+            handleDragOver(e) {
+                e.preventDefault();
+                elements.fileUpload.classList.add('dragover');
+            }
+
+            handleDragLeave(e) {
+                e.preventDefault();
+                elements.fileUpload.classList.remove('dragover');
+            }
+
+            handleFileDrop(e) {
+                e.preventDefault();
+                elements.fileUpload.classList.remove('dragover');
+                const files = Array.from(e.dataTransfer.files);
+                this.processFiles(files);
+            }
+
+            handleFileSelect(e) {
+                const files = Array.from(e.target.files);
+                this.processFiles(files);
+            }
+
+            async processFiles(files) {
+                if (files.length === 0 || isProcessing) return;
+
+                isProcessing = true;
+                showMessage('🔍 Memproses file...', 'success');
+                elements.filePreview.style.display = 'block';
+                elements.fileList.innerHTML = '';
+
+                let jsonFound = false;
+                let jsonContent = '';
+
+                try {
+                    for (const file of files) {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `📄 ${file.name} (${this.formatFileSize(file.size)})`;
+                        elements.fileList.appendChild(listItem);
+
+                        try {
+                            let result;
+                            if (file.name.toLowerCase().endsWith('.zip')) {
+                                result = await this.processZipFile(file);
+                            } else {
+                                result = await this.processRegularFile(file);
+                            }
+
+                            if (result.success) {
+                                jsonContent = result.content;
+                                jsonFound = true;
+                                listItem.classList.add('valid');
+                                listItem.textContent += ' ✅ JSON valid ditemukan';
+                                break;
+                            } else {
+                                listItem.classList.add('invalid');
+                                listItem.textContent += ' ❌ Tidak mengandung JSON valid';
+                            }
+                        } catch (error) {
+                            listItem.classList.add('invalid');
+                            listItem.textContent += ' ❌ Error membaca file';
+                        }
+                    }
+
+                    if (jsonFound) {
+                        elements.inputJson.value = jsonContent;
+                        showMessage('✅ JSON berhasil dimuat dari file!', 'success');
+                        this.autoResize(elements.inputJson);
+                        // Auto beautify
+                        setTimeout(() => this.beautifyJson(), 500);
+                    } else {
+                        showMessage('❌ Tidak ditemukan konten JSON valid dalam file yang diunggah.', 'error');
+                    }
+                } catch (error) {
+                    showMessage('❌ Terjadi kesalahan saat memproses file.', 'error');
+                } finally {
+                    isProcessing = false;
+                }
+            }
+
+            async processZipFile(file) {
+                try {
+                    if (typeof JSZip === 'undefined') {
+                        throw new Error('JSZip not loaded');
+                    }
+
+                    const zip = new JSZip();
+                    const zipData = await zip.loadAsync(file);
+                    
+                    for (const [filename, zipEntry] of Object.entries(zipData.files)) {
+                        if (!zipEntry.dir) {
+                            try {
+                                const content = await zipEntry.async('text');
+                                JSON.parse(content); // Validate JSON
+                                return { success: true, content: content };
+                            } catch (e) {
+                                // Not a valid JSON, continue to next file
+                            }
+                        }
+                    }
+                    return { success: false };
+                } catch (error) {
+                    return { success: false };
+                }
+            }
+
+            async processRegularFile(file) {
+                return new Promise((resolve) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            const content = e.target.result;
+                            JSON.parse(content); // Validate JSON
+                            resolve({ success: true, content: content });
+                        } catch (error) {
+                            resolve({ success: false });
+                        }
+                    };
+                    reader.onerror = () => resolve({ success: false });
+                    reader.readAsText(file);
+                });
+            }
+
+            formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+
+            beautifyJson() {
+                const input = elements.inputJson.value.trim();
+                
+                if (!input) {
+                    showMessage('❌ Silakan masukkan JSON atau upload file terlebih dahulu!', 'error');
+                    return;
+                }
+
+                try {
+                    const parsed = JSON.parse(input);
+                    const beautified = JSON.stringify(parsed, null, 2);
+                    
+                    elements.outputJson.value = beautified;
+                    this.autoResize(elements.outputJson);
+                    this.enableOutputButtons();
+                    
+                    showMessage('✅ JSON berhasil dirapikan!', 'success');
+                    
+                    // Track beautify event
+                    this.trackEvent('json_beautify', 'beautify_success');
+                } catch (error) {
+                    showMessage('❌ JSON tidak valid! Periksa format JSON Anda: ' + error.message, 'error');
+                    elements.outputJson.value = '';
+                    this.disableOutputButtons();
+                }
+            }
+
+            validateJson() {
+                const input = elements.inputJson.value.trim();
+                
+                if (!input) {
+                    showMessage('❌ Silakan masukkan JSON terlebih dahulu!', 'error');
+                    return;
+                }
+
+                try {
+                    JSON.parse(input);
+                    showMessage('✅ JSON valid!', 'success');
+                    this.trackEvent('json_validate', 'validate_success');
+                } catch (error) {
+                    showMessage('❌ JSON tidak valid: ' + error.message, 'error');
+                }
+            }
+
+            minifyJson() {
+                const input = elements.outputJson.value.trim();
+                
+                if (!input) {
+                    showMessage('❌ Tidak ada JSON untuk diminifikasi!', 'error');
+                    return;
+                }
+
+                try {
+                    const parsed = JSON.parse(input);
+                    const minified = JSON.stringify(parsed);
+                    
+                    elements.outputJson.value = minified;
+                    this.autoResize(elements.outputJson);
+                    
+                    showMessage('✅ JSON berhasil diminifikasi!', 'success');
+                    this.trackEvent('json_minify', 'minify_success');
+                } catch (error) {
+                    showMessage('❌ Error saat minifikasi: ' + error.message, 'error');
+                }
+            }
+
+            async copyToClipboard() {
+                try {
+                    await navigator.clipboard.writeText(elements.outputJson.value);
+                    showMessage('✅ JSON berhasil disalin ke clipboard!', 'success');
+                    this.trackEvent('copy_json', 'copy_success');
+                } catch (error) {
+                    // Fallback for older browsers
+                    try {
+                        elements.outputJson.select();
+                        document.execCommand('copy');
+                        showMessage('✅ JSON berhasil disalin ke clipboard!', 'success');
+                        this.trackEvent('copy_json', 'copy_success');
+                    } catch (fallbackError) {
+                        showMessage('❌ Gagal menyalin ke clipboard.', 'error');
+                    }
+                }
+            }
+
+            downloadJson() {
+                const content = elements.outputJson.value;
+                if (!content) {
+                    showMessage('❌ Tidak ada JSON untuk didownload!', 'error');
+                    return;
+                }
+
+                try {
+                    const blob = new Blob([content], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `beautified-${new Date().getTime()}.json`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    
+                    showMessage('✅ File JSON berhasil didownload!', 'success');
+                    this.trackEvent('download_json', 'download_success');
+                } catch (error) {
+                    showMessage('❌ Gagal mendownload file.', 'error');
+                }
+            }
+
+            clearAll() {
+                elements.inputJson.value = '';
+                elements.outputJson.value = '';
+                elements.fileInput.value = '';
+                elements.filePreview.style.display = 'none';
+                this.disableOutputButtons();
+                hideMessages();
+                this.autoResize(elements.inputJson);
+                this.autoResize(elements.outputJson);
+            }
+
+            enableOutputButtons() {
+                elements.copyBtn.disabled = false;
+                elements.downloadBtn.disabled = false;
+                elements.minifyBtn.disabled = false;
+            }
+
+            disableOutputButtons() {
+                elements.copyBtn.disabled = true;
+                elements.downloadBtn.disabled = true;
+                elements.minifyBtn.disabled = true;
+            }
+
+            autoResize(textarea) {
+                textarea.style.height = 'auto';
+                textarea.style.height = Math.max(300, textarea.scrollHeight) + 'px';
+            }
+
+            trackEvent(action, label) {
+                if (cookieManager.getAnalyticsConsent() && typeof gtag !== 'undefined') {
+                    gtag('event', action, {
+                        'event_category': 'tool_usage',
+                        'event_label': label
+                    });
+                }
+            }
+        }
+
+        // Utility Functions
+        function showMessage(message, type) {
+            hideMessages();
+            const element = type === 'error' ? elements.errorMessage : elements.successMessage;
+            element.textContent = message;
+            element.style.display = 'block';
+            
+            setTimeout(hideMessages, 5000);
         }
 
         function hideMessages() {
-            errorMessage.style.display = 'none';
-            successMessage.style.display = 'none';
+            elements.errorMessage.style.display = 'none';
+            elements.successMessage.style.display = 'none';
         }
 
-        // File type detection
-        function getFileIcon(filename) {
-            const ext = filename.split('.').pop().toLowerCase();
-            const icons = {
-                'json': '📄',
-                'txt': '📝',
-                'zip': '📦',
-                'rar': '📦',
-                '7z': '📦',
-                'pdf': '📕',
-                'docx': '📘',
-                'doc': '📘',
-                'jpg': '🖼️',
-                'jpeg': '🖼️',
-                'png': '🖼️',
-                'gif': '🖼️',
-                'xml': '📋',
-                'log': '📊',
-                'config': '⚙️',
-                'ini': '⚙️'
-            };
-            return icons[ext] || '📄';
-        }
-
-        function addFileToPreview(filename, status = 'checking') {
-            const fileItem = document.createElement('div');
-            fileItem.className = 'file-item';
-            fileItem.id = `file-${Date.now()}-${Math.random()}`;
-            
-            fileItem.innerHTML = `
-                <div class="file-item-info">
-                    <span class="file-icon">${getFileIcon(filename)}</span>
-                    <span class="file-name">${filename}</span>
-                </div>
-                <span class="file-status status-${status}">
-                    ${status === 'checking' ? '🔍 Memeriksa...' : 
-                      status === 'valid' ? '✅ JSON Valid' :
-                      status === 'invalid' ? '❌ Bukan JSON' :
-                      status === 'processed' ? '🎯 Digunakan' : '⏳ Menunggu'}
-                </span>
-            `;
-            
-            fileList.appendChild(fileItem);
-            filePreview.style.display = 'block';
-            
-            return fileItem;
-        }
-
-        function updateFileStatus(fileItem, status, message = '') {
-            const statusElement = fileItem.querySelector('.file-status');
-            statusElement.className = `file-status status-${status}`;
-            
-            const statusTexts = {
-                'checking': '🔍 Memeriksa...',
-                'valid': '✅ JSON Valid',
-                'invalid': '❌ Bukan JSON',
-                'processed': '🎯 Digunakan',
-                'error': '⚠️ Error'
-            };
-            
-            statusElement.textContent = message || statusTexts[status] || status;
-        }
-
-        // Check if content is valid JSON
-        function isValidJSON(text) {
-            try {
-                JSON.parse(text.trim());
-                return true;
-            } catch (e) {
-                return false;
-            }
-        }
-
-        // Read file as text
-        function readFileAsText(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = (e) => resolve(e.target.result);
-                reader.onerror = (e) => reject(e);
-                reader.readAsText(file);
-            });
-        }
-
-        // Read file as array buffer
-        function readFileAsArrayBuffer(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = (e) => resolve(e.target.result);
-                reader.onerror = (e) => reject(e);
-                reader.readAsArrayBuffer(file);
-            });
-        }
-
-        // Process ZIP files
-        async function processZipFile(file, fileItem) {
-            try {
-                updateFileStatus(fileItem, 'checking', '🔍 Mengekstrak ZIP...');
-                
-                const arrayBuffer = await readFileAsArrayBuffer(file);
-                const zip = await JSZip.loadAsync(arrayBuffer);
-                
-                let foundJSON = false;
-                const zipFiles = Object.keys(zip.files);
-                
-                updateFileStatus(fileItem, 'checking', `🔍 Memeriksa ${zipFiles.length} file...`);
-                
-                for (const filename of zipFiles) {
-                    const zipEntry = zip.files[filename];
-                    
-                    if (zipEntry.dir) continue; // Skip directories
-                    
-                    // Add sub-file to preview
-                    const subFileItem = addFileToPreview(`📦 ${file.name} → ${filename}`, 'checking');
-                    
-                    try {
-                        const content = await zipEntry.async('text');
-                        
-                        if (isValidJSON(content)) {
-                            const beautified = JSON.stringify(JSON.parse(content), null, 2);
-                            outputJson.value = beautified;
-                            
-                            updateFileStatus(subFileItem, 'processed', '🎯 JSON Digunakan');
-                            updateFileStatus(fileItem, 'valid', '✅ Berisi JSON Valid');
-                            
-                            showSuccess(`✅ JSON ditemukan dalam "${filename}" dari ZIP "${file.name}"`);
-                            foundJSON = true;
-                            break;
-                        } else {
-                            updateFileStatus(subFileItem, 'invalid', '❌ Bukan JSON');
-                        }
-                    } catch (error) {
-                        updateFileStatus(subFileItem, 'error', '⚠️ Error baca file');
-                    }
-                }
-                
-                if (!foundJSON) {
-                    updateFileStatus(fileItem, 'invalid', '❌ Tidak ada JSON dalam ZIP');
-                }
-                
-                return foundJSON;
-            } catch (error) {
-                updateFileStatus(fileItem, 'error', '⚠️ Error ekstrak ZIP');
-                console.error('ZIP processing error:', error);
-                return false;
-            }
-        }
-
-        // Process text-based files
-        async function processTextFile(file, fileItem) {
-            try {
-                updateFileStatus(fileItem, 'checking', '🔍 Membaca konten...');
-                
-                const content = await readFileAsText(file);
-                
-                if (isValidJSON(content)) {
-                    const beautified = JSON.stringify(JSON.parse(content), null, 2);
-                    outputJson.value = beautified;
-                    
-                    updateFileStatus(fileItem, 'processed', '🎯 JSON Digunakan');
-                    showSuccess(`✅ JSON valid ditemukan dalam "${file.name}"`);
-                    return true;
+        // Scroll to Top Functionality
+        function initScrollToTop() {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    elements.scrollTop.classList.add('show');
                 } else {
-                    updateFileStatus(fileItem, 'invalid', '❌ Konten bukan JSON');
-                    return false;
+                    elements.scrollTop.classList.remove('show');
                 }
-            } catch (error) {
-                updateFileStatus(fileItem, 'error', '⚠️ Error baca file');
-                console.error('Text file processing error:', error);
-                return false;
-            }
+            });
+
+            elements.scrollTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
         }
 
-        // Process binary/unsupported files
-        function processBinaryFile(file, fileItem) {
-            updateFileStatus(fileItem, 'invalid', '❌ Format tidak didukung');
-            return false;
-        }
-
-        // Main file processing function
-        async function processFiles(files) {
-            // Clear previous results
-            fileList.innerHTML = '';
-            outputJson.value = '';
-            hideMessages();
-            
-            if (files.length === 0) return;
-            
-            let foundValidJSON = false;
-            processedFiles = [];
-            
-            // Show loading
-            loading.style.display = 'inline-block';
-            beautifyBtn.disabled = true;
-            
+        // Initialize Application
+        document.addEventListener('DOMContentLoaded', () => {
             try {
-                for (const file of files) {
-                    const fileItem = addFileToPreview(file.name, 'checking');
-                    processedFiles.push({ file, fileItem });
-                    
-                    const filename = file.name.toLowerCase();
-                    const ext = filename.split('.').pop();
-                    
-                    let result = false;
-                    
-                    // Determine file type and process accordingly
-                    if (ext === 'zip' || ext === 'rar' || ext === '7z') {
-                        result = await processZipFile(file, fileItem);
-                    } else if (['txt', 'json', 'log', 'config', 'ini', 'xml'].includes(ext) || !ext) {
-                        result = await processTextFile(file, fileItem);
-                    } else if (['pdf', 'docx', 'doc', 'jpg', 'jpeg', 'png', 'gif'].includes(ext)) {
-                        result = processBinaryFile(file, fileItem);
-                    } else {
-                        // Unknown extension, try as text first
-                        result = await processTextFile(file, fileItem);
-                    }
-                    
-                    if (result) {
-                        foundValidJSON = true;
-                        break; // Use first valid JSON found
-                    }
-                    
-                    // Small delay to show processing animation
-                    await new Promise(resolve => setTimeout(resolve, 100));
-                }
+                // Initialize managers
+                window.cookieManager = new CookieManager();
+                window.newsletterManager = new NewsletterManager();
+                window.jsonProcessor = new JSONProcessor();
                 
-                if (!foundValidJSON) {
-                    showError('❌ Tidak ditemukan konten JSON valid dalam file yang diunggah.');
-                }
+                // Initialize other features
+                initScrollToTop();
                 
+                console.log('VIN NESIA JSON Beautifier initialized successfully');
             } catch (error) {
-                showError(`❌ Error memproses file: ${error.message}`);
-                console.error('File processing error:', error);
-            } finally {
-                loading.style.display = 'none';
-                beautifyBtn.disabled = false;
+                console.error('Failed to initialize application:', error);
+                showMessage('❌ Terjadi kesalahan saat memuat aplikasi.', 'error');
             }
+        });
+
+        // Handle errors gracefully
+        window.addEventListener('error', (e) => {
+            console.error('Application error:', e.error);
+            showMessage('❌ Terjadi kesalahan tak terduga.', 'error');
+        });
+
+        // Service Worker for offline functionality (optional)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch(() => {
+                    // Service worker registration failed - not critical
+                });
+            });
         }
-
-        // Beautify JSON Function
-        function beautifyJson() {
-            const input = inputJson.value.trim();
-            const output = outputJson.value.trim();
-            
-            // Use output if input is empty (from file processing)
-            const jsonToBeautify = input || output;
-            
-            if (!jsonToBeautify) {
-                showError('❌ Input kosong! Silakan masukkan JSON atau upload file.');
-                return;
-            }
-
-            // Show loading
-            loading.style.display = 'inline-block';
-            beautifyBtn.disabled = true;
-
-            setTimeout(() => {
-                try {
-                    const parsed = JSON.parse(jsonToBeautify);
-                    const beautified = JSON.stringify(parsed, null, 2);
-                    outputJson.value = beautified;
-                    showSuccess('✅ JSON berhasil dirapikan!');
-                } catch (error) {
-                    showError(`❌ JSON tidak valid: ${error.message}`);
-                    outputJson.value = '';
-                } finally {
-                    loading.style.display = 'none';
-                    beautifyBtn.disabled = false;
-                }
-            }, 500);
-        }
-
-        // Copy to Clipboard
-        async function copyToClipboard() {
-            const output = outputJson.value;
-            
-            if (!output) {
-                showError('❌ Tidak ada hasil untuk disalin!');
-                return;
-            }
-
-            try {
-                await navigator.clipboard.writeText(output);
-                showSuccess('📋 Hasil berhasil disalin ke clipboard!');
-            } catch (error) {
-                // Fallback for older browsers
-                outputJson.select();
-                document.execCommand('copy');
-                showSuccess('📋 Hasil berhasil disalin ke clipboard!');
-            }
-        }
-
-        // Download JSON
-        function downloadJson() {
-            const output = outputJson.value;
-            
-            if (!output) {
-                showError('❌ Tidak ada hasil untuk didownload!');
-                return;
-            }
-
-            const blob = new Blob([output], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'beautified.json';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            
-            showSuccess('💾 File JSON berhasil didownload!');
-        }
-
-        fileInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) {
-                processFiles(Array.from(e.target.files));
-            }
-        });
-
-        // Drag and Drop
-        dropZone.addEventListener('click', () => fileInput.click());
-
-        dropZone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            dropZone.classList.add('dragover');
-        });
-
-        dropZone.addEventListener('dragleave', (e) => {
-            e.preventDefault();
-            dropZone.classList.remove('dragover');
-        });
-
-        dropZone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            dropZone.classList.remove('dragover');
-            
-            const files = Array.from(e.dataTransfer.files);
-            if (files.length > 0) {
-                processFiles(files);
-            }
-        });
-
-        // Auto-beautify on input change (optional)
-        inputJson.addEventListener('input', hideMessages);
-
-        // Keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey && e.key === 'Enter') {
-                beautifyJson();
-            }
-        });
     </script>
 </body>
 </html>
