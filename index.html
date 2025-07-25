@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON Formatter & Beautifier | Vin Nesia</title>
     <meta name="description" content="Format, beautify, minify, and validate your JSON instantly. Fast and secure JSON formatter tool by Vin Nesia.">
-    <meta name="keywords" content="JSON beautifier, JSON formatter, JSON validator, format JSON online, rapikan JSON, JSON tools, beautify JSON Indonesia">
+    <meta name="keywords" content="JSON beautifier, JSON formatter, JSON validator, format JSON online, JSON tools, beautify JSON Indonesia">
     <meta name="author" content="VIN NESIA">
     <meta name="robots" content="index, follow">
     
-    <meta property="og:title" content="JSON Beautifier Online - Format & Rapikan JSON Instan">
-    <meta property="og:description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify! Mendukung upload file apapun.">
+    <meta property="og:title" content="JSON Beautifier Online - Format & Beautify JSON Instantly">
+    <meta property="og:description" content="Free and online JSON Beautifier to tidy up JSON files. Just paste and click Beautify! Supports file uploads.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jsonbeautifier.vinnesia.my.id">
-    <meta property="og:image" content="https://jsonbeautifier.vinnesia.my.id/logo.png">
+    <meta property="og:url" content="https://json.vinnesia.my.id">
+    <meta property="og:image" content="https://json.vinnesia.my.id/logo.png">
     <meta property="og:site_name" content="VIN NESIA JSON Beautifier">
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JSON Beautifier Online - Format & Rapikan JSON Instan">
-    <meta name="twitter:description" content="JSON Beautifier gratis dan online untuk merapikan file JSON. Cukup paste dan klik Beautify!">
-    <meta name="twitter:image" content="https://jsonbeautifier.vinnesia.my.id/logo.png">
+    <meta name="twitter:title" content="JSON Beautifier Online - Format & Beautify JSON Instantly">
+    <meta name="twitter:description" content="Free and online JSON Beautifier to tidy up JSON files. Just paste and click Beautify!">
+    <meta name="twitter:image" content="https://json.vinnesia.my.id/logo.png">
     
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="canonical" href="https://jsonbeautifier.vinnesia.my.id">
+    <link rel="canonical" href="https://json.vinnesia.my.id">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
@@ -36,7 +36,7 @@
         "operatingSystem": "Web",
         "applicationCategory": "DeveloperApplication",
         "description": "Beautify and format JSON instantly in your browser. Paste, upload, or download clean JSON output.",
-        "url": "https://jsonbeautifier.vinnesia.my.id",
+        "url": "https://json.vinnesia.my.id",
         "offers": {
             "@type": "Offer",
             "price": "0",
@@ -743,11 +743,11 @@
         <div class="header">
             <div class="logo">VN</div>
             <div class="site-title">VIN NESIA JSON BEAUTIFIER</div>
-            <a href="https://www.vinnesia.my.id" class="back-btn">🔙 Kembali ke Homepage</a>
+            <a href="https://www.vinnesia.my.id" class="back-btn">🔙 Back to Homepage</a>
         </div>
         
         <main>
-            <h1>JSON Beautifier Online</h1>
+            <h1>Online JSON Beautifier</h1>
             
             <div class="main-content">
                 <div class="panel">
@@ -756,20 +756,20 @@
                     <div class="file-upload" id="fileUpload">
                         <input type="file" id="fileInput" multiple accept="*/*">
                         <div class="upload-text">
-                            <strong>📁 Drag & Drop file atau klik untuk upload</strong><br>
-                            <small>Kami menerima semua jenis file. Isi file akan dicek apakah berisi JSON valid.</small>
+                            <strong>📁 Drag & Drop file or click to upload</strong><br>
+                            <small>We accept all file types. File content will be checked for valid JSON.</small>
                         </div>
                     </div>
                     
                     <div id="filePreview" class="file-preview">
-                        <strong>🧪 File yang diperiksa:</strong>
+                        <strong>🧪 Files processed:</strong>
                         <ul id="fileList" class="file-list"></ul>
                     </div>
                     
                     <div id="errorMessage" class="error-message"></div>
                     <div id="successMessage" class="success-message"></div>
                     
-                    <textarea id="inputJson" placeholder="Paste JSON mentah di sini atau upload file..."></textarea>
+                    <textarea id="inputJson" placeholder="Paste raw JSON here or upload a file..."></textarea>
                     
                     <div class="button-group">
                         <button class="btn btn-primary" id="beautifyBtn">✨ Beautify JSON</button>
@@ -781,10 +781,10 @@
                 <div class="panel">
                     <h2>📤 Output JSON</h2>
                     
-                    <textarea id="outputJson" placeholder="Hasil JSON yang sudah dirapikan akan muncul di sini..." readonly></textarea>
+                    <textarea id="outputJson" placeholder="Formatted JSON output will appear here..." readonly></textarea>
                     
                     <div class="button-group">
-                        <button class="btn btn-success" id="copyBtn" disabled>📋 Salin ke Clipboard</button>
+                        <button class="btn btn-success" id="copyBtn" disabled>📋 Copy to Clipboard</button>
                         <button class="btn btn-secondary" id="downloadBtn" disabled>💾 Download JSON</button>
                         <button class="btn btn-secondary" id="minifyBtn" disabled>🗜️ Minify JSON</button>
                     </div>
@@ -792,12 +792,12 @@
             </div>
             
             <div class="newsletter-section">
-                <h3>📧 Berlangganan Newsletter</h3>
-                <p>Dapatkan update terbaru tentang tools dan tips programming dari VIN NESIA</p>
+                <h3>📧 Subscribe to Newsletter</h3>
+                <p>Get the latest updates on tools and programming tips from VIN NESIA</p>
                 <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Masukkan email Anda..." required>
+                    <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email..." required>
                     <button type="submit" class="newsletter-btn" id="newsletterBtn">
-                        <span id="newsletterBtnText">Berlangganan</span>
+                        <span id="newsletterBtnText">Subscribe</span>
                         <span id="newsletterLoading" class="loading" style="display: none;"></span>
                     </button>
                 </form>
@@ -821,34 +821,34 @@
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-content">
             <div class="cookie-text">
-                <h4>🍪 Kami Menggunakan Cookies</h4>
+                <h4>🍪 We Use Cookies</h4>
                 <p>
-                    Situs ini menggunakan cookies untuk Google Analytics guna meningkatkan pengalaman Anda. 
-                    Kami tidak menyimpan data pribadi atau file JSON Anda. 
-                    <a href="privacy.html" target="_blank">Baca Privacy Policy</a>
+                    This site uses cookies for Google Analytics to improve your experience. 
+                    We do not store your personal data or JSON files. 
+                    <a href="privacy.html" target="_blank">Read Privacy Policy</a>
                 </p>
             </div>
             <div class="cookie-buttons">
-                <button class="cookie-btn cookie-btn-accept" id="acceptCookies">✅ Terima Semua</button>
-                <button class="cookie-btn cookie-btn-decline" id="declineCookies">❌ Tolak</button>
-                <button class="cookie-btn cookie-btn-settings" id="cookieSettings">⚙️ Pengaturan</button>
+                <button class="cookie-btn cookie-btn-accept" id="acceptCookies">✅ Accept All</button>
+                <button class="cookie-btn cookie-btn-decline" id="declineCookies">❌ Decline</button>
+                <button class="cookie-btn cookie-btn-settings" id="cookieSettings">⚙️ Settings</button>
             </div>
         </div>
     </div>
 
     <div id="cookieModal" class="cookie-modal">
         <div class="cookie-modal-content">
-            <h3>⚙️ Pengaturan Cookies</h3>
+            <h3>⚙️ Cookie Settings</h3>
             
             <div class="cookie-category">
                 <h4>
-                    Cookies Wajib
+                    Essential Cookies
                     <label class="cookie-toggle">
                         <input type="checkbox" checked disabled>
                         <span class="cookie-slider"></span>
                     </label>
                 </h4>
-                <p>Cookies ini diperlukan untuk fungsi dasar website dan tidak dapat dinonaktifkan. Tidak menyimpan informasi pribadi.</p>
+                <p>These cookies are required for basic website functionality and cannot be disabled. They do not store personal information.</p>
             </div>
             
             <div class="cookie-category">
@@ -859,7 +859,7 @@
                         <span class="cookie-slider"></span>
                     </label>
                 </h4>
-                <p>Membantu kami memahami bagaimana pengunjung berinteraksi dengan website untuk meningkatkan pengalaman pengguna. Data bersifat anonim.</p>
+                <p>Helps us understand how visitors interact with the website to improve user experience. Data is anonymous.</p>
             </div>
             
             <div class="cookie-category">
@@ -870,13 +870,13 @@
                         <span class="cookie-slider"></span>
                     </label>
                 </h4>
-                <p>Tidak digunakan. Kami tidak menggunakan cookies untuk tujuan periklanan atau pemasaran.</p>
+                <p>Not used. We do not use cookies for advertising or marketing purposes.</p>
             </div>
             
             <div class="cookie-modal-buttons">
-                <button class="cookie-btn cookie-btn-settings" id="saveSettings">💾 Simpan Pengaturan</button>
-                <button class="cookie-btn cookie-btn-accept" id="acceptAllModal">✅ Terima Semua</button>
-                <button class="cookie-btn cookie-btn-decline" id="closeModal">✖️ Tutup</button>
+                <button class="cookie-btn cookie-btn-settings" id="saveSettings">💾 Save Settings</button>
+                <button class="cookie-btn cookie-btn-accept" id="acceptAllModal">✅ Accept All</button>
+                <button class="cookie-btn cookie-btn-decline" id="closeModal">✖️ Close</button>
             </div>
         </div>
     </div>
@@ -1025,14 +1025,14 @@
                     this.setCookieConsent('accepted');
                     this.setAnalyticsConsent(true);
                     this.hideBanner();
-                    showMessage('✅ Cookies diterima. Terima kasih!', 'success');
+                    showMessage('✅ Cookies accepted. Thank you!', 'success');
                 });
 
                 elements.declineCookies.addEventListener('click', () => {
                     this.setCookieConsent('declined');
                     this.setAnalyticsConsent(false);
                     this.hideBanner();
-                    showMessage('❌ Cookies ditolak. Hanya cookies wajib yang akan digunakan.', 'success');
+                    showMessage('❌ Cookies declined. Only essential cookies will be used.', 'success');
                 });
 
                 elements.cookieSettings.addEventListener('click', () => {
@@ -1052,8 +1052,8 @@
                     this.hideBanner();
                     
                     const message = analyticsEnabled 
-                        ? '✅ Pengaturan disimpan. Analytics diaktifkan.'
-                        : '⚙️ Pengaturan disimpan. Hanya cookies wajib yang aktif.';
+                        ? '✅ Settings saved. Analytics enabled.'
+                        : '⚙️ Settings saved. Only essential cookies are active.';
                     showMessage(message, 'success');
                 });
 
@@ -1063,7 +1063,7 @@
                     this.setAnalyticsConsent(true);
                     this.hideModal();
                     this.hideBanner();
-                    showMessage('✅ Semua cookies diterima. Terima kasih!', 'success');
+                    showMessage('✅ All cookies accepted. Thank you!', 'success');
                 });
 
                 elements.closeModal.addEventListener('click', () => {
@@ -1096,12 +1096,12 @@
                 const email = elements.newsletterEmail.value.trim();
                 
                 if (!email) {
-                    this.showMessage('❌ Silakan masukkan email yang valid.', 'error');
+                    this.showMessage('❌ Please enter a valid email.', 'error');
                     return;
                 }
 
                 if (!this.isValidEmail(email)) {
-                    this.showMessage('❌ Format email tidak valid.', 'error');
+                    this.showMessage('❌ Invalid email format.', 'error');
                     return;
                 }
 
@@ -1111,7 +1111,7 @@
                     // Simulate API call - replace with actual endpoint
                     await this.simulateApiCall(email);
                     
-                    this.showMessage('✅ Terima kasih! Anda berhasil berlangganan newsletter.', 'success');
+                    this.showMessage('✅ Thank you! You have successfully subscribed to the newsletter.', 'success');
                     elements.newsletterEmail.value = '';
                     
                     // Track subscription if analytics enabled
@@ -1122,7 +1122,7 @@
                         });
                     }
                 } catch (error) {
-                    this.showMessage('❌ Terjadi kesalahan. Silakan coba lagi nanti.', 'error');
+                    this.showMessage('❌ An error occurred. Please try again later.', 'error');
                 } finally {
                     this.setLoading(false);
                 }
@@ -1227,7 +1227,7 @@
                 if (files.length === 0 || isProcessing) return;
 
                 isProcessing = true;
-                showMessage('🔍 Memproses file...', 'success');
+                showMessage('🔍 Processing file...', 'success');
                 elements.filePreview.style.display = 'block';
                 elements.fileList.innerHTML = '';
 
@@ -1252,29 +1252,29 @@
                                 jsonContent = result.content;
                                 jsonFound = true;
                                 listItem.classList.add('valid');
-                                listItem.textContent += ' ✅ JSON valid ditemukan';
+                                listItem.textContent += ' ✅ Valid JSON found';
                                 break;
                             } else {
                                 listItem.classList.add('invalid');
-                                listItem.textContent += ' ❌ Tidak mengandung JSON valid';
+                                listItem.textContent += ' ❌ No valid JSON found';
                             }
                         } catch (error) {
                             listItem.classList.add('invalid');
-                            listItem.textContent += ' ❌ Error membaca file';
+                            listItem.textContent += ' ❌ Error reading file';
                         }
                     }
 
                     if (jsonFound) {
                         elements.inputJson.value = jsonContent;
-                        showMessage('✅ JSON berhasil dimuat dari file!', 'success');
+                        showMessage('✅ JSON successfully loaded from file!', 'success');
                         this.autoResize(elements.inputJson);
                         // Auto beautify
                         setTimeout(() => this.beautifyJson(), 500);
                     } else {
-                        showMessage('❌ Tidak ditemukan konten JSON valid dalam file yang diunggah.', 'error');
+                        showMessage('❌ No valid JSON content found in the uploaded file.', 'error');
                     }
                 } catch (error) {
-                    showMessage('❌ Terjadi kesalahan saat memproses file.', 'error');
+                    showMessage('❌ An error occurred while processing the file.', 'error');
                 } finally {
                     isProcessing = false;
                 }
@@ -1335,7 +1335,7 @@
                 const input = elements.inputJson.value.trim();
                 
                 if (!input) {
-                    showMessage('❌ Silakan masukkan JSON atau upload file terlebih dahulu!', 'error');
+                    showMessage('❌ Please enter JSON or upload a file first!', 'error');
                     return;
                 }
 
@@ -1347,12 +1347,12 @@
                     this.autoResize(elements.outputJson);
                     this.enableOutputButtons();
                     
-                    showMessage('✅ JSON berhasil dirapikan!', 'success');
+                    showMessage('✅ JSON successfully beautified!', 'success');
                     
                     // Track beautify event
                     this.trackEvent('json_beautify', 'beautify_success');
                 } catch (error) {
-                    showMessage('❌ JSON tidak valid! Periksa format JSON Anda: ' + error.message, 'error');
+                    showMessage('❌ Invalid JSON! Please check your JSON format: ' + error.message, 'error');
                     elements.outputJson.value = '';
                     this.disableOutputButtons();
                 }
@@ -1362,16 +1362,16 @@
                 const input = elements.inputJson.value.trim();
                 
                 if (!input) {
-                    showMessage('❌ Silakan masukkan JSON terlebih dahulu!', 'error');
+                    showMessage('❌ Please enter JSON first!', 'error');
                     return;
                 }
 
                 try {
                     JSON.parse(input);
-                    showMessage('✅ JSON valid!', 'success');
+                    showMessage('✅ Valid JSON!', 'success');
                     this.trackEvent('json_validate', 'validate_success');
                 } catch (error) {
-                    showMessage('❌ JSON tidak valid: ' + error.message, 'error');
+                    showMessage('❌ Invalid JSON: ' + error.message, 'error');
                 }
             }
 
@@ -1379,7 +1379,7 @@
                 const input = elements.outputJson.value.trim();
                 
                 if (!input) {
-                    showMessage('❌ Tidak ada JSON untuk diminifikasi!', 'error');
+                    showMessage('❌ No JSON to minify!', 'error');
                     return;
                 }
 
@@ -1390,27 +1390,27 @@
                     elements.outputJson.value = minified;
                     this.autoResize(elements.outputJson);
                     
-                    showMessage('✅ JSON berhasil diminifikasi!', 'success');
+                    showMessage('✅ JSON successfully minified!', 'success');
                     this.trackEvent('json_minify', 'minify_success');
                 } catch (error) {
-                    showMessage('❌ Error saat minifikasi: ' + error.message, 'error');
+                    showMessage('❌ Error minifying: ' + error.message, 'error');
                 }
             }
 
             async copyToClipboard() {
                 try {
                     await navigator.clipboard.writeText(elements.outputJson.value);
-                    showMessage('✅ JSON berhasil disalin ke clipboard!', 'success');
+                    showMessage('✅ JSON successfully copied to clipboard!', 'success');
                     this.trackEvent('copy_json', 'copy_success');
                 } catch (error) {
                     // Fallback for older browsers
                     try {
                         elements.outputJson.select();
                         document.execCommand('copy');
-                        showMessage('✅ JSON berhasil disalin ke clipboard!', 'success');
+                        showMessage('✅ JSON successfully copied to clipboard!', 'success');
                         this.trackEvent('copy_json', 'copy_success');
                     } catch (fallbackError) {
-                        showMessage('❌ Gagal menyalin ke clipboard.', 'error');
+                        showMessage('❌ Failed to copy to clipboard.', 'error');
                     }
                 }
             }
@@ -1418,7 +1418,7 @@
             downloadJson() {
                 const content = elements.outputJson.value;
                 if (!content) {
-                    showMessage('❌ Tidak ada JSON untuk didownload!', 'error');
+                    showMessage('❌ No JSON to download!', 'error');
                     return;
                 }
 
@@ -1433,10 +1433,10 @@
                     document.body.removeChild(a);
                     URL.revokeObjectURL(url);
                     
-                    showMessage('✅ File JSON berhasil didownload!', 'success');
+                    showMessage('✅ JSON file successfully downloaded!', 'success');
                     this.trackEvent('download_json', 'download_success');
                 } catch (error) {
-                    showMessage('❌ Gagal mendownload file.', 'error');
+                    showMessage('❌ Failed to download file.', 'error');
                 }
             }
 
@@ -1525,14 +1525,14 @@
                 console.log('VIN NESIA JSON Beautifier initialized successfully');
             } catch (error) {
                 console.error('Failed to initialize application:', error);
-                showMessage('❌ Terjadi kesalahan saat memuat aplikasi.', 'error');
+                showMessage('❌ Failed to load application.', 'error');
             }
         });
 
         // Handle errors gracefully
         window.addEventListener('error', (e) => {
             console.error('Application error:', e.error);
-            showMessage('❌ Terjadi kesalahan tak terduga.', 'error');
+            showMessage('❌ An unexpected error occurred.', 'error');
         });
 
         // Service Worker for offline functionality (optional)
