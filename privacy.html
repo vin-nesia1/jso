@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - VIN NESIA JSON Beautifier</title>
-    <meta name="description" content="Kebijakan Privasi JSON Beautifier VIN NESIA - Perlindungan data dan privasi pengguna">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://jsonbeautifier.vinnesia.my.id/privacy.html">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Kebijakan Privasi untuk JSON Beautifier Online - vinnesia.my.id">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <!-- Google Analytics GA4 -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PYZXZFNER"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -17,185 +16,168 @@
         gtag('js', new Date());
         gtag('config', 'G-3PYZXZFNER');
     </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             color: #e0e0e0;
             min-height: 100vh;
-            line-height: 1.6;
+            line-height: 1.7;
         }
-        
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
-        
+
         .header {
             text-align: center;
             margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(124, 58, 237, 0.3);
         }
-        
-        .logo {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #7c3aed, #10b981);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-        }
-        
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(45deg, #374151, #4b5563);
-            color: #e0e0e0;
-            text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-weight: 500;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-            border: 1px solid #6b7280;
-        }
-        
-        .back-btn:hover {
-            background: linear-gradient(45deg, #4b5563, #6b7280);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-        
+
         h1 {
-            color: #7c3aed;
-            font-size: 2.2rem;
+            color: #a855f7;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(168, 85, 247, 0.3);
         }
-        
+
+        .subtitle {
+            color: #10b981;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #a855f7, #10b981);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+        }
+
         .content {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
             padding: 40px;
+            border: 1px solid rgba(124, 58, 237, 0.3);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
-        
+
         h2 {
-            color: #10b981;
-            font-size: 1.4rem;
-            margin: 30px 0 15px 0;
+            color: #a855f7;
+            font-size: 1.6rem;
             font-weight: 600;
+            margin-bottom: 20px;
+            margin-top: 30px;
         }
-        
-        h2:first-of-type {
+
+        h2:first-child {
             margin-top: 0;
         }
-        
+
+        h3 {
+            color: #10b981;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
         p {
             margin-bottom: 15px;
-            color: #d1d5db;
+            color: #cbd5e1;
         }
-        
+
         ul {
-            margin: 15px 0 15px 25px;
-            color: #d1d5db;
+            margin-left: 20px;
+            margin-bottom: 15px;
         }
-        
+
         li {
             margin-bottom: 8px;
+            color: #cbd5e1;
         }
-        
+
         .highlight {
             background: rgba(16, 185, 129, 0.1);
-            border: 1px solid #10b981;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 20px 0;
-            color: #10b981;
-        }
-        
-        .contact-info {
-            background: rgba(124, 58, 237, 0.1);
-            border: 1px solid #7c3aed;
-            border-radius: 8px;
             padding: 20px;
-            margin: 25px 0;
-            text-align: center;
+            border-radius: 10px;
+            border-left: 4px solid #10b981;
+            margin: 20px 0;
         }
-        
-        .contact-info h3 {
-            color: #7c3aed;
-            margin-bottom: 10px;
+
+        .contact-info {
+            background: rgba(168, 85, 247, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #a855f7;
+            margin: 20px 0;
         }
-        
+
         .contact-info a {
             color: #a855f7;
             text-decoration: none;
             font-weight: 500;
         }
-        
+
         .contact-info a:hover {
-            text-decoration: underline;
+            color: #10b981;
         }
-        
+
         .last-updated {
             text-align: center;
-            color: #9ca3af;
+            color: #94a3b8;
             font-style: italic;
             margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(124, 58, 237, 0.3);
         }
-        
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .footer p {
-            color: #9ca3af;
-            margin-bottom: 15px;
-        }
-        
-        .footer a {
-            color: #7c3aed;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-        
-        .footer a:hover {
-            color: #a855f7;
-        }
-        
+
         @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
             .content {
                 padding: 25px;
             }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-            
+
             h2 {
+                font-size: 1.4rem;
+            }
+
+            h3 {
                 font-size: 1.2rem;
             }
         }
@@ -203,110 +185,154 @@
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-btn">
-            🔙 Kembali ke JSON Beautifier
-        </a>
+        <a href="https://jsonbeautifier.vinnesia.my.id" class="back-button">🔙 Kembali ke JSON Beautifier</a>
         
-        <div class="header">
-            <div class="logo">VN</div>
+        <header class="header">
             <h1>Privacy Policy</h1>
-        </div>
-        
+            <p class="subtitle">VIN NESIA JSON Beautifier</p>
+        </header>
+
         <div class="content">
             <div class="highlight">
-                <strong>Ringkasan Singkat:</strong> Kami tidak mengumpulkan, menyimpan, atau mengirim data pribadi Anda. Semua proses JSON beautifier berjalan langsung di browser Anda (client-side only).
+                <p><strong>Ringkasan Singkat:</strong> Kami tidak mengumpulkan, menyimpan, atau mengirim data pribadi Anda. Semua proses JSON beautifying dilakukan sepenuhnya di browser Anda (client-side). File yang Anda upload tidak pernah meninggalkan perangkat Anda.</p>
             </div>
-            
+
             <h2>1. Informasi yang Kami Kumpulkan</h2>
-            <p>VIN NESIA JSON Beautifier berkomitmen untuk melindungi privasi pengguna. Kami <strong>TIDAK mengumpulkan, menyimpan, atau memproses data pribadi</strong> apa pun dari pengguna, termasuk:</p>
+            <p>JSON Beautifier Online berkomitmen untuk melindungi privasi pengguna. Kami <strong>TIDAK mengumpulkan, menyimpan, atau memproses</strong> data pribadi apapun, termasuk:</p>
             <ul>
-                <li>File JSON yang Anda upload atau input</li>
-                <li>Konten teks yang Anda masukkan</li>
-                <li>Informasi pribadi seperti nama, email, atau alamat</li>
-                <li>Data sensitif dalam file JSON Anda</li>
+                <li>Nama, email, atau informasi identitas pribadi</li>
+                <li>File JSON atau konten yang Anda upload/input</li>
+                <li>Data hasil beautify/format JSON</li>
+                <li>Informasi login atau akun (karena tidak ada sistem akun)</li>
             </ul>
-            
-            <h2>2. Pemrosesan Data Client-Side</h2>
-            <p>Semua fungsionalitas JSON Beautifier berjalan sepenuhnya di browser Anda (client-side processing):</p>
+
+            <h2>2. Bagaimana Aplikasi Bekerja</h2>
+            <h3>Client-Side Processing</h3>
+            <p>Semua pemrosesan JSON dilakukan sepenuhnya di browser Anda (client-side):</p>
             <ul>
-                <li>File JSON diproses langsung di perangkat Anda</li>
-                <li>Tidak ada data yang dikirim ke server kami</li>
-                <li>Tidak ada data yang disimpan di server external</li>
-                <li>Semua operasi beautify, validasi, dan download berjalan offline di browser</li>
+                <li>File yang Anda upload dibaca langsung oleh JavaScript di browser</li>
+                <li>Proses beautify/format menggunakan fungsi JSON.stringify() browser</li>
+                <li>Tidak ada data yang dikirim ke server atau pihak ketiga</li>
+                <li>File dan hasil processing hanya ada di memori browser Anda</li>
             </ul>
-            
+
+            <h3>Tidak Ada Penyimpanan Data</h3>
+            <p>Aplikasi ini tidak menggunakan:</p>
+            <ul>
+                <li>Database atau server penyimpanan</li>
+                <li>localStorage atau sessionStorage browser</li>
+                <li>Cookies untuk menyimpan data pengguna</li>
+                <li>Cache file atau konten pengguna</li>
+            </ul>
+
             <h2>3. Google Analytics</h2>
-            <p>Kami menggunakan Google Analytics (GA4) untuk memahami penggunaan website dan meningkatkan layanan. Data yang dikumpulkan bersifat anonim dan meliputi:</p>
-            <ul>
-                <li>Jumlah pengunjung dan halaman yang dilihat</li>
-                <li>Informasi browser dan perangkat (tanpa identifikasi personal)</li>
-                <li>Negara dan kota asal pengunjung (berdasarkan IP address)</li>
-                <li>Interaksi dengan fitur-fitur website (klik tombol, upload file)</li>
-            </ul>
-            <p>Data ini digunakan untuk analisis statistik dan tidak dapat digunakan untuk mengidentifikasi individu tertentu.</p>
+            <p>Kami menggunakan Google Analytics (GA4) dengan ID tracking <code>G-3PYZXZFNER</code> untuk menganalisis penggunaan website secara anonim:</p>
             
-            <h2>4. Cookies dan Local Storage</h2>
+            <h3>Data yang Dikumpulkan GA4:</h3>
+            <ul>
+                <li>Informasi teknis browser (jenis browser, sistem operasi)</li>
+                <li>Lokasi geografis umum (negara/kota, bukan alamat spesifik)</li>
+                <li>Halaman yang dikunjungi dan durasi kunjungan</li>
+                <li>Referrer/sumber traffic</li>
+                <li>Interaksi dengan elemen website (klik tombol, dll.)</li>
+            </ul>
+
+            <h3>Data yang TIDAK Dikumpulkan GA4:</h3>
+            <ul>
+                <li>Konten file JSON yang Anda upload/input</li>
+                <li>Informasi pribadi yang dapat mengidentifikasi Anda</li>
+                <li>Data sensitif atau rahasia bisnis</li>
+            </ul>
+
+            <p>Anda dapat menonaktifkan Google Analytics dengan menggunakan ekstensi browser seperti "Google Analytics Opt-out" atau mengatur browser untuk memblokir tracking.</p>
+
+            <h2>4. Cookies dan Teknologi Pelacakan</h2>
             <p>Website ini menggunakan cookies minimal yang diperlukan untuk:</p>
             <ul>
-                <li>Google Analytics untuk pelacakan penggunaan website</li>
-                <li>Preferensi browser untuk pengalaman pengguna yang lebih baik</li>
+                <li>Google Analytics (untuk statistik penggunaan anonim)</li>
+                <li>Preferensi teknis browser (tidak menyimpan data pribadi)</li>
             </ul>
-            <p>Kami <strong>TIDAK menggunakan</strong> cookies untuk menyimpan data JSON atau informasi sensitif Anda.</p>
             
+            <p>Kami tidak menggunakan cookies untuk:</p>
+            <ul>
+                <li>Menyimpan data pribadi atau file pengguna</li>
+                <li>Tracking lintas website</li>
+                <li>Advertising atau marketing</li>
+                <li>Profiling pengguna</li>
+            </ul>
+
             <h2>5. Keamanan Data</h2>
-            <p>Karena semua pemrosesan dilakukan di browser Anda:</p>
+            <div class="highlight">
+                <p><strong>Keamanan Maksimal:</strong> Karena semua proses dilakukan client-side, data Anda tidak pernah meninggalkan perangkat Anda. Ini adalah metode paling aman untuk memproses file JSON sensitif.</p>
+            </div>
+
+            <h3>Praktik Keamanan:</h3>
             <ul>
-                <li>Data JSON Anda tidak pernah meninggalkan perangkat Anda</li>
-                <li>Tidak ada risiko data breach dari server kami</li>
-                <li>Anda memiliki kontrol penuh atas data yang diproses</li>
-                <li>Koneksi website menggunakan HTTPS untuk keamanan</li>
+                <li>Koneksi HTTPS untuk mengenkripsi komunikasi</li>
+                <li>Tidak ada penyimpanan data di server</li>
+                <li>Tidak ada transmisi file ke server external</li>
+                <li>Code open-source yang dapat diaudit</li>
+            </ul>
+
+            <h2>6. Hak Pengguna</h2>
+            <p>Karena kami tidak mengumpulkan atau menyimpan data pribadi, Anda secara otomatis memiliki kontrol penuh atas data Anda:</p>
+            <ul>
+                <li><strong>Hak Akses:</strong> Tidak ada data pribadi yang disimpan untuk diakses</li>
+                <li><strong>Hak Hapus:</strong> Refresh browser akan menghapus semua data lokal</li>
+                <li><strong>Hak Portabilitas:</strong> Data tetap di perangkat Anda</li>
+                <li><strong>Hak Pembatasan:</strong> Anda dapat berhenti menggunakan layanan kapan saja</li>
+            </ul>
+
+            <h2>7. Anak-anak dan Remaja</h2>
+            <p>Layanan ini aman digunakan oleh pengguna di bawah 18 tahun karena:</p>
+            <ul>
+                <li>Tidak mengumpulkan informasi pribadi apapun</li>
+                <li>Tidak memerlukan registrasi atau login</li>
+                <li>Tidak ada interaksi sosial atau komunikasi</li>
+                <li>Fokus pada tools teknis yang edukatif</li>
+            </ul>
+
+            <h2>8. Link Eksternal</h2>
+            <p>Website ini berisi link ke:</p>
+            <ul>
+                <li><strong>vinnesia.my.id</strong> - Website utama kami</li>
+                <li><strong>CDN resources</strong> (Google Fonts, libraries) - Untuk fungsi teknis</li>
             </ul>
             
-            <h2>6. Perlindungan Anak</h2>
-            <p>Layanan ini tidak dirancang khusus untuk anak-anak di bawah 13 tahun. Kami tidak secara sengaja mengumpulkan informasi pribadi dari anak-anak. Jika Anda adalah orangtua dan mengetahui bahwa anak Anda memberikan informasi pribadi kepada kami, silakan hubungi kami.</p>
-            
-            <h2>7. Link ke Website Lain</h2>
-            <p>Website ini mungkin berisi link ke website lain. Kami tidak bertanggung jawab atas praktik privasi website lain. Kami mendorong Anda untuk membaca kebijakan privasi setiap website yang Anda kunjungi.</p>
-            
-            <h2>8. Hak Pengguna</h2>
-            <p>Karena kami tidak mengumpulkan data pribadi, tidak ada data pribadi yang perlu dihapus atau diperbaiki. Namun, Anda memiliki hak untuk:</p>
+            <p>Kami tidak bertanggung jawab atas kebijakan privasi website eksternal. Silakan periksa kebijakan privasi mereka secara terpisah.</p>
+
+            <h2>9. Perubahan Kebijakan Privasi</h2>
+            <p>Jika ada perubahan pada kebijakan privasi ini, kami akan:</p>
             <ul>
-                <li>Menonaktifkan cookies di browser Anda</li>
-                <li>Menggunakan mode incognito/private browsing</li>
-                <li>Menghubungi kami jika ada pertanyaan privasi</li>
+                <li>Memperbarui tanggal "Last Updated" di bagian bawah</li>
+                <li>Memberikan notifikasi di halaman utama untuk perubahan material</li>
+                <li>Tetap berkomitmen pada prinsip "tidak mengumpulkan data pribadi"</li>
+            </ul>
+
+            <h2>10. Dasar Hukum (GDPR Compliance)</h2>
+            <p>Untuk pengguna di wilayah Uni Eropa, pemrosesan data kami berdasarkan:</p>
+            <ul>
+                <li><strong>Legitimate Interest:</strong> Google Analytics untuk menganalisis penggunaan website</li>
+                <li><strong>Consent:</strong> Dengan menggunakan website, Anda menyetujui penggunaan Google Analytics</li>
             </ul>
             
-            <h2>9. Perubahan Kebijakan</h2>
-            <p>Kami dapat memperbarui kebijakan privasi ini dari waktu ke waktu. Perubahan akan diposting di halaman ini dengan tanggal revisi yang baru. Penggunaan berkelanjutan atas layanan kami setelah perubahan berarti Anda menerima kebijakan privasi yang diperbarui.</p>
-            
-            <h2>10. Google AdSense Compliance</h2>
-            <p>Website ini mematuhi kebijakan Google AdSense:</p>
-            <ul>
-                <li>Tidak mengumpulkan informasi yang dapat diidentifikasi secara pribadi</li>
-                <li>Menggunakan Google Analytics sesuai dengan Terms of Service Google</li>
-                <li>Memberikan transparansi penuh tentang penggunaan data</li>
-                <li>Mematuhi GDPR dan regulasi privasi internasional</li>
-            </ul>
-            
+            <p>Karena tidak ada data pribadi yang dikumpulkan dari proses JSON beautifying, sebagian besar requirement GDPR tidak berlaku untuk fungsi utama aplikasi.</p>
+
+            <h2>11. Kontak dan Pertanyaan</h2>
             <div class="contact-info">
-                <h3>📧 Hubungi Kami</h3>
-                <p>Jika Anda memiliki pertanyaan tentang kebijakan privasi ini, silakan hubungi:</p>
+                <p>Jika Anda memiliki pertanyaan tentang kebijakan privasi ini atau ingin melaporkan masalah keamanan, silakan hubungi:</p>
                 <p><strong>Email:</strong> <a href="mailto:admin@vinnesia.my.id">admin@vinnesia.my.id</a></p>
                 <p><strong>Website:</strong> <a href="https://www.vinnesia.my.id">vinnesia.my.id</a></p>
+                <p><strong>Response Time:</strong> Kami akan merespon dalam 24-48 jam</p>
             </div>
-            
+
+            <h2>12. Yurisdiksi dan Hukum yang Berlaku</h2>
+            <p>Kebijakan privasi ini tunduk pada hukum Republik Indonesia. Untuk sengketa yang timbul, akan diselesaikan melalui pengadilan yang berwenang di Indonesia.</p>
+
             <div class="last-updated">
-                <p><em>Kebijakan privasi ini terakhir diperbarui pada: 25 Juli 2025</em></p>
+                <p><strong>Terakhir Diperbarui:</strong> 26 Juli 2025</p>
+                <p>Kebijakan ini berlaku untuk layanan JSON Beautifier di <strong>jsonbeautifier.vinnesia.my.id</strong></p>
             </div>
-        </div>
-        
-        <div class="footer">
-            <p>
-                <a href="index.html">JSON Beautifier</a> |
-                <a href="https://www.vinnesia.my.id">VIN NESIA</a> |
-                <a href="mailto:admin@vinnesia.my.id">Contact</a>
-            </p>
-            <p>©2025 vinnesia.my.id — All Rights Reserved</p>
         </div>
     </div>
 </body>
