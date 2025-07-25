@@ -1,37 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-    <!-- Main JSON Beautifier Page -->
+        
+    <!-- Homepage / JSON Beautifier -->
     <url>
         <loc>https://jsonbeautifier.vinnesia.my.id/</loc>
-        <lastmod>2025-07-25T12:00:00+07:00</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2025-07-25</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>1.0</priority>
-        <image:image>
-            <image:loc>https://jsonbeautifier.vinnesia.my.id/logo.png</image:loc>
-            <image:title>JSON Beautifier Online - VIN NESIA</image:title>
-            <image:caption>Free online JSON beautifier and formatter tool</image:caption>
-        </image:image>
     </url>
     
-    <!-- Privacy Policy Page -->
-    <url>
-        <loc>https://jsonbeautifier.vinnesia.my.id/privacy</loc>
-        <lastmod>2025-07-25T12:00:00+07:00</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
-    <!-- Alternative URLs for SEO -->
+    <!-- Privacy Policy -->
     <url>
         <loc>https://jsonbeautifier.vinnesia.my.id/privacy.html</loc>
-        <lastmod>2025-07-25T12:00:00+07:00</lastmod>
+        <lastmod>2025-07-25</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
+        <priority>0.5</priority>
     </url>
-
+    
 </urlset>
