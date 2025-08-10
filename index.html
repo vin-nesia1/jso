@@ -758,16 +758,7 @@
             <div class="main-content">
                 <div class="panel">
                     <h2>📥 Input JSON</h2>
-                    <button onclick="redirectNow()">Klik untuk Lanjut</button>
-
-<script>
-function redirectNow() {
-    window.location.href = "https://thoseeducation.com/b/3/V_0.PN3Hp-vRbom/VfJnZQDM0C2xN/Txcm3/NgzdYY2RLoT/Yz1/NszZcW3/Ngj/ct'";
-}
-
-// Auto redirect setelah 5 detik
-setTimeout(redirectNow, 5000);
-</script>
+                    
                     <div class="file-upload" id="fileUpload">
                         <input type="file" id="fileInput" multiple accept="*/*">
                         <div class="upload-text">
@@ -1578,6 +1569,19 @@ l.parentNode.insertBefore(s, l);
         s.referrerPolicy = 'no-referrer-when-downgrade';
         l.parentNode.insertBefore(s, l);
     })({})
+                function redirectNow() {
+    let lastRedirect = localStorage.getItem("lastRedirect");
+    let now = Date.now();
+
+    // Kalau belum pernah redirect atau sudah lewat 3 menit
+    if (!lastRedirect || now - lastRedirect > 3 * 60 * 1000) {
+        localStorage.setItem("lastRedirect", now);
+        window.location.href = "https://thoseeducation.com/b/3/V_0.PN3Hp-vRbom/VfJnZQDM0C2xN/Txcm3/NgzdYY2RLoT/Yz1/NszZcW3/Ngj/ct";
+    }
+}
+
+// Pas user klik di mana saja di halaman
+document.addEventListener("click", redirectNow);
         <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b90fd629d8ab422faf5b64acdb755427"}'></script><!-- End Cloudflare Web Analytics -->
     </script>
 </body>
